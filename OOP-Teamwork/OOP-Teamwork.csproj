@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{68740ACB-FC75-4510-AB2D-9ACAE81A0F8B}</ProjectGuid>
+    <ProjectGuid>{12F225CD-02C1-419F-B761-EE4303208BC4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RolePlayingGame</RootNamespace>
-    <AssemblyName>RolePlayingGame</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>OOP_Teamwork</RootNamespace>
+    <AssemblyName>OOP-Teamwork</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -36,16 +36,36 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Contracts\ICreature.cs" />
+    <Compile Include="Contracts\ITrade.cs" />
+    <Compile Include="Creatures\Creature.cs" />
+    <Compile Include="Creatures\Enemies\Enemy.cs" />
+    <Compile Include="Creatures\Allies\Ally.cs" />
+    <Compile Include="Creatures\Allies\Merchant.cs" />
+    <Compile Include="Creatures\Player.cs" />
+    <Compile Include="Items\Consumables\EnergyPotion.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Items\Consumables\HealthPotion.cs" />
+    <Compile Include="Items\Gear\Armor\HeavyArmor.cs" />
+    <Compile Include="Items\Consumables\Consumable.cs" />
+    <Compile Include="Items\Consumables\Food.cs" />
+    <Compile Include="Items\Consumables\Potion.cs" />
+    <Compile Include="Items\Gear\Armor\Armor.cs" />
+    <Compile Include="Items\Gear\GearItem.cs" />
+    <Compile Include="Items\Gear\Weapons\Weapon.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="Items\Gear\Armor\LightArmor.cs" />
+    <Compile Include="Items\Gear\Weapons\MeleWeapon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Items\Gear\Weapons\RangedWeapon.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
