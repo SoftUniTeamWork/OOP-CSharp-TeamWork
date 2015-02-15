@@ -5,7 +5,11 @@ using System.Text;
 
 namespace OOP_Teamwork
 {
-    public abstract class MeleWeapon : OOP_Teamwork.Items.Gear.Weapons.Weapon
+    public abstract class MeleWeapon : Items.Gear.Weapons.Weapon
     {
+        // Fields
+        // Constructors
+        // Properties
+        // Methods
     }
 }

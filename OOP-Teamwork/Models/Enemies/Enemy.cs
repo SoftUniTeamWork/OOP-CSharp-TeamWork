@@ -5,6 +5,9 @@
 
     public abstract class Enemy : Creature
     {
-        
+        // Fields
+        // Constructors
+        // Properties
+        // Methods
     }
 }

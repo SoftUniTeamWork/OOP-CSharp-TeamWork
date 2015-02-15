@@ -2,6 +2,9 @@
 {
     public abstract class Ally : Creature
     {
-
+        // Fields
+        // Constructors
+        // Properties
+        // Methods
     }
 }

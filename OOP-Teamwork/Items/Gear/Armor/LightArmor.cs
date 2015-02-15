@@ -5,5 +5,9 @@
 
     public abstract class LightArmor : Armor
     {
+        // Fields
+        // Constructors
+        // Properties
+        // Methods
     }
 }

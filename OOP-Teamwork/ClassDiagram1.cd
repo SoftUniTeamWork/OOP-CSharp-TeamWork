@@ -1,119 +1,119 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="OOP_Teamwork.Game" Collapsed="true">
-    <Position X="16.75" Y="0.5" Width="1.5" />
+    <Position X="17" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.EnergyPotion" Collapsed="true">
-    <Position X="3" Y="8.75" Width="1.5" />
+    <Position X="3.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Consumables\EnergyPotion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.HealthPotion" Collapsed="true">
-    <Position X="5.25" Y="8.75" Width="1.5" />
+    <Position X="5.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Consumables\HealthPotion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.MeleWeapon" Collapsed="true">
-    <Position X="9.75" Y="8.75" Width="1.5" />
+    <Position X="10" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Gear\Weapons\MeleWeapon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.RangedWeapon" Collapsed="true">
-    <Position X="7.5" Y="8.75" Width="1.5" />
+    <Position X="7.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Gear\Weapons\RangedWeapon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.Items.Consumables.Consumable" Collapsed="true">
-    <Position X="3" Y="5.75" Width="1.5" />
+    <Position X="3.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Consumables\Consumable.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.Items.Consumables.Food" Collapsed="true">
-    <Position X="0.75" Y="7.25" Width="1.5" />
+    <Position X="1" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Consumables\Food.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.Items.Consumables.Potion" Collapsed="true">
-    <Position X="4.25" Y="7.25" Width="1.5" />
+    <Position X="4.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Consumables\Potion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.Items.Gear.Armor.Armor" Collapsed="true">
-    <Position X="13.25" Y="7.25" Width="1.5" />
+    <Position X="13.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Gear\Armor\Armor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.Items.Gear.Armor.HeavyArmor" Collapsed="true">
-    <Position X="12" Y="8.75" Width="1.5" />
+    <Position X="12.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Gear\Armor\HeavyArmor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.Items.Gear.Armor.LightArmor" Collapsed="true">
-    <Position X="14.25" Y="8.75" Width="1.5" />
+    <Position X="14.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Gear\Armor\LightArmor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.Items.Gear.GearItem" Collapsed="true">
-    <Position X="11" Y="5.75" Width="1.5" />
+    <Position X="11.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Gear\GearItem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.Items.Gear.Weapons.Weapon" Collapsed="true">
-    <Position X="8.75" Y="7.25" Width="1.5" />
+    <Position X="9" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Gear\Weapons\Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.Items.Item" Collapsed="true">
-    <Position X="7.5" Y="4.5" Width="1.5" />
+    <Position X="7.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Item.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.Models.Allies.Ally" Collapsed="true">
-    <Position X="10.25" Y="1.75" Width="1.5" />
+    <Position X="0.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Allies\Ally.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.Models.Allies.Merchant" Collapsed="true">
-    <Position X="10.25" Y="3.25" Width="1.5" />
+    <Position X="0.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Allies\Merchant.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.Models.Creature" Collapsed="true">
-    <Position X="11.5" Y="0.5" Width="1.5" />
+    <Position X="1.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Creature.cs</FileName>
@@ -121,49 +121,49 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="OOP_Teamwork.Models.Enemy" Collapsed="true">
-    <Position X="12.5" Y="1.75" Width="1.5" />
+    <Position X="2.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Enemies\Enemy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Teamwork.Models.Player" Collapsed="true">
-    <Position X="18.5" Y="0.5" Width="1.5" />
+    <Position X="18.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="OOP_Teamwork.Contracts.ICreature" Collapsed="true">
-    <Position X="2.75" Y="0.5" Width="1.5" />
+    <Position X="18.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Contracts\ICreature.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="OOP_Teamwork.Contracts.IMage" Collapsed="true">
-    <Position X="2.75" Y="3.25" Width="1.5" />
+    <Position X="18.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Contracts\IMage.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="OOP_Teamwork.Contracts.IPriest" Collapsed="true">
-    <Position X="5" Y="3.25" Width="1.5" />
+    <Position X="20.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Contracts\IPriest.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="OOP_Teamwork.Contracts.ITrade" Collapsed="true">
-    <Position X="16.75" Y="1.75" Width="1.5" />
+    <Position X="17" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Contracts\ITrade.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="OOP_Teamwork.Contracts.IWarrior" Collapsed="true">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+    <Position X="17" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Contracts\IWarrior.cs</FileName>

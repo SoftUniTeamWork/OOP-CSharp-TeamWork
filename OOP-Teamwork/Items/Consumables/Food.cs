@@ -5,6 +5,9 @@
 
     public class Food : Consumable
     {
-
+        // Fields
+        // Constructors
+        // Properties
+        // Methods
     }
 }

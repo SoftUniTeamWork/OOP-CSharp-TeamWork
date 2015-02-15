@@ -1,10 +1,13 @@
 ﻿namespace OOP_Teamwork
 {
     using System;
-    using OOP_Teamwork.Items.Gear.Weapons;
+    using Items.Gear.Weapons;
 
     public abstract class RangedWeapon : Weapon
     {
-
+        // Fields
+        // Constructors
+        // Properties
+        // Methods
     }
 }

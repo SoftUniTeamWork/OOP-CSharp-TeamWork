@@ -5,5 +5,9 @@
 
     public abstract class HeavyArmor : Armor
     {
+        // Fields
+        // Constructors
+        // Properties
+        // Methods
     }
 }

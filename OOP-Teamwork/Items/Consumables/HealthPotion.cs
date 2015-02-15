@@ -5,7 +5,11 @@ using System.Text;
 
 namespace OOP_Teamwork
 {
-    public class HealthPotion : OOP_Teamwork.Items.Consumables.Potion
+    public class HealthPotion : Items.Consumables.Potion
     {
+        // Fields
+        // Constructors
+        // Properties
+        // Methods
     }
 }

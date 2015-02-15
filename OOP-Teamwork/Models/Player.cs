@@ -3,6 +3,9 @@
     using System;
     public class Player
     {
-
+        // Fields
+        // Constructors
+        // Properties
+        // Methods
     }
 }
