@@ -1,9 +1,8 @@
-﻿namespace OOP_Teamwork.Items.Gear.Armor
+﻿namespace OOP_Teamwork.Characters.Allies
 {
     using System;
-    using System.Linq;
 
-    public abstract class LightArmor : Armor
+    public class Merchant : Ally
     {
         // Fields
         // Constructors

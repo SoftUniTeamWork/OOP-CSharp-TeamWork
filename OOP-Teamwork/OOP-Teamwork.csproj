@@ -40,16 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Characters\AttributePair.cs" />
+    <Compile Include="Characters\Heroes\Mage.cs" />
+    <Compile Include="Characters\Heroes\Rogue.cs" />
+    <Compile Include="Characters\Heroes\Warrior.cs" />
     <Compile Include="Contracts\ICreature.cs" />
     <Compile Include="Contracts\IMage.cs" />
     <Compile Include="Contracts\IPriest.cs" />
     <Compile Include="Contracts\ITrade.cs" />
     <Compile Include="Contracts\IWarrior.cs" />
-    <Compile Include="Models\Creature.cs" />
-    <Compile Include="Models\Enemies\Enemy.cs" />
-    <Compile Include="Models\Allies\Ally.cs" />
-    <Compile Include="Models\Allies\Merchant.cs" />
-    <Compile Include="Models\Player.cs" />
+    <Compile Include="Characters\Character.cs" />
+    <Compile Include="Characters\Enemies\Enemy.cs" />
+    <Compile Include="Characters\Allies\Ally.cs" />
+    <Compile Include="Characters\Allies\Merchant.cs" />
+    <Compile Include="Characters\Player.cs" />
     <Compile Include="Items\Consumables\EnergyPotion.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Items\Consumables\HealthPotion.cs" />

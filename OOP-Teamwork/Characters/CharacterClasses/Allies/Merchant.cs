@@ -4,9 +4,6 @@
 
     public class Merchant : Ally
     {
-        // Fields
-        // Constructors
-        // Properties
-        // Methods
+
     }
 }

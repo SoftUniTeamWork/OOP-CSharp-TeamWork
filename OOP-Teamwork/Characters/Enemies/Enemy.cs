@@ -1,9 +1,9 @@
-﻿namespace OOP_Teamwork.Items.Gear.Armor
+﻿namespace OOP_Teamwork.Characters
 {
     using System;
     using System.Linq;
 
-    public abstract class LightArmor : Armor
+    public abstract class Enemy : Character
     {
         // Fields
         // Constructors
