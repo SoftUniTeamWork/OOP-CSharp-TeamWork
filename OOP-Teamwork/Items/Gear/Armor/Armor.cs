@@ -1,8 +1,5 @@
 ﻿namespace OOP_Teamwork.Items.Gear.Armor
 {
-    using System;
-    using System.Linq;
-
     public abstract class Armor : GearItem
     {
         // Fields
@@ -12,21 +9,27 @@
         protected Armor(string name, int sellPrice, int armorVal) 
             : base(name, sellPrice)
         {
-            this.ArmorValue = armorVal;
+            ArmorValue = armorVal;
         }
 
         // Properties
         public int ArmorValue
         {
-            get { return this.armorValue; }
-            set { this.armorValue = value; }
+            get { return armorValue; }
+            set { armorValue = value; }
         }
 
         // Methods
+        /// <summary>
+        /// Equips player with item
+        /// </summary>
         public override void Equip()
         {
             // player.Armor += this.ArmorValue;
         }
+        /// <summary>
+        /// Unequips player with item
+        /// </summary>
         public override void Unequip()
         {
             // player.Armor -= this.ArmorValue;

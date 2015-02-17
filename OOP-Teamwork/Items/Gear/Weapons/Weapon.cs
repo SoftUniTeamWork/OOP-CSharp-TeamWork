@@ -1,8 +1,5 @@
 ﻿namespace OOP_Teamwork.Items.Gear.Weapons
 {
-    using System;
-    using System.Linq;
-
     public abstract class Weapon : GearItem
     {
         // Fields
@@ -13,8 +10,8 @@
         protected Weapon(string name, int sellPrice, int minDmg, int maxDmg)
             : base(name, sellPrice)
         {
-            this.MinimalDamage = minDmg;
-            this.MaximalDamage = maxDmg;
+            MinimalDamage = minDmg;
+            MaximalDamage = maxDmg;
         }
         
         // Properties
