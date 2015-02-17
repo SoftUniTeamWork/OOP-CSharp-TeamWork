@@ -8,5 +8,8 @@
         // Constructors
         // Properties
         // Methods
+        public Merchant(int strength, int inteligence, int agility) : base(strength, inteligence, agility)
+        {
+        }
     }
 }
