@@ -1,8 +1,5 @@
 ﻿namespace OOP_Teamwork.Items
 {
-    using System;
-    using System.Linq;
-
     public abstract class Item
     {
         // Fields
@@ -12,8 +9,8 @@
         // Constructors
         public Item(string name, int sellPrice)
         {
-            this.Name = name;
-            this.SellPrice = sellPrice;
+            Name = name;
+            SellPrice = sellPrice;
         }
 
         // Properties
