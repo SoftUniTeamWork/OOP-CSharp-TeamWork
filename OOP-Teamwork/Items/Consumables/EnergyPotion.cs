@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace OOP_Teamwork
+﻿namespace OOP_Teamwork
 {
     public class EnergyPotion : Items.Consumables.Potion
     {
@@ -11,5 +6,8 @@ namespace OOP_Teamwork
         // Constructors
         // Properties
         // Methods
+        public EnergyPotion(string name, int sellPrice) : base(name, sellPrice)
+        {
+        }
     }
 }
