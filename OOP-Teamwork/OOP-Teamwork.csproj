@@ -47,7 +47,7 @@
     <Compile Include="Contracts\ICreature.cs" />
     <Compile Include="Contracts\IMage.cs" />
     <Compile Include="Contracts\IPriest.cs" />
-    <Compile Include="Contracts\ITrade.cs" />
+    <Compile Include="Contracts\ITradable.cs" />
     <Compile Include="Contracts\IWarrior.cs" />
     <Compile Include="Characters\Character.cs" />
     <Compile Include="Characters\Enemies\Enemy.cs" />
