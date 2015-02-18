@@ -7,73 +7,111 @@ namespace Entities
 {
     public abstract class Entity
     {
-        private string entityName;
-        private EntityResourceType entityResource;
+        // Private Fields
+        private string name;
+        private int hitPoints;
+        private int armor;
         private int entityDamage;
+        private double attackSpeed;
 
         /// <summary>
-        /// This constructor is parental with several data. Name, Resource, Damage. Data is completely validated.
+        /// Constructor for entities
         /// </summary>
-        /// <param name="entityName">This will be Player, Enemy or Non-Enemy Creature name.</param>
-        /// <param name="entityResource">This will be the Entity resouce of type: Mana, Energy, Rage or whatever.</param>
-        /// <param name="entityDamage">This is damage that creature will be took. It will be calculate in method CalcDamage. Read more at CalcDamage method.</param>
-        public Entity(string entityName, EntityResourceType entityResource, int entityDamage)
+        /// <param name="name">Name</param>
+        /// <param name="hitPts">Health points</param>
+        /// <param name="armor">Armor</param>
+        /// <param name="entityDamage">Base damage</param>
+        /// <param name="attackSpeed">Attack speed</param>
+        public Entity(string name, int hitPts, int armor, int entityDamage, double attackSpeed)
         {
-            this.EntityName = entityName;
-            this.EntityResource = entityResource;
+            this.Name = name;
+            this.HitPoints = hitPts;
+            this.Armor = armor;
             this.EntityDamage = entityDamage;
+            this.AttackSpeed = attackSpeed;
         }
 
-        public virtual string EntityName
+        // Properties
+        public virtual string Name
         {
-            get { return this.entityName; }
-            set { this.entityName = EntityValidator.NameValidating(value); }
+            get { return this.name; }
+            set { this.name = EntityValidator.NameValidating(value); }
         }
 
-        public virtual EntityResourceType EntityResource
+        public virtual int HitPoints
         {
-            get { return this.entityResource; }
-            set { this.entityResource = value; }
+            get { return this.hitPoints; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentNullException("Hit points cannot be negative number.");
+                }
+                this.hitPoints = value;
+            }
         }
 
+        public virtual int Armor
+        {
+            get { return this.armor; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentNullException("Armor cannot be negative number.");
+                }
+                this.armor = value;
+            }
+        }
         public int EntityDamage
         {
             get { return this.entityDamage; }
             set { this.entityDamage = EntityValidator.DamageValidating(value); }
         }
 
+        public double AttackSpeed
+        {
+            get { return this.attackSpeed; }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Attack speed cannot be less than 0,0 sec.");
+                }
+                this.attackSpeed = value;
+            }
+        }
+
         /// <summary>
         /// Converts Entity to string.
         /// </summary>
-        /// <returns>By default returns Enemy name, enemy resource type and average damage.</returns>
+        /// <returns>By default returns Enemy name</returns>
         public override string ToString()
         {
             StringBuilder toString = new StringBuilder();
 
-            toString.AppendLine("Entity with name " + this.entityName);
-            toString.AppendLine("Entity uses " + this.entityResource);
-            toString.AppendLine("Entity average damage is " + this.entityDamage);
+            toString.AppendLine("Entity with name " + this.name);
 
             return toString.ToString();
         }
 
         /// <summary>
-        /// This method calculates damage range. Formula by default is current entity damage divide by 2 bottom border, entity damage mulriplicate by 2 upper border. 
+        /// Method for calculating the damage to be dealt.
         /// </summary>
-        /// <returns>Returns random damage to be taken</returns>
+        /// <returns>Returns a number in range: from 80% to 120% of Base damage.</returns>
         protected virtual int CalcDamage()
         {
             Random getDamage = new Random();
-            int minDmgFormula = this.EntityDamage >> 1; //Equals to divide. E.g. 10/2 == 10 >> 1. This is twice faster than dividing.
-            int maxDmgFormula = this.EntityDamage << 1; //Example 10 * 2 == 10 << 1; Twice faster than multiplication.
-            int damageDone = getDamage.Next(minDmgFormula, maxDmgFormula);
-            return 0;
+            int diff = (int)Math.Round(EntityDamage/5.0); // Difference between min and max damage
+            int minDmgFormula = (EntityDamage - diff); // Min damage
+            int maxDmgFormula = (EntityDamage + diff); // Max damage
+            int damageDone = getDamage.Next(minDmgFormula, maxDmgFormula); // Random number between min and max damage
+            return damageDone;
         }
-
-        /// <summary>
-        /// This method takes damage that Entity done. 
-        /// </summary>
-        /// <returns>Returns damage taken</returns>
-        public abstract int DamageDone();
+        // Attack method takes target and damage as parameters.
+        public void Attack(Entity target, int damage)
+        {
+            target.HitPoints -= damage; // Deals "damage" to "target"
+        }
     }
 }
