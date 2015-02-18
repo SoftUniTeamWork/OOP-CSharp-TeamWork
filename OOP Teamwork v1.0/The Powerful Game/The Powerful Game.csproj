@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Entities\Player.cs" />
     <Compile Include="Exceptions\EntityDamageException.cs" />
     <Compile Include="Exceptions\EntityNameException.cs" />
     <Compile Include="ISwitchable.cs" />
