@@ -106,7 +106,25 @@ namespace Entities
             int minDmgFormula = (EntityDamage - diff); // Min damage
             int maxDmgFormula = (EntityDamage + diff); // Max damage
             int damageDone = getDamage.Next(minDmgFormula, maxDmgFormula); // Random number between min and max damage
+            
+            if (CalcCritChance() == true)
+            {
+                damageDone = damageDone * 2;
+            }
+
             return damageDone;
+        }
+
+        public bool CalcCritChance()
+        {
+            Random getChance = new Random();
+            bool isCrit = false;
+            int chance = getChance.Next(1, 100);
+            if (chance > 85)
+            {
+                isCrit = true;
+            }
+            return isCrit;
         }
         // Attack method takes target and damage as parameters.
         public void Attack(Entity target, int damage)
