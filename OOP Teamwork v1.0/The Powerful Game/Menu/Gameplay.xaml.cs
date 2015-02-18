@@ -18,11 +18,41 @@ namespace The_Powerful_Game.Menu
     /// Interaction logic for Gameplay.xaml
     /// </summary>
     public partial class Gameplay : UserControl, ISwitchable
-	{
-		public Gameplay()
-		{
-			InitializeComponent();
-		}
+    {
+        public Gameplay()
+        {
+            InitializeComponent();
+            CompositionTarget.Rendering += HandleKeyPress;
+        }
+
+        // Should be in Player class
+        private void HandleKeyPress(object sender, EventArgs e)
+        {
+            var target = gameplayLayoutRoot.Children[0];
+
+            double x = Canvas.GetLeft(target);
+            double y = Canvas.GetTop(target);
+
+            if (Keyboard.IsKeyDown(Key.Up))
+            {
+                Canvas.SetTop(target, y - 2);
+            }
+
+            if (Keyboard.IsKeyDown(Key.Down))
+            {
+                Canvas.SetTop(target, y + 2);
+            }
+
+            if (Keyboard.IsKeyDown(Key.Left))
+            {
+                Canvas.SetLeft(target, x - 2);
+            }
+
+            if (Keyboard.IsKeyDown(Key.Right))
+            {
+                Canvas.SetLeft(target, x + 2);
+            }
+        }
 
         #region ISwitchable Members
         public void UtilizeState(object state)

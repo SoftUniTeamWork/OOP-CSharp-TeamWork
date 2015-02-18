@@ -7,8 +7,10 @@
 	x:Class="The_Powerful_Game.Menu.Gameplay"
 	d:DesignWidth="640" d:DesignHeight="480" Width="800" Height="600">
 
-    <Grid x:Name="gameplayLayoutRoot" Background="White">
-        <TextBlock Height="40" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="200" Text="Gameplay" TextWrapping="Wrap" FontSize="21.333"/>
-        <Button Click="Button_Click" HorizontalAlignment="Right" Margin="0,0,20,20" VerticalAlignment="Bottom" Width="100" Content="&lt; Back" Height="25" />
-    </Grid>
+    <Canvas x:Name="gameplayLayoutRoot" Background="White">
+        <Image Height="63.609" Canvas.Left="172.246" Source="../Resources\WoodElf.png" Stretch="Fill" Canvas.Top="195.372" Width="38.868"/>
+        <Image Height="63.384" Source="../Resources/3D-Orc.png" Stretch="Fill" Canvas.Top="316.492" Width="38.96" Canvas.Left="265.213"/>
+        <TextBlock Height="40" Margin="20,20,0,0" Width="200" Text="Gameplay" TextWrapping="Wrap" FontSize="21.333"/>
+        <Button Click="Button_Click" Margin="0,0,20,20" Width="100" Content="&lt; Back" Height="25" Canvas.Bottom="0" Canvas.Right="0"/>
+    </Canvas>
 </UserControl>
