@@ -111,6 +111,7 @@ namespace Entities
         // Attack method takes target and damage as parameters.
         public void Attack(Entity target, int damage)
         {
+            int damageDealt = damage - target.Armor;
             target.HitPoints -= damage; // Deals "damage" to "target"
         }
     }
