@@ -102,7 +102,7 @@ namespace Entities
         protected virtual int CalcDamage()
         {
             Random getDamage = new Random();
-            int diff = (int)Math.Round(EntityDamage/5.0); // Difference between min and max damage
+            int diff = (int)Math.Round(EntityDamage/10.0); // Difference between min and max damage
             int minDmgFormula = (EntityDamage - diff); // Min damage
             int maxDmgFormula = (EntityDamage + diff); // Max damage
             int damageDone = getDamage.Next(minDmgFormula, maxDmgFormula); // Random number between min and max damage
@@ -111,8 +111,8 @@ namespace Entities
         // Attack method takes target and damage as parameters.
         public void Attack(Entity target, int damage)
         {
-            int damageDealt = damage - target.Armor;
-            target.HitPoints -= damage; // Deals "damage" to "target"
+            int damageDealt = damage - target.Armor; // Damage dealth will be the damage of the attacker - armor value of attacked
+            target.HitPoints -= damageDealt; // Reduces target HP by "damageDealt"
         }
     }
 }
