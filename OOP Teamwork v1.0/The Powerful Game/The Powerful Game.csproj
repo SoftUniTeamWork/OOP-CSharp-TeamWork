@@ -53,6 +53,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Contracts\IRenderable.cs" />
+    <Compile Include="Contracts\IUpdatable.cs" />
+    <Compile Include="CoreLogic\Engine.cs" />
+    <Compile Include="CoreLogic\Constants.cs" />
+    <Compile Include="Entities\Enemy.cs" />
     <Compile Include="Entities\Player.cs" />
     <Compile Include="Exceptions\EntityDamageException.cs" />
     <Compile Include="Exceptions\EntityNameException.cs" />
@@ -148,6 +153,7 @@
     <Resource Include="Resources\3D-Orc.png" />
     <Resource Include="Resources\WoodElf.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

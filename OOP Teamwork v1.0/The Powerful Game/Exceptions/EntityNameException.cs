@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exceptions
+namespace The_Powerful_Game.Exceptions
 {
     /// <summary>
     /// Entity name exception with some constructors.

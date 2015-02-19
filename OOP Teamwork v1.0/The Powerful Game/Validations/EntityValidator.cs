@@ -1,6 +1,6 @@
-﻿using Exceptions;
+﻿using The_Powerful_Game.Exceptions;
 
-namespace Validations
+namespace The_Powerful_Game.Validations
 {
     /// <summary>
     /// Entity validations are doing here. Validations for Name and Damage.
@@ -32,13 +32,13 @@ namespace Validations
         /// <param name="value">Value from the property in parental constructor.</param>
         /// <returns>Returns value if its valid.</returns>
         /// <exception cref="EntityDamageException">
-        /// Throws exception if value is negative with following message: "Entity cannot make negative damage." and property "EntityDamage"
+        /// Throws exception if value is negative with following message: "Entity cannot make negative damage." and property "damage"
         /// </exception>
         internal static int DamageValidating(int value)
         {
             if (value < 0)
             {
-                throw new EntityDamageException("Entity cannot make negative damage.", "EntityDamage");
+                throw new EntityDamageException("Entity cannot make negative damage.", "damage");
             }
             return value;
         }

@@ -1,72 +1,88 @@
-﻿using System;
-using System.Text;
-using Entities.Chooses;
-using Validations;
-
-namespace The_Powerful_Game.Entities
+﻿namespace The_Powerful_Game.Entities
 {
-    public abstract class Entity
+    using System;
+    using System.Text;
+    using Contracts;
+    using System.Windows.Controls;
+    using The_Powerful_Game.Validations;
+
+    public abstract class Entity : IUpdatable, IRenderable
     {
-        // Private Fields
         private string name;
-        private int hitPoints;
-        private int armor;
-        private int entityDamage;
+        private int healthPoints;
+        private int armorPoints;
+        private int damage;
         private double attackSpeed;
+        private Image image;
+
+        private int x;
+        private int y;
+
+        public bool isAlive = true;
 
         /// <summary>
         /// Constructor for entities
         /// </summary>
         /// <param name="name">Name</param>
-        /// <param name="hitPts">Health points</param>
-        /// <param name="armor">Armor</param>
-        /// <param name="entityDamage">Base damage</param>
+        /// <param name="healthPoints">Health points</param>
+        /// <param name="armorPoints">armorPoints</param>
+        /// <param name="damage">Base damage</param>
         /// <param name="attackSpeed">Attack speed</param>
-        public Entity(string name, int hitPts, int armor, int entityDamage, double attackSpeed)
+        public Entity(string name, int x, int y, int healthPoints, int armorPoints, int damage, double attackSpeed, Image image)
         {
             this.Name = name;
-            this.HitPoints = hitPts;
-            this.Armor = armor;
-            this.EntityDamage = entityDamage;
+            this.X = x;
+            this.Y = y;
+            this.HealthPoints = healthPoints;
+            this.ArmorPoints = armorPoints;
+            this.Damage = damage;
             this.AttackSpeed = attackSpeed;
+            this.Image = image;
         }
 
-        // Properties
         public virtual string Name
         {
             get { return this.name; }
-            set { this.name = EntityValidator.NameValidating(value); }
+            set
+            {
+                this.name = EntityValidator.NameValidating(value);
+            }
         }
 
-        public virtual int HitPoints
+        public int X { get; set; }
+
+        public int Y { get; set; }
+
+        public virtual int HealthPoints
         {
-            get { return this.hitPoints; }
+            get { return this.healthPoints; }
             set
             {
                 if (value < 0)
                 {
                     throw new ArgumentNullException("Hit points cannot be negative number.");
                 }
-                this.hitPoints = value;
+                this.healthPoints = value;
             }
         }
 
-        public virtual int Armor
+        public virtual int ArmorPoints
         {
-            get { return this.armor; }
+            get { return this.armorPoints; }
             set
             {
                 if (value < 0)
                 {
-                    throw new ArgumentNullException("Armor cannot be negative number.");
+                    throw new ArgumentNullException("armorPoints cannot be negative number.");
                 }
-                this.armor = value;
+                this.armorPoints = value;
             }
         }
-        public int EntityDamage
+
+        public int Damage
         {
-            get { return this.entityDamage; }
-            set { this.entityDamage = EntityValidator.DamageValidating(value); }
+            get { return this.damage; }
+            set { this.damage = EntityValidator.DamageValidating(value); }
         }
 
         public double AttackSpeed
@@ -81,6 +97,26 @@ namespace The_Powerful_Game.Entities
                 this.attackSpeed = value;
             }
         }
+
+        public Image Image
+        {
+            get
+            {
+                return this.image;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Entity image cannot be empty.");
+                }
+                this.image = value;
+            }
+        }
+
+        public abstract void Update();
+
+        public abstract void Render();
 
         /// <summary>
         /// Converts Entity to string.
@@ -102,9 +138,9 @@ namespace The_Powerful_Game.Entities
         protected virtual int CalcDamage()
         {
             Random getDamage = new Random();
-            int diff = (int)Math.Round(EntityDamage / 10.0); // Difference between min and max damage
-            int minDmgFormula = (EntityDamage - diff); // Min damage
-            int maxDmgFormula = (EntityDamage + diff); // Max damage
+            int diff = (int)Math.Round(Damage / 10.0); // Difference between min and max damage
+            int minDmgFormula = (Damage - diff); // Min damage
+            int maxDmgFormula = (Damage + diff); // Max damage
             int damageDone = getDamage.Next(minDmgFormula, maxDmgFormula); // Random number between min and max damage
 
             if (CalcCritChance() == true)
@@ -126,11 +162,11 @@ namespace The_Powerful_Game.Entities
             }
             return isCrit;
         }
-        // Attack method takes target and damage as parameters.
+
         public void Attack(Entity target, int damage)
         {
-            int damageDealt = damage - target.Armor; // Damage dealth will be the damage of the attacker - armor value of attacked
-            target.HitPoints -= damageDealt; // Reduces target HP by "damageDealt"
+            int damageDealt = damage - target.ArmorPoints; // Damage dealth will be the damage of the attacker - armorPoints value of attacked
+            target.HealthPoints -= damageDealt; // Reduces target HP by "damageDealt"
         }
     }
 }
