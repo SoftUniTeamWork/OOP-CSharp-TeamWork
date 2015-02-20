@@ -14,16 +14,12 @@ C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.pdb
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.csprojResolveAssemblyReference.cache
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Gameplay.baml
-C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Login.baml
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\MainMenu.baml
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Option.baml
-C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Register.baml
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\PageSwitcher.baml
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Gameplay.g.cs
-C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Login.g.cs
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\MainMenu.g.cs
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Option.g.cs
-C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Register.g.cs
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\PageSwitcher.g.cs
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\App.g.cs
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game_MarkupCompile.cache
