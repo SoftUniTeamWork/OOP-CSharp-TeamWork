@@ -65,8 +65,8 @@
     <Compile Include="Menu\Gameplay.xaml.cs">
       <DependentUpon>Gameplay.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Menu\LoadGame.xaml.cs">
-      <DependentUpon>LoadGame.xaml</DependentUpon>
+    <Compile Include="Menu\Credits.xaml.cs">
+      <DependentUpon>Credits.xaml</DependentUpon>
     </Compile>
     <Compile Include="Menu\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -124,7 +124,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Menu\LoadGame.xaml">
+    <Page Include="Menu\Credits.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

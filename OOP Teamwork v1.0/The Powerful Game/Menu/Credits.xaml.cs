@@ -15,12 +15,12 @@ using System.Windows.Shapes;
 namespace The_Powerful_Game.Menu
 {
     /// <summary>
-    /// Interaction logic for LoadGame.xaml
+    /// Interaction logic for Credits.xaml
     /// </summary>
 
-    public partial class LoadGame : UserControl, ISwitchable
+    public partial class Credits : UserControl, ISwitchable
     {
-        public LoadGame()
+        public Credits()
         {
             // Required to initialize variables
             InitializeComponent();

@@ -27,8 +27,6 @@ C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\PageSwitcher.g.cs
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\App.g.cs
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game_MarkupCompile.cache
-C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\LoadGame.baml
-C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\LoadGame.g.cs
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.g.resources
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The_Powerful_Game.Properties.Resources.resources
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.csproj.GenerateResource.Cache
@@ -49,3 +47,5 @@ C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerf
 C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Register.g.cs
 C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\PageSwitcher.g.cs
 C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.csprojResolveAssemblyReference.cache
+C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Credits.baml
+C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Credits.g.cs
