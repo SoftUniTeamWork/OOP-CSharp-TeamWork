@@ -45,3 +45,24 @@ C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerf
 C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.csprojResolveAssemblyReference.cache
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Credits.baml
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Credits.g.cs
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\bin\Debug\The Powerful Game.exe.config
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\bin\Debug\The Powerful Game.exe
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\bin\Debug\The Powerful Game.pdb
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.csprojResolveAssemblyReference.cache
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Gameplay.baml
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Credits.baml
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\MainMenu.baml
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Option.baml
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\PageSwitcher.baml
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Gameplay.g.cs
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Credits.g.cs
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\MainMenu.g.cs
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Option.g.cs
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\PageSwitcher.g.cs
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\App.g.cs
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game_MarkupCompile.cache
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.g.resources
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The_Powerful_Game.Properties.Resources.resources
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.csproj.GenerateResource.Cache
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.exe
+D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.pdb

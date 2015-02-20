@@ -1,13 +1,8 @@
-﻿using The_Powerful_Game.CoreLogic;
-using The_Powerful_Game.Menu;
-
-namespace The_Powerful_Game.Entities
+﻿namespace The_Powerful_Game.Entities
 {
-    using System;
     using System.Windows.Controls;
     using System.Windows.Input;
-    using System.Windows.Media;
-    using The_Powerful_Game.Entities.Chooses;
+    using Chooses;
 
     public class Player : Entity
     {
@@ -44,22 +39,34 @@ namespace The_Powerful_Game.Entities
         {
             if (Keyboard.IsKeyDown(Key.Up))
             {
-                this.Y--;
+                if (this.Y != 0)
+                {
+                    this.Y--;
+                }
             }
 
             if (Keyboard.IsKeyDown(Key.Down))
             {
-                this.Y++;
+                if (this.Y != 571)
+                {
+                    this.Y++;
+                }
             }
 
             if (Keyboard.IsKeyDown(Key.Left))
             {
-                this.X--;
+                if (this.X != 0)
+                {
+                    this.X--;
+                }
             }
 
             if (Keyboard.IsKeyDown(Key.Right))
             {
-                this.X++;
+                if (this.X != 638)
+                {
+                    this.X++;
+                }
             }
         }
     }

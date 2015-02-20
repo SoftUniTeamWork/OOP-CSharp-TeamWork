@@ -6,9 +6,65 @@
 	mc:Ignorable="d"
 	x:Class="The_Powerful_Game.Menu.Gameplay"
 	d:DesignWidth="640" d:DesignHeight="480" Width="800" Height="600">
-
+    <UserControl.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="Height"
+                    Value="495"></Setter>
+            <Setter Property="Width"
+                    Value="110"></Setter>
+            <Setter Property="Canvas.Left"
+                    Value="680"></Setter>
+            <Setter Property="Canvas.Top"
+                    Value="55"></Setter>
+        </Style>
+        <Style x:Key="GridTextStyle" 
+               TargetType="TextBlock">
+            <Setter Property="Height"
+                    Value="25"></Setter>
+            <Setter Property="Width"
+                    Value="110"></Setter>
+            <Setter Property="TextWrapping"
+                    Value="Wrap"></Setter>
+            <Setter Property="FontSize"
+                    Value="14"></Setter>
+        </Style>
+    </UserControl.Resources>
     <Canvas x:Name="GameplayLayoutRoot" Background="White">
-        <TextBlock Height="40" Margin="20,20,0,0" Width="200" Text="Gameplay" TextWrapping="Wrap" FontSize="21.333"/>
+        <TextBlock Height="40" Width="110" Text="Gameplay" TextWrapping="Wrap" FontSize="21.333" Canvas.Left="680" Canvas.Top="10"/>
         <Button Click="Button_Click" Margin="0,0,20,20" Width="100" Content="&lt; Back" Height="25" Canvas.Bottom="0" Canvas.Right="0"/>
+        <Grid Canvas.Left="670" Canvas.Top="55">
+
+            <TextBlock Style="{StaticResource GridTextStyle}"
+                       Text="Class: Warrior"
+                       Margin="0,10,-16,460" Width="Auto"/>
+            
+            <TextBlock Style="{StaticResource GridTextStyle}"
+                       Text="Race: Night Elf"
+                       Margin="0,40,-16,430" Width="Auto"/>
+
+            <TextBlock Style="{StaticResource GridTextStyle}"
+                       Text="Health: 1200"
+                       Margin="0,70,-16,400" Width="Auto"/>
+
+            <TextBlock Style="{StaticResource GridTextStyle}"
+                       Text="Rage: 100"
+                       Margin="0,100,-16,370" Width="Auto"/>
+
+            <TextBlock Style="{StaticResource GridTextStyle}"
+                       Text="Attack Speed: 100%"
+                       Margin="0,130,-16,340" Width="Auto"/>
+
+            <TextBlock Style="{StaticResource GridTextStyle}"
+                       Text="Damage: 9999"
+                       Margin="0,160,-16,310" Width="Auto"/>
+
+            <TextBlock Style="{StaticResource GridTextStyle}"
+                       Text="Inventory: 100/100"
+                       Margin="0,190,-16,280" Width="Auto"/>
+            
+            <TextBlock Style="{StaticResource GridTextStyle}"
+                       Text="Gold: 99999"
+                       Margin="0,460,-16,10" Width="Auto"/>
+        </Grid>
     </Canvas>
 </UserControl>

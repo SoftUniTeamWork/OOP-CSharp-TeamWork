@@ -1,22 +1,16 @@
-﻿using System.Media;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using System.Windows.Media;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
+using The_Powerful_Game.Entities;
+using The_Powerful_Game.Entities.Chooses;
 using The_Powerful_Game.Menu;
 
 namespace The_Powerful_Game.CoreLogic
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Windows.Controls;
-    using System.Windows.Input;
-    using System.Windows.Media.Imaging;
-    using The_Powerful_Game.Entities;
-    using The_Powerful_Game.Entities.Chooses;
-
     public class Engine
     {
-        private const int NumberOfEnemies = 1;
+        private const int NumberOfEnemies = 3;
         private const string EnemyImageSource = @"pack://application:,,,/Resources/3D-Orc.png";
         private const string PlayerImageSource = @"pack://application:,,,/Resources/WoodElf.png";
         private readonly List<Enemy> enemiesList = new List<Enemy>(NumberOfEnemies);
@@ -32,7 +26,11 @@ namespace The_Powerful_Game.CoreLogic
             if (this.player.isAlive)
             {
                 this.player.Update();
-                enemiesList.ForEach(e => e.Update());
+                enemiesList.ForEach(e =>
+                {
+                    Collision(this.player, e);
+                    e.Update();
+                });
 
                 this.player.Render();
                 enemiesList.ForEach(e => e.Render());
@@ -78,8 +76,8 @@ namespace The_Powerful_Game.CoreLogic
 
             var enemy = new Enemy(
                 enemyName,
-                270,
-                300,
+                200,
+                100,
                 Constants.EnemyHealthPoints,
                 Constants.EnemyArmorPoints,
                 Constants.EnemyDamagePoints,
@@ -99,6 +97,15 @@ namespace The_Powerful_Game.CoreLogic
             img.Height = height;
 
             return img;
+        }
+
+        private void Collision(Player player, Enemy enemy)
+        {
+            if ((player.X + 13 >= enemy.X && player.X + 4  <= enemy.X + 18) && (player.Y + 23 >= enemy.Y && player.Y + 23 <= enemy.Y + 49))
+            {
+                player.X = 0;
+                player.Y = 0;
+            }
         }
     }
 }
