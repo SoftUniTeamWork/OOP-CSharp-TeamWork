@@ -28,7 +28,7 @@
         /// <param name="armorPoints">armorPoints</param>
         /// <param name="damage">Base damage</param>
         /// <param name="attackSpeed">Attack speed</param>
-        public Entity(string name, int x, int y, int healthPoints, int armorPoints, int damage, double attackSpeed, Image image)
+        public Entity(string name, double x, double y, int healthPoints, int armorPoints, int damage, double attackSpeed, Image image)
         {
             this.Name = name;
             this.X = x;
@@ -49,9 +49,9 @@
             }
         }
 
-        public int X { get; set; }
+        public double X { get; set; }
 
-        public int Y { get; set; }
+        public double Y { get; set; }
 
         public virtual int HealthPoints
         {
