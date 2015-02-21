@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using The_Powerful_Game.Entities;
+using The_Powerful_Game.Menu;
 
 namespace The_Powerful_Game.CoreLogic
 {
@@ -84,7 +85,7 @@ namespace The_Powerful_Game.CoreLogic
             string result = "";
             int damage = Player.Damage;
 
-            if (userChoice == "Attack")
+            if (userChoice.ToLower() == "attack")
             {
                 int fightCase = fightSituation.Next(1, 10);
                 switch (fightCase)
