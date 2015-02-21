@@ -28,13 +28,13 @@
         /// <param name="armorPoints">armorPoints</param>
         /// <param name="damage">Base damage</param>
         /// <param name="attackSpeed">Attack speed</param>
-        public Entity(string name, double x, double y, int healthPoints, int armorPoints, int damage, double attackSpeed, Image image)
+        public Entity(string name, double x, double y, int healthPoints, int armorPoints, int damage, Image image)
         {
             this.Name = name;
             this.HealthPoints = healthPoints;
             this.ArmorPoints = armorPoints;
             this.Damage = damage;
-            this.AttackSpeed = attackSpeed;
+            //this.AttackSpeed = attackSpeed;
             this.Image = image;
             this.X = x;
             this.Y = y;
@@ -81,7 +81,7 @@
             {
                 if (value < 0)
                 {
-                    throw new ArgumentNullException("armorPoints cannot be negative number.");
+                    throw new ArgumentNullException("Armor cannot be negative number.");
                 }
                 this.armorPoints = value;
             }
@@ -93,18 +93,19 @@
             set { this.damage = EntityValidator.DamageValidating(value); }
         }
 
-        public double AttackSpeed
-        {
-            get { return this.attackSpeed; }
-            set
-            {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("Attack speed cannot be less than 0,0 sec.");
-                }
-                this.attackSpeed = value;
-            }
-        }
+        // WILL BE REMOVED
+        //public double AttackSpeed
+        //{
+        //    get { return this.attackSpeed; }
+        //    set
+        //    {
+        //        if (value <= 0)
+        //        {
+        //            throw new ArgumentException("Attack speed cannot be less than 0,0 sec.");
+        //        }
+        //        this.attackSpeed = value;
+        //    }
+        //}
 
         public Image Image
         {
@@ -143,38 +144,40 @@
         /// Method for calculating the damage to be dealt.
         /// </summary>
         /// <returns>Returns a number in range: from 80% to 120% of Base damage.</returns>
-        protected virtual int CalcDamage()
-        {
-            Random getDamage = new Random();
-            int diff = (int)Math.Round(Damage / 10.0); // Difference between min and max damage
-            int minDmgFormula = (Damage - diff); // Min damage
-            int maxDmgFormula = (Damage + diff); // Max damage
-            int damageDone = getDamage.Next(minDmgFormula, maxDmgFormula); // Random number between min and max damage
+        
+        //                                          DO NOT DELETE!!!
+        //protected virtual int CalcDamage()
+        //{
+        //    Random getDamage = new Random();
+        //    int diff = (int)Math.Round(Damage / 10.0); // Difference between min and max damage
+        //    int minDmgFormula = (Damage - diff); // Min damage
+        //    int maxDmgFormula = (Damage + diff); // Max damage
+        //    int damageDone = getDamage.Next(minDmgFormula, maxDmgFormula); // Random number between min and max damage
 
-            if (CalcCritChance() == true)
-            {
-                damageDone = damageDone * 2;
-            }
+        //    if (CalcCritChance() == true)
+        //    {
+        //        damageDone = damageDone * 2;
+        //    }
 
-            return damageDone;
-        }
+        //    return damageDone;
+        //}
 
-        public bool CalcCritChance()
-        {
-            Random getChance = new Random();
-            bool isCrit = false;
-            int chance = getChance.Next(1, 100);
-            if (chance > 85)
-            {
-                isCrit = true;
-            }
-            return isCrit;
-        }
+        //public bool CalcCritChance()
+        //{
+        //    Random getChance = new Random();
+        //    bool isCrit = false;
+        //    int chance = getChance.Next(1, 100);
+        //    if (chance > 85)
+        //    {
+        //        isCrit = true;
+        //    }
+        //    return isCrit;
+        //}
 
-        public void Attack(Entity target, int damage)
-        {
-            int damageDealt = damage - target.ArmorPoints; // Damage dealth will be the damage of the attacker - armorPoints value of attacked
-            target.HealthPoints -= damageDealt; // Reduces target HP by "damageDealt"
-        }
+        //public void Attack(Entity target, int damage)
+        //{
+        //    int damageDealt = damage - target.ArmorPoints; // Damage dealth will be the damage of the attacker - armorPoints value of attacked
+        //    target.HealthPoints -= damageDealt; // Reduces target HP by "damageDealt"
+        //}
     }
 }

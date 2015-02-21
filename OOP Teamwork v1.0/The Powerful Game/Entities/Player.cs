@@ -15,8 +15,8 @@ namespace The_Powerful_Game.Entities
         private int resoursePoints;
         private EntityResourceType resourceType;
 
-        public Player(string name, double x, double y, int healthPoints, int armorPoints, int damage, double attackSpeed, int resoursePoints, EntityResourceType resourceType, Image img)
-            : base(name, x, y, healthPoints, armorPoints, damage, attackSpeed, img)
+        public Player(string name, double x, double y, int healthPoints, int armorPoints, int damage, int resoursePoints, EntityResourceType resourceType, Image img)
+            : base(name, x, y, healthPoints, armorPoints, damage, img)
         {
             this.ResoursePoints = resoursePoints;
             this.ResourceType = resourceType;
@@ -51,6 +51,9 @@ namespace The_Powerful_Game.Entities
                 double verticalDistance = p.Y - this.Y - this.Image.Height / 2;
 
                 double distance = Math.Sqrt(Math.Abs(p.X - this.X) + Math.Abs(p.Y - this.Y));
+
+                double horSpeed = horizontalDistance / distance / 10;
+                double vertSpeed = verticalDistance / distance / 10;
 
                 if (this.X != p.X && this.Y != p.X)
                 {
