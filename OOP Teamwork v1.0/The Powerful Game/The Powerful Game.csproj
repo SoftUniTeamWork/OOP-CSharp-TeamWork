@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -57,11 +58,15 @@
     <Compile Include="Contracts\IUpdatable.cs" />
     <Compile Include="CoreLogic\Engine.cs" />
     <Compile Include="CoreLogic\Constants.cs" />
+    <Compile Include="CoreLogic\Fight.cs" />
     <Compile Include="Entities\Enemy.cs" />
     <Compile Include="Entities\Player.cs" />
     <Compile Include="Exceptions\EntityDamageException.cs" />
     <Compile Include="Exceptions\EntityNameException.cs" />
     <Compile Include="ISwitchable.cs" />
+    <Compile Include="Menu\FightField.xaml.cs">
+      <DependentUpon>FightField.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Menu\Gameplay.xaml.cs">
       <DependentUpon>Gameplay.xaml</DependentUpon>
     </Compile>
@@ -114,6 +119,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Menu\FightField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Menu\Gameplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
