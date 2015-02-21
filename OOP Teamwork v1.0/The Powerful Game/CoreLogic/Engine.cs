@@ -55,8 +55,8 @@ namespace The_Powerful_Game.CoreLogic
 
             var player = new Player(
                 playerName,
-                0,
-                0,
+                100,
+                100,
                 Constants.PlayerHealthPoints,
                 Constants.PlayerArmorPoints,
                 Constants.PlayerDamagePoints,

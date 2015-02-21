@@ -15,8 +15,8 @@
         private double attackSpeed;
         private Image image;
 
-        private int x;
-        private int y;
+        private double x;
+        private double y;
 
         public bool isAlive = true;
 
@@ -31,13 +31,13 @@
         public Entity(string name, double x, double y, int healthPoints, int armorPoints, int damage, double attackSpeed, Image image)
         {
             this.Name = name;
-            this.X = x;
-            this.Y = y;
             this.HealthPoints = healthPoints;
             this.ArmorPoints = armorPoints;
             this.Damage = damage;
             this.AttackSpeed = attackSpeed;
             this.Image = image;
+            this.X = x;
+            this.Y = y;
         }
 
         public virtual string Name
@@ -49,9 +49,17 @@
             }
         }
 
-        public double X { get; set; }
+        public double X
+        {
+            get { return this.x; }
+            set { this.x = value; }
+        }
 
-        public double Y { get; set; }
+        public double Y
+        {
+            get { return this.y; }
+            set { this.y = value; }
+        }
 
         public virtual int HealthPoints
         {

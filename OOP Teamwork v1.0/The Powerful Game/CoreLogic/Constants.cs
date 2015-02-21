@@ -3,6 +3,9 @@
     public static class Constants
     {
         public static readonly string GameName = "";   //TODO
+        public static readonly int MapWidth = 800;
+        public static readonly int MapHeight = 600;
+
         public static readonly int PlayerHealthPoints = 500;
         public static readonly int PlayerResourcePoints = 100;
         public static readonly int PlayerArmorPoints = 100;

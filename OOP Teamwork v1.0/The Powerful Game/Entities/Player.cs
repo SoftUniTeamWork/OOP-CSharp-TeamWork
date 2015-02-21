@@ -1,4 +1,5 @@
 ﻿using System;
+using The_Powerful_Game.CoreLogic;
 
 namespace The_Powerful_Game.Entities
 {
@@ -42,55 +43,23 @@ namespace The_Powerful_Game.Entities
 
         private void KeyListener()
         {
-            //if (Mouse.RightButton == MouseButtonState.Pressed)
-            //{
-            //    Point p = Mouse.GetPosition(null);
-
-            //    double horizontalDistance = p.X - this.X;
-            //    double verticalDistance = p.Y - this.Y;
-
-            //    double distance = Math.Sqrt(Math.Abs(p.X - this.X) + Math.Abs(p.Y - this.Y));
-
-            //    if (this.X != p.X)
-            //    {
-            //        this.X += (horizontalDistance / distance) / 10;
-            //    }
-
-            //    if (this.Y != p.Y)
-            //    {
-            //        this.Y += (verticalDistance / distance) / 10;
-            //    }
-            //}
-
-            if (Keyboard.IsKeyDown(Key.Up))
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
             {
-                if (this.Y != 0)
-                {
-                    this.Y--;
-                }
-            }
+                Point p = Mouse.GetPosition(null);
 
-            if (Keyboard.IsKeyDown(Key.Down))
-            {
-                if (this.Y != 571)
-                {
-                    this.Y++;
-                }
-            }
+                double horizontalDistance = p.X - this.X - this.Image.Width / 2;
+                double verticalDistance = p.Y - this.Y - this.Image.Height / 2;
 
-            if (Keyboard.IsKeyDown(Key.Left))
-            {
-                if (this.X != 0)
-                {
-                    this.X--;
-                }
-            }
+                double distance = Math.Sqrt(Math.Abs(p.X - this.X) + Math.Abs(p.Y - this.Y));
 
-            if (Keyboard.IsKeyDown(Key.Right))
-            {
-                if (this.X != 638)
+                if (this.X != p.X && this.Y != p.X)
                 {
-                    this.X++;
+                    if (p.X >= 0 && p.X < Constants.MapWidth - 150 &&
+                        p.Y >= 0 && p.Y < Constants.MapHeight)
+                    {
+                        this.X += horizontalDistance / distance / 10;
+                        this.Y += verticalDistance / distance / 10;
+                    }
                 }
             }
         }
