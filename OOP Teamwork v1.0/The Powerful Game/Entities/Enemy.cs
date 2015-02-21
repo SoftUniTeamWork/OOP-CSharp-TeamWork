@@ -6,8 +6,8 @@ namespace The_Powerful_Game.Entities
 
     public class Enemy : Entity
     {
-        public Enemy(string name, double x, double y, int healthPoints, int armorPoints, int damage, double attackSpeed, Image img)
-            : base(name, x, y, healthPoints, armorPoints, damage, attackSpeed, img)
+        public Enemy(string name, double x, double y, int healthPoints, int armorPoints, int damage, Image img)
+            : base(name, x, y, healthPoints, armorPoints, damage, img)
         {
         }
 
