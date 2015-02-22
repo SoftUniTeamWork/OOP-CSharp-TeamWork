@@ -60,7 +60,6 @@ namespace The_Powerful_Game.CoreLogic
                 Constants.PlayerHealthPoints,
                 Constants.PlayerArmorPoints,
                 Constants.PlayerDamagePoints,
-                Constants.PlayerAttackSpeed,
                 Constants.PlayerResourcePoints,
                 EntityResourceType.Energy,
                 img);
@@ -81,7 +80,6 @@ namespace The_Powerful_Game.CoreLogic
                 Constants.EnemyHealthPoints,
                 Constants.EnemyArmorPoints,
                 Constants.EnemyDamagePoints,
-                Constants.EnemyAttackSpeed,
                 img);
 
             Gameplay.root.Children.Add(img);
@@ -103,8 +101,7 @@ namespace The_Powerful_Game.CoreLogic
         {
             if ((player.X + 13 >= enemy.X && player.X + 4  <= enemy.X + 18) && (player.Y + 23 >= enemy.Y && player.Y + 23 <= enemy.Y + 49))
             {
-                player.X = 0;
-                player.Y = 0;
+                Switcher.Switch(new FightField(player, enemy));
             }
         }
     }
