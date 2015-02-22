@@ -106,7 +106,7 @@
                      Canvas.Left="171"
                      TextWrapping="Wrap"
                      Text="Combat CLog"
-                     FontSize="20"
+                     FontSize="12"
                      IsReadOnly = "True"
                      Canvas.Top="10"
                      Width="536"

@@ -45,13 +45,13 @@ namespace The_Powerful_Game.Menu
 
         private void ButtonAttackOnClick(object sender, RoutedEventArgs e)
         {
-            this.CombatLog.Text += this.Fighting.PlayerTurn("Attack");
-            this.CombatLog.Text += this.Fighting.EnemyTurn();
+            this.CombatLog.Text = this.Fighting.PlayerTurn("Attack") + this.CombatLog.Text;
+            this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
         }
 
         private void ButtonSpellOnClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("You cursed the enemy.");
+            //this.Player.CastSpell()
         }
 
         private void ButtonDrinkPotionOnClick(object sender, RoutedEventArgs e)
@@ -59,11 +59,11 @@ namespace The_Powerful_Game.Menu
             DialogResult dialogResult = (DialogResult)MessageBox.Show("Press yes for health potion, no for mana or cancel for not?", "Drink potion?", MessageBoxButton.YesNoCancel);
             if (dialogResult == DialogResult.Yes)
             {
-                this.CombatLog.Text += "\nYou used health potion";
+                this.CombatLog.Text += "You used health potion\n";
             }
             else if (dialogResult == DialogResult.No)
             {
-                this.CombatLog.Text += "\nYou used mana potion";
+                this.CombatLog.Text += "You used mana potion\n";
             }
         }
     }

@@ -116,6 +116,19 @@
 
         public abstract void Render();
 
+        protected virtual void ProcessDamageTaken(int damage)
+        {
+            int healthLeft = this.HealthPoints - (damage - this.ArmorPoints);
+            if (healthLeft >= 0)
+            {
+                this.HealthPoints = healthLeft;
+            }
+            else
+            {
+                this.HealthPoints = 0;
+            }
+        }
+
         /// <summary>
         /// Converts Entity to string.
         /// </summary>
