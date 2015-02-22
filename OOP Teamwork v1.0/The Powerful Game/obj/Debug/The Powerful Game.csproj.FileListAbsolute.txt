@@ -36,7 +36,6 @@ C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerf
 C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\MainMenu.g.cs
 C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Option.g.cs
 C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\PageSwitcher.g.cs
-C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.csprojResolveAssemblyReference.cache
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Credits.baml
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Credits.g.cs
 D:\All\SU\Level 2\C# OOP LEVEL 2\Teamwork\trunk\OOP Teamwork v1.0\The Powerful Game\bin\Debug\The Powerful Game.exe.config
@@ -108,3 +107,6 @@ D:\All\SU\Level 2\OOP\TW\trunk\OOP Teamwork v1.0\The Powerful Game\bin\Debug\The
 D:\All\SU\Level 2\OOP\TW\trunk\OOP Teamwork v1.0\The Powerful Game\bin\Debug\The Powerful Game.exe
 D:\All\SU\Level 2\OOP\TW\trunk\OOP Teamwork v1.0\The Powerful Game\bin\Debug\The Powerful Game.pdb
 D:\All\SU\Level 2\OOP\TW\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.pdb
+C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\FightField.baml
+C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\FightField.g.cs
+C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.csprojResolveAssemblyReference.cache

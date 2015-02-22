@@ -9,9 +9,9 @@
 
 
     <Grid x:Name="mainMenuLayoutRoot" Background="White">
-        <Button x:Name="newGameButton" HorizontalAlignment="Center" Margin="305,0,276,370" VerticalAlignment="Bottom" Width="219" Content="New Game" Height="45" FontSize="21.333" Click="newGameButton_Click"/>
-        <Button x:Name="optionButton" Height="45" HorizontalAlignment="Center" Margin="305,0,276,316" VerticalAlignment="Bottom" Width="219" FontSize="21.333" Content="Option" Click="optionButton_Click"/>
-        <Button x:Name="creditsGameButton" Height="45" HorizontalAlignment="Center" Margin="305,0,276,262" VerticalAlignment="Bottom" Width="219" FontSize="21.333" Content="Credits" Click="creditsButton_Click"/>
-        <Button x:Name="quitButton" Height="44" HorizontalAlignment="Center" Margin="305,0,276,209" VerticalAlignment="Bottom" Width="219" FontSize="21.333" Content="Quit" Click="quitButton_Click"/>
+        <Button x:Name="newGameButton" HorizontalAlignment="Center" Margin="279,0,302,352" VerticalAlignment="Bottom" Width="219" Content="New Game" Height="45" FontSize="21.333" Click="newGameButton_Click"/>
+        <Button x:Name="optionButton" Height="45" HorizontalAlignment="Center" Margin="279,0,302,302" VerticalAlignment="Bottom" Width="219" FontSize="21.333" Content="Option" Click="optionButton_Click"/>
+        <Button x:Name="creditsGameButton" Height="45" HorizontalAlignment="Center" Margin="279,0,302,252" VerticalAlignment="Bottom" Width="219" FontSize="21.333" Content="Credits" Click="creditsButton_Click"/>
+        <Button x:Name="quitButton" Height="44" HorizontalAlignment="Center" Margin="279,0,302,203" VerticalAlignment="Bottom" Width="219" FontSize="21.333" Content="Quit" Click="quitButton_Click"/>
     </Grid>
 </UserControl>

@@ -15,7 +15,7 @@
         public static readonly int EnemyHealthPoints = 200;
         public static readonly int EnemyArmorPoints = 100;
         public static readonly int EnemyDamagePoints = 20;
-        public static readonly double EnemyAttackSpeed = 3.0;
+        public static readonly double EnemyAttackSpeed = 2.0;
 
         public static readonly int PlayerWidth = 30;
         public static readonly int PlayerHeight = 30;

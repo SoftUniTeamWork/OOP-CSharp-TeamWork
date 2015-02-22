@@ -15,9 +15,6 @@
         private double attackSpeed;
         private Image image;
 
-        private double x;
-        private double y;
-
         public bool isAlive = true;
 
         /// <summary>
@@ -49,17 +46,9 @@
             }
         }
 
-        public double X
-        {
-            get { return this.x; }
-            set { this.x = value; }
-        }
+        public double X { get; set; }
 
-        public double Y
-        {
-            get { return this.y; }
-            set { this.y = value; }
-        }
+        public double Y { get; set; }
 
         public virtual int HealthPoints
         {

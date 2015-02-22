@@ -1,14 +1,11 @@
-﻿using System;
-using The_Powerful_Game.CoreLogic;
-
-namespace The_Powerful_Game.Entities
+﻿namespace The_Powerful_Game.Entities
 {
+    using System;
     using System.Windows.Controls;
     using System.Windows.Input;
     using Chooses;
     using System.Windows;
-    using System.Windows.Media;
-    using System.Windows.Media.Animation;
+    using The_Powerful_Game.CoreLogic;
 
     public class Player : Entity
     {
@@ -41,6 +38,11 @@ namespace The_Powerful_Game.Entities
             Canvas.SetTop(this.Image, this.Y);
         }
 
+        public void Flee(Enemy enemy)
+        {
+            this.X = enemy.X - 50;
+        }
+
         private void KeyListener()
         {
             if (Mouse.LeftButton == MouseButtonState.Pressed)
@@ -51,9 +53,6 @@ namespace The_Powerful_Game.Entities
                 double verticalDistance = p.Y - this.Y - this.Image.Height / 2;
 
                 double distance = Math.Sqrt(Math.Abs(p.X - this.X) + Math.Abs(p.Y - this.Y));
-
-                double horSpeed = horizontalDistance / distance / 10;
-                double vertSpeed = verticalDistance / distance / 10;
 
                 if (this.X != p.X && this.Y != p.X)
                 {

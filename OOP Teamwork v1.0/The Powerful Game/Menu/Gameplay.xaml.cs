@@ -1,10 +1,8 @@
 ﻿namespace The_Powerful_Game.Menu
 {
     using System;
-    using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media;
-    using System.Windows.Media.Imaging;
     using The_Powerful_Game.CoreLogic;
 
     /// <summary>
@@ -12,16 +10,21 @@
     /// </summary>
     public partial class Gameplay : UserControl, ISwitchable
     {
-        public static Canvas root;
+        public static Canvas Root { get; set; }
+
+        public static Engine MainEngine { get; set; }
+
+        public static UserControl Control { get; set; }
 
         public Gameplay()
         {
             InitializeComponent();
 
-            root = GameplayLayoutRoot;
+            Control = this;
+            Gameplay.Root = GameplayLayoutRoot;
 
-            Engine engine = new Engine();
-            CompositionTarget.Rendering += engine.Run;
+            MainEngine = new Engine();
+            CompositionTarget.Rendering += Gameplay.MainEngine.Run;
         }
 
         #region ISwitchable Members

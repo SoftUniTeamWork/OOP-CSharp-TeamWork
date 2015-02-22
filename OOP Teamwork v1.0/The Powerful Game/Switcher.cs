@@ -1,7 +1,8 @@
-﻿using System.Windows.Controls;
-
-namespace The_Powerful_Game
+﻿namespace The_Powerful_Game
 {
+    using System.Windows.Controls;
+    using The_Powerful_Game.Menu;
+
     public static class Switcher
     {
         public static PageSwitcher pageSwitcher;

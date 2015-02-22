@@ -105,7 +105,7 @@
                      Name="CombatLog"
                      Canvas.Left="171"
                      TextWrapping="Wrap"
-                     Text="Combat Log"
+                     Text="Combat CLog"
                      FontSize="20"
                      IsReadOnly = "True"
                      Canvas.Top="10"

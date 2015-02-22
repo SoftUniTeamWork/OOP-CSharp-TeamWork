@@ -1,20 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Controls;
-using System.Windows.Media.Imaging;
-using The_Powerful_Game.Entities;
-using The_Powerful_Game.Entities.Chooses;
-using The_Powerful_Game.Menu;
+﻿using System.Windows.Media;
 
 namespace The_Powerful_Game.CoreLogic
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Windows.Controls;
+    using System.Windows.Media.Imaging;
+    using The_Powerful_Game.Entities;
+    using The_Powerful_Game.Entities.Chooses;
+    using The_Powerful_Game.Menu;
+
     public class Engine
     {
-        private const int NumberOfEnemies = 3;
+        private const int NumberOfEnemies = 1;
         private const string EnemyImageSource = @"pack://application:,,,/Resources/3D-Orc.png";
         private const string PlayerImageSource = @"pack://application:,,,/Resources/WoodElf.png";
-        private readonly List<Enemy> enemiesList = new List<Enemy>(NumberOfEnemies);
         private Player player;
+
+        public readonly List<Enemy> EnemiesList = new List<Enemy>(NumberOfEnemies);
 
         public Engine()
         {
@@ -26,14 +29,14 @@ namespace The_Powerful_Game.CoreLogic
             if (this.player.isAlive)
             {
                 this.player.Update();
-                enemiesList.ForEach(e =>
+                EnemiesList.ForEach(e =>
                 {
                     Collision(this.player, e);
                     e.Update();
                 });
 
                 this.player.Render();
-                enemiesList.ForEach(e => e.Render());
+                EnemiesList.ForEach(e => e.Render());
             }
         }
 
@@ -64,13 +67,13 @@ namespace The_Powerful_Game.CoreLogic
                 EntityResourceType.Energy,
                 img);
 
-            Gameplay.root.Children.Add(img);
+            Gameplay.Root.Children.Add(img);
             return player;
         }
 
         private void GenerateEnemy()
         {
-            string enemyName = "Enemy1";
+            string enemyName = "Enemy";
             var img = GenerateImage(enemyName, Constants.PlayerWidth, Constants.PlayerHeight, EnemyImageSource);
 
             var enemy = new Enemy(
@@ -82,8 +85,8 @@ namespace The_Powerful_Game.CoreLogic
                 Constants.EnemyDamagePoints,
                 img);
 
-            Gameplay.root.Children.Add(img);
-            enemiesList.Add(enemy);
+            Gameplay.Root.Children.Add(img);
+            EnemiesList.Add(enemy);
         }
 
         private Image GenerateImage(string name, int width, int height, string source)
@@ -99,8 +102,9 @@ namespace The_Powerful_Game.CoreLogic
 
         private void Collision(Player player, Enemy enemy)
         {
-            if ((player.X + 13 >= enemy.X && player.X + 4  <= enemy.X + 18) && (player.Y + 23 >= enemy.Y && player.Y + 23 <= enemy.Y + 49))
+            if ((player.X + 13 >= enemy.X && player.X + 4 <= enemy.X + 18) && (player.Y + 23 >= enemy.Y && player.Y + 23 <= enemy.Y + 49))
             {
+                CompositionTarget.Rendering -= Gameplay.MainEngine.Run;
                 Switcher.Switch(new FightField(player, enemy));
             }
         }

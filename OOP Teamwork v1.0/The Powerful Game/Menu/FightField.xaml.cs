@@ -1,42 +1,51 @@
-﻿using System.Windows;
-using System.Windows.Forms;
-using The_Powerful_Game.CoreLogic;
-using The_Powerful_Game.Entities;
-using MessageBox = System.Windows.MessageBox;
-using UserControl = System.Windows.Controls.UserControl;
+﻿using System.Windows.Controls;
 
 namespace The_Powerful_Game.Menu
 {
+    using System.Windows;
+    using System.Windows.Forms;
+    using System.Windows.Media;
+    using The_Powerful_Game.CoreLogic;
+    using The_Powerful_Game.Entities;
+    using MessageBox = System.Windows.MessageBox;
+    using TextBox = System.Windows.Controls.TextBox;
+    using UserControl = System.Windows.Controls.UserControl;
+
     /// <summary>
     /// Interaction logic for Fight.xaml
     /// </summary>
     public partial class FightField : UserControl
     {
-        private Player player;
-        private Enemy enemy;
-        private Fight fighting;
+        public Player Player { get; private set; }
+
+        public Enemy Enemy { get; private set; }
+
+        public Fight Fighting { get; private set; }
+
         public FightField(Player player, Enemy enemy)
         {
-            this.player = player;
-            this.enemy = enemy;
-            this.fighting = new Fight(player, enemy);
+            this.Player = player;
+            this.Enemy = enemy;
+            this.Fighting = new Fight(player, enemy);
             InitializeComponent();
         }
 
         private void ButtonFledOnClick(object sender, RoutedEventArgs e)
         {
-            DialogResult dialogResult = (DialogResult) MessageBox.Show("Are you sure you want to fled?", "Are you sure?", MessageBoxButton.YesNo);
+            DialogResult dialogResult = (DialogResult)MessageBox.Show("Are you sure you want to fled?", "Are you sure?", MessageBoxButton.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 MessageBox.Show("Whew! You fled from The Orc Revenger!");
-                Switcher.Switch(new Gameplay());
+                CompositionTarget.Rendering += Gameplay.MainEngine.Run;
+                Player.Flee(this.Enemy);
+                Switcher.Switch(Gameplay.Control);
             }
         }
 
         private void ButtonAttackOnClick(object sender, RoutedEventArgs e)
         {
-            this.CombatLog.Text += "\nYou attacked " + this.enemy.Name + " with " + this.player.Damage + " dmg.";
-            //this.fighting.PlayerTurn("Attack");
+            this.CombatLog.Text += "\nYou attacked " + this.Enemy.Name + " with " + this.Player.Damage + " dmg.";
+            this.Fighting.PlayerTurn("Attack");
         }
 
         private void ButtonSpellOnClick(object sender, RoutedEventArgs e)
