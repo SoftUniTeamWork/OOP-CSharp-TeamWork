@@ -27,6 +27,7 @@ namespace The_Powerful_Game.Menu
             this.Player = player;
             this.Enemy = enemy;
             this.Fighting = new Fight(player, enemy);
+
             InitializeComponent();
         }
 
@@ -44,8 +45,8 @@ namespace The_Powerful_Game.Menu
 
         private void ButtonAttackOnClick(object sender, RoutedEventArgs e)
         {
-            this.CombatLog.Text += "\nYou attacked " + this.Enemy.Name + " with " + this.Player.Damage + " dmg.";
-            this.Fighting.PlayerTurn("Attack");
+            this.CombatLog.Text += this.Fighting.PlayerTurn("Attack");
+            this.CombatLog.Text += this.Fighting.EnemyTurn();
         }
 
         private void ButtonSpellOnClick(object sender, RoutedEventArgs e)

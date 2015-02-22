@@ -10,20 +10,20 @@
     /// </summary>
     public partial class Gameplay : UserControl, ISwitchable
     {
-        public static Canvas Root { get; set; }
+        public static Canvas Root { get;private set; }
 
-        public static Engine MainEngine { get; set; }
+        public static Engine MainEngine { get; private set; }
 
-        public static UserControl Control { get; set; }
+        public static UserControl Control { get; private set; }
 
         public Gameplay()
         {
             InitializeComponent();
 
             Control = this;
-            Gameplay.Root = GameplayLayoutRoot;
-
+            Root = GameplayLayoutRoot;
             MainEngine = new Engine();
+
             CompositionTarget.Rendering += Gameplay.MainEngine.Run;
         }
 

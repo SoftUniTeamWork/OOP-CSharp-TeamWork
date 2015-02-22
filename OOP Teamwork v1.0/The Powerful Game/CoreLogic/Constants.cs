@@ -6,15 +6,15 @@
         public static readonly int MapWidth = 800;
         public static readonly int MapHeight = 600;
 
-        public static readonly int PlayerHealthPoints = 500;
+        public static readonly int PlayerHealthPoints = 300;
         public static readonly int PlayerResourcePoints = 100;
-        public static readonly int PlayerArmorPoints = 100;
+        public static readonly int PlayerArmorPoints = 15;
         public static readonly int PlayerDamagePoints = 30;
         public static readonly double PlayerAttackSpeed = 2.0;
 
-        public static readonly int EnemyHealthPoints = 200;
-        public static readonly int EnemyArmorPoints = 100;
-        public static readonly int EnemyDamagePoints = 20;
+        public static readonly int EnemyHealthPoints = 100;
+        public static readonly int EnemyArmorPoints = 10;
+        public static readonly int EnemyDamagePoints = 40;
         public static readonly double EnemyAttackSpeed = 2.0;
 
         public static readonly int PlayerWidth = 30;
