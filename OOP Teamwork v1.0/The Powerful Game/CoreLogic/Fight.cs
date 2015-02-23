@@ -14,9 +14,9 @@
             this.Enemy = enemy;
         }
 
-        public Player Player { get; private set; }
+        private Player Player { get; set; }
 
-        public Enemy Enemy { get; private set; }
+        private Enemy Enemy { get; set; }
 
         public string EnemyTurn()
         {
@@ -46,7 +46,7 @@
             return combatLogResult;
         }
 
-        public void FightOverCheck()
+        private void FightOverCheck()
         {
             if (Player.HealthPoints == 0 || Enemy.HealthPoints == 0)
             {

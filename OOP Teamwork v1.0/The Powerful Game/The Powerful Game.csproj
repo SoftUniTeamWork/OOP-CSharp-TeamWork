@@ -56,6 +56,7 @@
     </ApplicationDefinition>
     <Compile Include="Contracts\IRenderable.cs" />
     <Compile Include="Contracts\IUpdatable.cs" />
+    <Compile Include="CoreLogic\CollisionHandler.cs" />
     <Compile Include="CoreLogic\Engine.cs" />
     <Compile Include="CoreLogic\Constants.cs" />
     <Compile Include="CoreLogic\Fight.cs" />

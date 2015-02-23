@@ -47,6 +47,7 @@
         {
             Random fightSituation = new Random();
             int fightCase = fightSituation.Next(1, 10);
+
             string combatLogResult = "";
 
             switch (fightCase)
