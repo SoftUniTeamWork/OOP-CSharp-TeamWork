@@ -6,12 +6,69 @@
 	mc:Ignorable="d"
 	x:Class="The_Powerful_Game.Menu.MainMenu"
 	d:DesignWidth="800" d:DesignHeight="600">
+<UserControl.Resources>
+        <Image x:Key="ClickImage" >
+            <Image.Source>
+                <BitmapImage UriSource="../Resources/FightField/button-clicked.png"></BitmapImage>
+            </Image.Source>
+        </Image>
+    </UserControl.Resources>
 
-
-    <Grid x:Name="mainMenuLayoutRoot" Background="White">
-        <Button x:Name="newGameButton" HorizontalAlignment="Center" Margin="279,0,302,352" VerticalAlignment="Bottom" Width="219" Content="New Game" Height="45" FontSize="21.333" Click="newGameButton_Click"/>
-        <Button x:Name="optionButton" Height="45" HorizontalAlignment="Center" Margin="279,0,302,302" VerticalAlignment="Bottom" Width="219" FontSize="21.333" Content="Option" Click="optionButton_Click"/>
-        <Button x:Name="creditsGameButton" Height="45" HorizontalAlignment="Center" Margin="279,0,302,252" VerticalAlignment="Bottom" Width="219" FontSize="21.333" Content="Credits" Click="creditsButton_Click"/>
-        <Button x:Name="quitButton" Height="44" HorizontalAlignment="Center" Margin="279,0,302,203" VerticalAlignment="Bottom" Width="219" FontSize="21.333" Content="Quit" Click="quitButton_Click"/>
+    <Grid x:Name="mainMenuLayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/Menuehintergrund.jpg"/>
+        </Grid.Background>
+        <Button x:Name="newGameButton"
+                HorizontalAlignment="Center"
+                Margin="279,0,302,352"
+                VerticalAlignment="Bottom"
+                Width="219"
+                Content="New Game"
+                Height="45"
+                FontSize="21.333"
+                Click="newGameButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="../Resources/FightField/button-normal.png"></ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="optionButton"
+                Height="45"
+                HorizontalAlignment="Center"
+                Margin="279,0,302,302"
+                VerticalAlignment="Bottom"
+                Width="219"
+                FontSize="21.333"
+                Content="Option"
+                Click="optionButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="../Resources/FightField/button-normal.png"></ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="creditsGameButton"
+                Height="45"
+                HorizontalAlignment="Center"
+                Margin="279,0,302,252"
+                VerticalAlignment="Bottom"
+                Width="219"
+                FontSize="21.333"
+                Content="Credits"
+                Click="creditsButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="../Resources/FightField/button-normal.png"></ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="quitButton"
+                Height="44"
+                HorizontalAlignment="Center"
+                Margin="279,0,302,203"
+                VerticalAlignment="Bottom"
+                Width="219" 
+                FontSize="21.333"
+                Content="Quit"
+                Click="quitButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="../Resources/FightField/button-normal.png"></ImageBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </UserControl>

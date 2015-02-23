@@ -1,23 +1,74 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
+using The_Powerful_Game.Validations;
 
 namespace The_Powerful_Game.Items
 {
-    class Item
+    public abstract class Item
     {
-        private string itemName;
-        private int itemPrice;
+        //protected List<Type> allowableClasses = new List<Type>();
 
-        public Item(string name, int price)
+        private string name;
+        private string type;
+        private int price;
+        private int levelRequired;
+        private bool isEquipped;
+
+        public Item(string name, string type, int price, int levelRequired/*, params Type[] allowableClasses*/)
         {
-            this.ItemName = name;
-            this.ItemPrice = price;
+            //foreach (Type t in allowableClasses)
+            //    AllowableClasses.Add(t);
+
+            this.Name = name;
+            this.Type = type;
+            this.Price = price;
+            this.LevelRequired = levelRequired;
+            isEquipped = false;
         }
 
-        public string ItemName { get; set; }
-        public int ItemPrice { get; set; }
+        public string Name
+        {
+            get { return this.name; }
+            set { this.name = ItemValidator.ItemNameValidating(value); }
+        }
+
+        public string Type
+        {
+            get { return this.type; }
+            set { this.type = ItemValidator.ItemTypeValidating(value); }
+        }
+
+        public int Price
+        {
+            get { return this.price; }
+            set { this.price = ItemValidator.PriceValidating(value); }
+        }
+
+        public int LevelRequired
+        {
+            get { return this.levelRequired; }
+            set { this.levelRequired = ItemValidator.LevelRequired(value); }
+        }
+
+        public bool IsEquipped
+        {
+            get { return this.isEquipped; }
+            protected set { this.isEquipped = value; }
+        }
+
+        public abstract object Clone();
+
+        //public virtual bool CanEquip(Type characterType)
+        //{
+        //    return allowableClasses.Contains(characterType);
+        //}
+
+        public override string ToString()
+        {
+            StringBuilder toString = new StringBuilder();
+
+            toString.AppendFormat("{0}, {1}, {2}, {3}, {4}, {5}", this.Name, this.Type, this.price, this.LevelRequired);
+
+            return toString.ToString();
+        }
     }
 }

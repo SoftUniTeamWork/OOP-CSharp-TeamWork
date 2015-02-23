@@ -66,6 +66,15 @@
     <Compile Include="Exceptions\EntityDamageException.cs" />
     <Compile Include="Exceptions\EntityNameException.cs" />
     <Compile Include="Contracts\ISwitchable.cs" />
+    <Compile Include="Exceptions\ItemNameException.cs" />
+    <Compile Include="Exceptions\ItemTypeException.cs" />
+    <Compile Include="Items\Armor.cs" />
+    <Compile Include="Items\Consumable.cs" />
+    <Compile Include="Items\GearItem.cs" />
+    <Compile Include="Items\HandsCount\Hands.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="Items\Location\ItemLocation.cs" />
+    <Compile Include="Items\Weapon.cs" />
     <Compile Include="Menu\Choosing.xaml.cs">
       <DependentUpon>Choosing.xaml</DependentUpon>
     </Compile>
@@ -95,6 +104,7 @@
     </Compile>
     <Compile Include="Entities\Chooses\EntityResourceType.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Validations\ItemValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -158,7 +168,99 @@
     <Resource Include="Resources\3D-Orc.png" />
     <Resource Include="Resources\WoodElf.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Menuehintergrund.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\anger\anger0000.png" />
+    <Resource Include="Resources\anger\anger0001.png" />
+    <Resource Include="Resources\anger\anger0002.png" />
+    <Resource Include="Resources\anger\anger0003.png" />
+    <Resource Include="Resources\anger\anger0004.png" />
+    <Resource Include="Resources\anger\anger0005.png" />
+    <Resource Include="Resources\anger\anger0006.png" />
+    <Resource Include="Resources\anger\anger0007.png" />
+    <Resource Include="Resources\anger\anger0008.png" />
+    <Resource Include="Resources\anger\anger0009.png" />
+    <Resource Include="Resources\anger\anger0010.png" />
+    <Resource Include="Resources\anger\anger0011.png" />
+    <Resource Include="Resources\anger\anger0012.png" />
+    <Resource Include="Resources\anger\anger0013.png" />
+    <Resource Include="Resources\anger\anger0014.png" />
+    <Resource Include="Resources\anger\anger0015.png" />
+    <Resource Include="Resources\anger\anger0016.png" />
+    <Resource Include="Resources\anger\anger0017.png" />
+    <Resource Include="Resources\anger\anger0018.png" />
+    <Resource Include="Resources\anger\anger0019.png" />
+    <Resource Include="Resources\hp\hp0000.png" />
+    <Resource Include="Resources\hp\hp0001.png" />
+    <Resource Include="Resources\hp\hp0002.png" />
+    <Resource Include="Resources\hp\hp0003.png" />
+    <Resource Include="Resources\hp\hp0004.png" />
+    <Resource Include="Resources\hp\hp0005.png" />
+    <Resource Include="Resources\hp\hp0006.png" />
+    <Resource Include="Resources\hp\hp0007.png" />
+    <Resource Include="Resources\hp\hp0008.png" />
+    <Resource Include="Resources\hp\hp0009.png" />
+    <Resource Include="Resources\hp\hp0010.png" />
+    <Resource Include="Resources\hp\hp0011.png" />
+    <Resource Include="Resources\hp\hp0012.png" />
+    <Resource Include="Resources\hp\hp0013.png" />
+    <Resource Include="Resources\mana\mana0000.png" />
+    <Resource Include="Resources\mana\mana0001.png" />
+    <Resource Include="Resources\mana\mana0002.png" />
+    <Resource Include="Resources\mana\mana0003.png" />
+    <Resource Include="Resources\mana\mana0004.png" />
+    <Resource Include="Resources\mana\mana0005.png" />
+    <Resource Include="Resources\mana\mana0006.png" />
+    <Resource Include="Resources\mana\mana0007.png" />
+    <Resource Include="Resources\mana\mana0008.png" />
+    <Resource Include="Resources\mana\mana0009.png" />
+    <Resource Include="Resources\mana\mana0010.png" />
+    <Resource Include="Resources\mana\mana0011.png" />
+    <Resource Include="Resources\mana\mana0012.png" />
+    <Resource Include="Resources\mana\mana0013.png" />
+    <Resource Include="Resources\mana\mana0014.png" />
+    <Resource Include="Resources\mana\mana0015.png" />
+    <Resource Include="Resources\mana\mana0016.png" />
+    <Resource Include="Resources\mana\mana0017.png" />
+    <Resource Include="Resources\mana\mana0018.png" />
+    <Resource Include="Resources\mana\mana0019.png" />
+    <Resource Include="Resources\xp\xp0.png" />
+    <Resource Include="Resources\xp\xp1.png" />
+    <Resource Include="Resources\xp\xp10.png" />
+    <Resource Include="Resources\xp\xp11.png" />
+    <Resource Include="Resources\xp\xp12.png" />
+    <Resource Include="Resources\xp\xp13.png" />
+    <Resource Include="Resources\xp\xp14.png" />
+    <Resource Include="Resources\xp\xp15.png" />
+    <Resource Include="Resources\xp\xp16.png" />
+    <Resource Include="Resources\xp\xp17.png" />
+    <Resource Include="Resources\xp\xp18.png" />
+    <Resource Include="Resources\xp\xp19.png" />
+    <Resource Include="Resources\xp\xp2.png" />
+    <Resource Include="Resources\xp\xp20.png" />
+    <Resource Include="Resources\xp\xp3.png" />
+    <Resource Include="Resources\xp\xp4.png" />
+    <Resource Include="Resources\xp\xp5.png" />
+    <Resource Include="Resources\xp\xp6.png" />
+    <Resource Include="Resources\xp\xp7.png" />
+    <Resource Include="Resources\xp\xp8.png" />
+    <Resource Include="Resources\xp\xp9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FightField\enemy-withgrass.png" />
+    <Resource Include="Resources\FightField\player-withgrass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FightField\bg-full.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FightField\button-clicked.png" />
+    <Resource Include="Resources\FightField\button-normal.png" />
+    <Resource Include="Resources\FightField\buttons-bg.jpg" />
+    <Resource Include="Resources\FightField\gamelog-bg.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

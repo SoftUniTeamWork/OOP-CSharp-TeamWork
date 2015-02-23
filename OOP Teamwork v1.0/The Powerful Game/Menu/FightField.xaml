@@ -29,10 +29,6 @@
                     Value="296"></Setter>
             <Setter Property="Height"
                     Value="26"></Setter>
-            <Setter Property="Stroke"
-                    Value="#00ff00"></Setter>
-            <Setter Property="Fill"
-                    Value="#00ff00"></Setter>
             <Setter Property="VerticalAlignment"
                     Value="Top"></Setter>
         </Style>
@@ -47,6 +43,8 @@
         </Style>
         <Style x:Key="ButtonMenuStyle"
                TargetType="Button">
+            <Setter Property="Foreground"
+                    Value="White"></Setter>
             <Setter Property="Width"
                     Value="128"></Setter>
             <Setter Property="Height"
@@ -54,7 +52,10 @@
         </Style>
     </UserControl.Resources>
 
-    <Grid x:Name="fight" Background="White">
+    <Grid x:Name="fight">
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/FightField/bg-full.jpg"></ImageBrush>
+        </Grid.Background>
         <TextBlock Style="{StaticResource NameStyle}"
                    HorizontalAlignment="Left"
                    Text="The Ork Slayer"
@@ -65,53 +66,128 @@
                    Margin="0,10,83,0"
                    Text="Orc Revenger"
                    Width="220"/>
-        <Rectangle Style="{StaticResource Health}"
-                   HorizontalAlignment="Left"
-                   Margin="42,44,0,0"/>
-        <Rectangle Style="{StaticResource Health}"
-                   HorizontalAlignment="Right"
-                   Margin="0,44,41,0"/>
         <Image Style="{StaticResource Character}"
-               Source="../Resources/WoodElf.png"
-               Margin="95,106,511,209"/>
+               Source="../Resources/FightField/player-withgrass.png"
+               Margin="95,106,511,184" Height="310"/>
         <Image Style="{StaticResource Character}"
-               Source="../Resources/3D-Orc.png"
+               Source="../Resources/FightField/enemy-withgrass.png"
                HorizontalAlignment="Center"
-               Margin="523,106,83,209"
-               Width="194"/>
-        <TextBlock Background="DarkMagenta"
-            HorizontalAlignment="Left"
+               Margin="523,106,83,184"
+               Width="194" Height="310"/>
+        <TextBlock HorizontalAlignment="Left"
             Margin="42,421,0,0"
             TextWrapping="Wrap"
             VerticalAlignment="Top"
             Height="6"
-            Width="717"/>
+            Width="717">
+            <TextBlock.Background>
+                <ImageBrush ImageSource="../Resources/xp/xp0.png"></ImageBrush>
+            </TextBlock.Background>
+        </TextBlock>
         <Canvas HorizontalAlignment="Left" Height="158" Margin="42,432,0,0" VerticalAlignment="Top" Width="717">
             <Menu Height="138" Canvas.Left="10" Canvas.Top="10" Width="146">
+                <Menu.Background>
+                    <ImageBrush ImageSource="../Resources/FightField/buttons-bg.jpg"></ImageBrush>
+                </Menu.Background>
                 <Button Style="{StaticResource ButtonMenuStyle}"
                         Content="Attack"
-                        Click="ButtonAttackOnClick"/>
-                <Button Style="{StaticResource ButtonMenuStyle}"
-                        Content="Spell"
-                        Click="ButtonSpellOnClick"/>
+                        Click="ButtonAttackOnClick"
+                        Height="26"
+                        Margin="0, 6, 0, 2">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/FightField/button-normal.png"></ImageBrush>
+                    </Button.Background>
+                </Button>
                 <Button Style="{StaticResource ButtonMenuStyle}"
                         Content="Potion"
-                        Click="ButtonDrinkPotionOnClick"/>
+                        Click="ButtonDrinkPotionOnClick"
+                        Height="26"
+                        Margin="0, -2, 0, 0">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/FightField/button-normal.png"></ImageBrush>
+                    </Button.Background>
+                </Button>
                 <Button Style="{StaticResource ButtonMenuStyle}"
-                        Content="Fled"
-                        Click="ButtonFledOnClick"/>
+                	Content="Spell"
+                	Click="ButtonSpellOnClick"
+                	Height="26"
+                	Width="128">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
+                    </Button.Background>
+                </Button>
+                <Button Style="{StaticResource ButtonMenuStyle}"
+                	Content="Fled"
+                	Click="ButtonFledOnClick"
+                        Height="26"
+                        Width="128"
+                        Margin="0, 0, 0, 0">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
+                    </Button.Background>
+                </Button>
             </Menu>
             <TextBox Height="138"
                      Name="CombatLog"
                      Canvas.Left="171"
                      TextWrapping="Wrap"
-                     Text="Combat CLog"
+                     Text="Combat Log"
                      FontSize="12"
+                     Foreground="White"
                      IsReadOnly = "True"
                      Canvas.Top="10"
                      Width="536"
-                     VerticalScrollBarVisibility="Auto"/>
+                     VerticalScrollBarVisibility="Auto">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="../Resources/FightField/gamelog-bg.jpg"></ImageBrush>
+                </TextBox.Background>
+            </TextBox>
         </Canvas>
-
+        <TextBox HorizontalAlignment="Left"
+                 Height="23"
+                 Margin="42,39,0,0"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="262"
+                 IsReadOnly="True">
+            <TextBox.Background>
+                <ImageBrush ImageSource="../Resources/hp/hp0013.png"></ImageBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox HorizontalAlignment="Left"
+                 Height="23"
+                 Margin="497,39,0,0"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="262"
+                 IsReadOnly="True">
+            <TextBox.Background>
+                <ImageBrush ImageSource="../Resources/hp/hp0013.png"></ImageBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox HorizontalAlignment="Left"
+        	Height="23"
+        	Margin="42,67,0,0"
+        	TextWrapping="Wrap"
+        	VerticalAlignment="Top"
+        	Width="262"
+            Text=""
+            IsReadOnly="True">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/The Powerful Game;component/Resources/mana/mana0019.png"/>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox HorizontalAlignment="Left"
+        	Height="23"
+        	Margin="42,95,0,0"
+        	TextWrapping="Wrap"
+        	VerticalAlignment="Top"
+        	Width="262"
+        	Text=""
+        	IsReadOnly="True">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/The Powerful Game;component/Resources/anger/anger0019.png"/>
+            </TextBox.Background>
+        </TextBox>
     </Grid>
 </UserControl>

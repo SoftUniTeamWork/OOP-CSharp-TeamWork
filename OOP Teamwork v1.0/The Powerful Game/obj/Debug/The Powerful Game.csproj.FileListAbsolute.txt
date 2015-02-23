@@ -114,3 +114,5 @@ C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\FightField.baml
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Choosing.g.cs
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\FightField.g.cs
+D:\All\SU\Level 2\OOP\TW\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Choosing.baml
+D:\All\SU\Level 2\OOP\TW\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Choosing.g.cs
