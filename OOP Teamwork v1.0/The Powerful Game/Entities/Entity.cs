@@ -17,14 +17,6 @@
 
         public bool isAlive = true;
 
-        /// <summary>
-        /// Constructor for entities
-        /// </summary>
-        /// <param name="name">Name</param>
-        /// <param name="healthPoints">Health points</param>
-        /// <param name="armorPoints">armorPoints</param>
-        /// <param name="damage">Base damage</param>
-        /// <param name="attackSpeed">Attack speed</param>
         public Entity(string name, double x, double y, int healthPoints, int armorPoints, int damage, Image image)
         {
             this.Name = name;
@@ -129,10 +121,6 @@
             }
         }
 
-        /// <summary>
-        /// Converts Entity to string.
-        /// </summary>
-        /// <returns>By default returns Enemy name</returns>
         public override string ToString()
         {
             StringBuilder toString = new StringBuilder();
@@ -142,10 +130,6 @@
             return toString.ToString();
         }
 
-        /// <summary>
-        /// Method for calculating the damage to be dealt.
-        /// </summary>
-        /// <returns>Returns a number in range: from 80% to 120% of Base damage.</returns>
         
         //                                          DO NOT DELETE!!!
         //protected virtual int CalcDamage()

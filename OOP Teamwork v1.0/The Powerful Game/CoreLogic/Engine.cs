@@ -12,9 +12,7 @@ namespace The_Powerful_Game.CoreLogic
 
     public class Engine
     {
-        private const int NumberOfEnemies = 1;
-        private const string EnemyImageSource = @"pack://application:,,,/Resources/3D-Orc.png";
-        private const string PlayerImageSource = @"pack://application:,,,/Resources/WoodElf.png";
+        private const int NumberOfEnemies = 3;
         private Player player;
 
         public readonly List<Enemy> EnemiesList = new List<Enemy>(NumberOfEnemies);
@@ -31,7 +29,7 @@ namespace The_Powerful_Game.CoreLogic
                 this.player.Update();
                 EnemiesList.ForEach(e =>
                 {
-                    Collision(this.player, e);
+                    CollisionHandler.HandleEnemyCollision(this.player, e);
                     e.Update();
                 });
 
@@ -43,9 +41,11 @@ namespace The_Powerful_Game.CoreLogic
         private void Initialize()
         {
             this.player = GeneratePlayer();
+            Random enemyPosition = new Random();
+
             for (var i = 0; i < NumberOfEnemies; i++)
             {
-                GenerateEnemy();
+                GenerateEnemy(enemyPosition.Next(0, Constants.MapWidth - 150), enemyPosition.Next(0, Constants.MapHeight));
             }
 
             // Should build the map here.
@@ -54,7 +54,7 @@ namespace The_Powerful_Game.CoreLogic
         private Player GeneratePlayer()
         {
             string playerName = "Player";
-            var img = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, PlayerImageSource);
+            var img = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.PlayerImage);
 
             var player = new Player(
                 playerName,
@@ -71,15 +71,17 @@ namespace The_Powerful_Game.CoreLogic
             return player;
         }
 
-        private void GenerateEnemy()
+        private void GenerateEnemy(int x, int y)
         {
+            Random newRandom = new Random();
+            
             string enemyName = "Enemy";
-            var img = GenerateImage(enemyName, Constants.PlayerWidth, Constants.PlayerHeight, EnemyImageSource);
+            var img = GenerateImage(enemyName, Constants.PlayerWidth, Constants.PlayerHeight, Constants.EnemyImage);
 
             var enemy = new Enemy(
                 enemyName,
-                200,
-                100,
+                x,
+                y,
                 Constants.EnemyHealthPoints,
                 Constants.EnemyArmorPoints,
                 Constants.EnemyDamagePoints,
@@ -98,15 +100,6 @@ namespace The_Powerful_Game.CoreLogic
             img.Height = height;
 
             return img;
-        }
-
-        private void Collision(Player player, Enemy enemy)
-        {
-            if ((player.X + 13 >= enemy.X && player.X + 4 <= enemy.X + 18) && (player.Y + 23 >= enemy.Y && player.Y + 23 <= enemy.Y + 49))
-            {
-                CompositionTarget.Rendering -= Gameplay.MainEngine.Run;
-                Switcher.Switch(new FightField(player, enemy));
-            }
         }
     }
 }
