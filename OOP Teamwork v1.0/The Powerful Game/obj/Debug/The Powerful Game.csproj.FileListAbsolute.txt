@@ -110,3 +110,7 @@ D:\All\SU\Level 2\OOP\TW\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The
 C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\FightField.baml
 C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\FightField.g.cs
 C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.csprojResolveAssemblyReference.cache
+C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Choosing.baml
+C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\FightField.baml
+C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Choosing.g.cs
+C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\FightField.g.cs
