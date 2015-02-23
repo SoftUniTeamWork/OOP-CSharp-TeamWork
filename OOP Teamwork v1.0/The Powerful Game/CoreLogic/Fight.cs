@@ -57,8 +57,8 @@
                 else if (Enemy.HealthPoints == 0)
                 {
                     MessageBox.Show("You killed your enemy gain xp and reward.");
-                    Gameplay.Root.Children.Remove(Enemy.Image);
-                    Gameplay.MainEngine.EnemiesList.Remove(Enemy);
+                    this.Enemy.isAlive = false;
+                    this.Enemy.Update();
                 }
 
                 CompositionTarget.Rendering += Gameplay.MainEngine.Run;

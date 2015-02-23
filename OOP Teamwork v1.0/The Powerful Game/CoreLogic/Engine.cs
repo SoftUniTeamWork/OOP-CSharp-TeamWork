@@ -45,7 +45,9 @@ namespace The_Powerful_Game.CoreLogic
 
             for (var i = 0; i < NumberOfEnemies; i++)
             {
-                GenerateEnemy(enemyPosition.Next(0, Constants.MapWidth - 150), enemyPosition.Next(0, Constants.MapHeight));
+                GenerateEnemy(
+                    enemyPosition.Next(0, Constants.MapWidth - 150),
+                    enemyPosition.Next(0, Constants.MapHeight) - Constants.EnemyHeight);
             }
 
             // Should build the map here.

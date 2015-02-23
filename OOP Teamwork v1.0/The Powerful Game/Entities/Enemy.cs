@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using The_Powerful_Game.Menu;
 
 namespace The_Powerful_Game.Entities
 {
@@ -29,21 +30,18 @@ namespace The_Powerful_Game.Entities
                 case 3:
                 case 4:
                     // Enemy deals 120% damage
-                    this.Damage = (int)Math.Round(this.Damage * 6 / 5.0); // 120% dmg
-                    ProcessDamageTaken(this.Damage);
+                    ProcessDamageTaken((int)Math.Round(this.Damage * 6 / 5.0));
                     combatLogResult = "The Enemy attacks you with relentless strike dealing " + this.Damage + " damage.\n";
                     break;
                 case 5:
                 case 6:
                     // Enemy deals 80% damage
-                    this.Damage = (int)Math.Round(this.Damage * 4 / 5.0); // 80% dmg
-                    ProcessDamageTaken(this.Damage);
+                    ProcessDamageTaken((int)Math.Round(this.Damage * 4 / 5.0));
                     combatLogResult = "The Enemy attack`s for " + this.Damage + " damage.\n";
                     break;
                 case 7:
                     // Enemy crits for 200% damage
-                    this.Damage = this.Damage * 2; // 200% dmg crit
-                    ProcessDamageTaken(this.Damage);
+                    ProcessDamageTaken(this.Damage * 2);
                     combatLogResult = "The Enemy delivers a deadly strike for " + this.Damage + "damage.\n";
                     break;
                 case 8:
@@ -52,11 +50,12 @@ namespace The_Powerful_Game.Entities
                     break;
                 case 9:
                     // Enemy stuns you and deals 50% damage
-                    this.Damage = (int)Math.Round(this.Damage / 2.0);
+                    ProcessDamageTaken((int)Math.Round(this.Damage / 2.0));
                     combatLogResult = "The enemy dashes you knocking you on the ground. You lose your turn and " + this.Damage + " Health Points.\n";
                     break;
                 case 10:
                     // Enemy flees from battle droping an item behind
+                    this.isAlive = false;
                     combatLogResult = "Your enemy has fled from the battle dropping a " + " behind.\n";
                     break;
             }
@@ -66,9 +65,10 @@ namespace The_Powerful_Game.Entities
 
         public override void Update()
         {
-            if (this.HealthPoints == 0)
+            if (this.isAlive == false)
             {
-                this.isAlive = false;
+                Gameplay.Root.Children.Remove(this.Image);
+                Gameplay.MainEngine.EnemiesList.Remove(this);
             }
         }
 

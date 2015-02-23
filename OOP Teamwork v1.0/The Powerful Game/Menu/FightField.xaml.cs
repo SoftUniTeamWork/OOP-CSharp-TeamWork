@@ -8,7 +8,6 @@ namespace The_Powerful_Game.Menu
     using The_Powerful_Game.CoreLogic;
     using The_Powerful_Game.Entities;
     using MessageBox = System.Windows.MessageBox;
-    using TextBox = System.Windows.Controls.TextBox;
     using UserControl = System.Windows.Controls.UserControl;
 
     /// <summary>

@@ -19,8 +19,8 @@ namespace The_Powerful_Game.CoreLogic
 
             double distance = Math.Sqrt(Math.Pow(playerX - enemyX, 2) + Math.Pow(playerY - enemyY, 2));
 
-            if (distance <= player.Image.Width - 5 &&
-                distance <= enemy.Image.Height - 5)
+            if (distance <= player.Image.Width / 2 &&
+                distance <= enemy.Image.Height / 2)
             {
                 CompositionTarget.Rendering -= Gameplay.MainEngine.Run;
                 Switcher.Switch(new FightField(player, enemy));
