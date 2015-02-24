@@ -48,13 +48,13 @@
 
         private void FightOverCheck()
         {
-            if (Player.HealthPoints == 0 || Enemy.HealthPoints == 0)
+            if (Player.HealthPoints.CurrentValue == 0 || Enemy.HealthPoints.CurrentValue == 0)
             {
-                if (Player.HealthPoints == 0)
+                if (Player.HealthPoints.CurrentValue == 0)
                 {
                     MessageBox.Show("You died!");
                 }
-                else if (Enemy.HealthPoints == 0)
+                else if (Enemy.HealthPoints.CurrentValue == 0)
                 {
                     MessageBox.Show("You killed your enemy gain xp and reward.");
                     this.Enemy.isAlive = false;

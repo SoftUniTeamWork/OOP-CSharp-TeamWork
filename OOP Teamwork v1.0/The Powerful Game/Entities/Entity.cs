@@ -9,18 +9,19 @@
     public abstract class Entity : IUpdatable, IRenderable
     {
         private string name;
-        private int healthPoints;
+        private AttributePair healthPoints;
         private int armorPoints;
         private int damage;
+        private int defense;
         private double attackSpeed;
         private Image image;
 
         public bool isAlive = true;
 
-        public Entity(string name, double x, double y, int healthPoints, int armorPoints, int damage, Image image)
+        public Entity(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image image)
         {
             this.Name = name;
-            this.HealthPoints = healthPoints;
+            healthPoints = new AttributePair();
             this.ArmorPoints = armorPoints;
             this.Damage = damage;
             //this.AttackSpeed = attackSpeed;
@@ -42,17 +43,11 @@
 
         public double Y { get; set; }
 
-        public virtual int HealthPoints
+        public virtual AttributePair HealthPoints
         {
             get { return this.healthPoints; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentNullException("Hit points cannot be negative number.");
-                }
-                this.healthPoints = value;
-            }
+            
+            
         }
 
         public virtual int ArmorPoints
@@ -110,14 +105,14 @@
 
         protected virtual void ProcessDamageTaken(int damage)
         {
-            int healthLeft = this.HealthPoints - (damage - this.ArmorPoints);
+            int healthLeft = this.HealthPoints.CurrentValue - (damage - this.ArmorPoints);
             if (healthLeft >= 0)
             {
-                this.HealthPoints = healthLeft;
+                this.HealthPoints.SetCurrent(healthLeft);
             }
             else
             {
-                this.HealthPoints = 0;
+                this.HealthPoints.SetCurrent(0);
             }
         }
 

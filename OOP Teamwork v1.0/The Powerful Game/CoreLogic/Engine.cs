@@ -57,12 +57,12 @@ namespace The_Powerful_Game.CoreLogic
         {
             string playerName = "Player";
             var img = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.PlayerImage);
-
+            var health = new AttributePair(Constants.PlayerHealthPoints);
             var player = new Player(
                 playerName,
                 100,
                 100,
-                Constants.PlayerHealthPoints,
+                health,
                 Constants.PlayerArmorPoints,
                 Constants.PlayerDamagePoints,
                 Constants.PlayerResourcePoints,
@@ -79,12 +79,12 @@ namespace The_Powerful_Game.CoreLogic
             
             string enemyName = "Enemy";
             var img = GenerateImage(enemyName, Constants.PlayerWidth, Constants.PlayerHeight, Constants.EnemyImage);
-
+            var health = new AttributePair(Constants.EnemyHealthPoints);
             var enemy = new Enemy(
                 enemyName,
                 x,
                 y,
-                Constants.EnemyHealthPoints,
+                health,
                 Constants.EnemyArmorPoints,
                 Constants.EnemyDamagePoints,
                 img);

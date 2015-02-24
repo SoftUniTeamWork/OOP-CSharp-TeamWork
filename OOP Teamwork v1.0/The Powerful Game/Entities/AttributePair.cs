@@ -17,7 +17,7 @@ namespace The_Powerful_Game.Entities
         /// This constructor set attribute max value.
         /// </summary>
         /// <param name="maxValue">the max value</param>
-        public AttributePair(ushort maxValue)
+        public AttributePair(int maxValue)
         {
             this.currentValue = maxValue;
             this.maximumValue = maxValue;
@@ -28,7 +28,7 @@ namespace The_Powerful_Game.Entities
         {
             get
             {
-                return currentValue;
+                return this.currentValue;
             }
         }
 
@@ -36,7 +36,7 @@ namespace The_Powerful_Game.Entities
         {
             get
             {
-                return maximumValue;
+                return this.maximumValue;
             }
         }
 
@@ -55,12 +55,12 @@ namespace The_Powerful_Game.Entities
         /// This method increment heal value and checks value for overflow.
         /// </summary>
         /// <param name="value">add health</param>
-        public void Heal(ushort value)   // value is ushort type, so that negative values can't be passed
+        public void Increase(int value)   // value is ushort type, so that negative values can't be passed
         {
-            currentValue += value;
-            if (currentValue > maximumValue)
+            this.currentValue += value;
+            if (this.currentValue > this.maximumValue)
             {
-                currentValue = maximumValue;
+                this.currentValue = this.maximumValue;
             }
         }
 
@@ -68,12 +68,12 @@ namespace The_Powerful_Game.Entities
         /// This method takes damage. Checks if damage is zero.
         /// </summary>
         /// <param name="value">take damage</param>
-        public void Damage(ushort value)
+        public void Decrease(int value)
         {
-            currentValue -= value;
-            if (currentValue < 0)
+            this.currentValue -= value;
+            if (this.currentValue < 0)
             {
-                currentValue = 0;
+                this.currentValue = 0;
             }
         }
 
@@ -81,12 +81,12 @@ namespace The_Powerful_Game.Entities
         /// This method sets the current value.
         /// </summary>
         /// <param name="value">current value</param>
-        public void SetCurrent(ushort value)  // used to set the currentValue
+        public void SetCurrent(int value)  // used to set the currentValue
         {
-            currentValue = value;
-            if (currentValue > maximumValue)
+            this.currentValue = value;
+            if (this.currentValue > this.maximumValue)
             {
-                currentValue = maximumValue;
+                this.currentValue = this.maximumValue;
             }
         }
 
@@ -94,12 +94,12 @@ namespace The_Powerful_Game.Entities
         /// This method sets the max value
         /// </summary>
         /// <param name="value">max value</param>
-        public void SetMaximum(ushort value) // used to set the maximumValue
+        public void SetMaximum(int value) // used to set the maximumValue
         {
-            maximumValue = value;
-            if (currentValue > maximumValue)
+            this.maximumValue = value;
+            if (this.currentValue > this.maximumValue)
             {
-                currentValue = maximumValue;
+                this.currentValue = this.maximumValue;
             }
         }
     }
