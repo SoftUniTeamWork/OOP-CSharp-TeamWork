@@ -80,7 +80,8 @@ namespace The_Powerful_Game.Entities
             {
                 this.ResourcePoints = this.ResourcePoints.Decrease(this.offensiveAbillity.Cost);
                 enemy.ProcessDamageTaken(this.Damage + this.offensiveAbillity.EffectValue);
-                combatLogResult = string.Format("You strike with the Gods' strength for {0}.\n", this.Damage + this.offensiveAbillity.EffectValue);
+                combatLogResult = string.Format("You strike with the Gods' strength for {0}.\n",
+                    this.Damage + this.offensiveAbillity.EffectValue);
             }
             else
             {

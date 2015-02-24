@@ -23,7 +23,7 @@
         public string EnemyTurn()
         {
             string combatLogResult = this.Enemy.Attack();
-            FightOverCheck();
+            PlayerDeadCheck();
             return combatLogResult;
         }
 
@@ -41,7 +41,6 @@
                     if (string.IsNullOrEmpty(combatLogResult))
                     {
                         this.PlayerTookTurn = true;
-                        
                     }
                     break;
                 case "Deffensive Skill":
@@ -50,25 +49,26 @@
                     break;
             }
 
-            FightOverCheck();
+            EnemyDeadCheck();
             return combatLogResult;
         }
 
-        private void FightOverCheck()
+        private void PlayerDeadCheck()
         {
-            if (Player.HealthPoints.CurrentValue == 0 || Enemy.HealthPoints.CurrentValue == 0)
+            if (this.Player.HealthPoints.CurrentValue == 0)
             {
-                if (Player.HealthPoints.CurrentValue == 0)
-                {
-                    MessageBox.Show("You died!");
-                }
-                else if (Enemy.HealthPoints.CurrentValue == 0)
-                {
-                    MessageBox.Show("You killed your enemy gain xp and reward.");
-                    this.Enemy.isAlive = false;
-                    this.Enemy.Update();
-                }
+                MessageBox.Show("You died!");
+                Switcher.Switch(Gameplay.Control);
+            }
+        }
 
+        private void EnemyDeadCheck()
+        {
+            if (this.Enemy.HealthPoints.CurrentValue == 0)
+            {
+                MessageBox.Show("You killed your enemy gain xp and reward.");
+                this.Enemy.isAlive = false;
+                this.Enemy.Update();
                 CompositionTarget.Rendering += Gameplay.MainEngine.Run;
                 Switcher.Switch(Gameplay.Control);
             }
