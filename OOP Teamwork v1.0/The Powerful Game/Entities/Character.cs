@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Input;
+using The_Powerful_Game.Contracts;
+using The_Powerful_Game.CoreLogic;
 using The_Powerful_Game.Entities.Chooses;
 
 namespace The_Powerful_Game.Entities
 {
-    public abstract class Character : Entity
+    public abstract class Character : Entity, IControllable
     {
         private int strength;
         private int inteligence;
@@ -76,9 +79,34 @@ namespace The_Powerful_Game.Entities
             throw new NotImplementedException();
         }
 
-        internal void Flee(Enemy enemy)
+
+        public void KeyListener()
         {
-            throw new NotImplementedException();
+            if (Keyboard.IsKeyDown(Key.Up))
+            {
+                this.Y -= Constants.PlayerMoveSpeed;
+            }
+
+            if (Keyboard.IsKeyDown(Key.Down))
+            {
+                this.Y += Constants.PlayerMoveSpeed;
+            }
+
+            if (Keyboard.IsKeyDown(Key.Left))
+            {
+                this.X -= Constants.PlayerMoveSpeed;
+            }
+
+            if (Keyboard.IsKeyDown(Key.Right))
+            {
+                this.X += Constants.PlayerMoveSpeed;
+            }
+        }
+
+
+        public void Flee(Enemy enemy)
+        {
+            this.X = enemy.X - 50;
         }
     }
 }

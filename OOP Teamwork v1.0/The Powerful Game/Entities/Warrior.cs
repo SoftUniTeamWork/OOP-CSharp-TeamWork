@@ -1,4 +1,6 @@
-﻿namespace The_Powerful_Game.Entities
+﻿using The_Powerful_Game.Contracts;
+
+namespace The_Powerful_Game.Entities
 {
     using System;
     using System.Windows.Controls;
@@ -34,10 +36,6 @@
             Canvas.SetTop(this.Image, this.Y);
         }
 
-        public void Flee(Enemy enemy)
-        {
-            this.X = enemy.X - 50;
-        }
 
         public string Attack(Enemy enemy)
         {
@@ -90,27 +88,8 @@
             return combatLogResult;
         }
 
-        private void KeyListener()
-        {
-            if (Keyboard.IsKeyDown(Key.Up))
-            {
-                this.Y -= Constants.PlayerMoveSpeed;
-            }
+        
 
-            if (Keyboard.IsKeyDown(Key.Down))
-            {
-                this.Y += Constants.PlayerMoveSpeed;
-            }
-
-            if (Keyboard.IsKeyDown(Key.Left))
-            {
-                this.X -= Constants.PlayerMoveSpeed;
-            }
-
-            if (Keyboard.IsKeyDown(Key.Right))
-            {
-                this.X += Constants.PlayerMoveSpeed;
-            }
-        }
+        
     }
 }

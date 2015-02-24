@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Contracts\IControllable.cs" />
     <Compile Include="Contracts\IRenderable.cs" />
     <Compile Include="Contracts\IUpdatable.cs" />
     <Compile Include="CoreLogic\CollisionHandler.cs" />
