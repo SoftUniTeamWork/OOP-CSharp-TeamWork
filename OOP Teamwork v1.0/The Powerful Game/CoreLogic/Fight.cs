@@ -34,10 +34,10 @@
                 case "Attack":
                     combatLogResult = this.Player.Attack(this.Enemy);
                     break;
-                case "Spell1":
-                    //combatLogResult = this.Player.CastSpell(this.Enemy);
+                case "Skill1":
+                    combatLogResult = this.Player.Spell(this.Enemy);
                     break;
-                case "Spell2":
+                case "Skill2":
                     //combatLogResult = this.Player.CastSpell2(this.Enemy);
                     break;
             }

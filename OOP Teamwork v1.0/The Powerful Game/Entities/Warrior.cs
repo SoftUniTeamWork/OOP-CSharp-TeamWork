@@ -16,7 +16,7 @@ namespace The_Powerful_Game.Entities
         {
         }
 
-        public string Attack(Enemy enemy)
+        internal override string Attack(Enemy enemy)
         {
             Random fightSituation = new Random();
             int fightCase = fightSituation.Next(1, 10);
@@ -63,6 +63,16 @@ namespace The_Powerful_Game.Entities
                     // 
                     break;
             }
+
+            return combatLogResult;
+        }
+
+        internal override string Spell(Enemy enemy)
+        {
+            Abillity courage = new Abillity("Mortal Strike", 20, 0, this.Damage * 2);
+            
+            string combatLogResult = courage.ApplyOffensiveEffect(enemy);
+            
 
             return combatLogResult;
         }
