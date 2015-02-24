@@ -66,6 +66,7 @@
     <Compile Include="Entities\Hunter.cs" />
     <Compile Include="Entities\Warrior.cs" />
     <Compile Include="Entities\Mage.cs" />
+    <Compile Include="Enums\ClassType.cs" />
     <Compile Include="Exceptions\EntityDamageException.cs" />
     <Compile Include="Exceptions\EntityNameException.cs" />
     <Compile Include="Contracts\ISwitchable.cs" />
@@ -105,7 +106,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entities\Chooses\EntityResourceType.cs" />
+    <Compile Include="Enums\EntityResourceType.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Validations\ItemValidator.cs" />
   </ItemGroup>
@@ -264,6 +265,12 @@
     <Resource Include="Resources\FightField\buttons-bg.jpg" />
     <Resource Include="Resources\FightField\gamelog-bg.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Classes\Hunter.png" />
+    <Resource Include="Resources\Classes\Mage.png" />
+    <Resource Include="Resources\Classes\Warrior.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using The_Powerful_Game.Enums;
 
 namespace The_Powerful_Game.Menu
 {
@@ -19,6 +20,7 @@ namespace The_Powerful_Game.Menu
     /// </summary>
     public partial class Choosing : UserControl, ISwitchable
     {
+        public static ClassType classType;
         public Choosing()
         {
             InitializeComponent();
@@ -26,16 +28,19 @@ namespace The_Powerful_Game.Menu
 
         private void warriorButton_Click(object sender, RoutedEventArgs e)
         {
+            classType = ClassType.Warrior;;
             Switcher.Switch(new Gameplay());
         }
 
         private void mageButton_Click(object sender, RoutedEventArgs e)
         {
+            classType = ClassType.Mage;
             Switcher.Switch(new Gameplay());
         }
 
         private void hunterButton_Click(object sender, RoutedEventArgs e)
         {
+            classType = ClassType.Hunter;
             Switcher.Switch(new Gameplay());
         }
 

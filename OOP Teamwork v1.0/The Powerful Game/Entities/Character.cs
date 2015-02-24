@@ -70,5 +70,15 @@ namespace The_Powerful_Game.Entities
             get { return this.experience; }
             set { this.experience = value; }
         }
+
+        internal string Attack(Enemy enemy)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void Flee(Enemy enemy)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

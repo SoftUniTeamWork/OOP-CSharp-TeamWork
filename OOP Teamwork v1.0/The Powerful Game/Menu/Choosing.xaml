@@ -24,13 +24,13 @@
             <RowDefinition Height="150*"/>
         </Grid.RowDefinitions>
         <Button x:Name="warriorButton" Margin="54,0,1.8,2.4" VerticalAlignment="Bottom" Height="186" FontSize="21.333" Click="warriorButton_Click" Grid.ColumnSpan="2">
-            <Image Source="../Resources/Warrior.png" Stretch="Fill" Height="186" RenderTransformOrigin="0.528,1.169"/>
+            <Image Source="/Resources/Classes/Warrior.png" Stretch="Fill" Height="186" RenderTransformOrigin="0.528,1.169"/>
         </Button>
         <Button x:Name="mageButton" Margin="92.2,0,0,2.4" VerticalAlignment="Bottom" Height="186" FontSize="21.333" Click="mageButton_Click" Grid.Column="2" Grid.ColumnSpan="2">
-            <Image Source="../Resources/Mage.png" Stretch="Fill" Height="186" Width="170" RenderTransformOrigin="0.479,0.507"/>
+            <Image Source="/Resources/Classes/Mage.png" Stretch="Fill" Height="186" Width="170" RenderTransformOrigin="0.479,0.507"/>
         </Button>
         <Button HorizontalAlignment="Left" Margin="0.4,31,0,0" VerticalAlignment="Top" Width="170" Height="186" Grid.Column="5" Grid.RowSpan="2" Click="hunterButton_Click">
-            <Image Source="../Resources/Hunter.png" Height="186" Width="170" Stretch="Fill"/>
+            <Image Source="/Resources/Classes/Hunter.png" Height="186" Width="170" Stretch="Fill"/>
         </Button>
         <TextBlock Grid.Column="3"  HorizontalAlignment="Right" Margin="0,2.8,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="204" Width="170" Text="&#x9;The arcane magic available to mages is both great and dangerous. Mages can wear only cloth armor, but arcane shields and enchantments give them additional protection. To keep enemies at bay, magi can summon bursts of fire to incinerate distant targets and cause entire areas to erupt, setting groups of foes ablaze." Grid.RowSpan="2"/>
         <TextBlock HorizontalAlignment="Left" Margin="54,2.8,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="204" Width="170" Text="&#x9;The warrior class  fills both the roles of tanking and damage. The warrior has the widest array of weapons to choose from in the game, being able to equip every weapon type in the game except for wands. Warriors can use a wide array of combat skills depending on their specific roles in a fight." Grid.RowSpan="2"/>

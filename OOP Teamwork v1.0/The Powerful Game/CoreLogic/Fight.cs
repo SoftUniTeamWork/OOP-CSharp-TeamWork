@@ -8,13 +8,13 @@
 
     public class Fight
     {
-        public Fight(Warrior player, Enemy enemy)
+        public Fight(Character player, Enemy enemy)
         {
             this.Player = player;
             this.Enemy = enemy;
         }
 
-        private Warrior Player { get; set; }
+        private Character Player { get; set; }
 
         private Enemy Enemy { get; set; }
 

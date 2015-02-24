@@ -1,4 +1,5 @@
 ﻿using System.Windows.Media;
+using The_Powerful_Game.Enums;
 
 namespace The_Powerful_Game.CoreLogic
 {
@@ -13,7 +14,7 @@ namespace The_Powerful_Game.CoreLogic
     public class Engine
     {
         private const int NumberOfEnemies = 3;
-        private Warrior player;
+        private Character player;
 
         public readonly List<Enemy> EnemiesList = new List<Enemy>(NumberOfEnemies);
 
@@ -53,22 +54,32 @@ namespace The_Powerful_Game.CoreLogic
             // Should build the map here.
         }
 
-        private Warrior GeneratePlayer()
+        private Character GeneratePlayer()
         {
             string playerName = "Player";
             var img = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.PlayerImage);
             var health = new AttributePair(Constants.PlayerHealthPoints);
-            var player = new Warrior(
-                playerName,
-                100,
-                100,
-                health,
-                Constants.PlayerArmorPoints,
-                Constants.PlayerDamagePoints,
-                img, 2, 1, 1, Constants.PlayerResourcePoints,
-                EntityResourceType.Energy);
-
             Gameplay.Root.Children.Add(img);
+            Character player = null;
+            switch (Choosing.classType)
+            {
+                case ClassType.Warrior:
+                    player = new Warrior(playerName, 100, 100, health, Constants.PlayerArmorPoints,
+                        Constants.PlayerDamagePoints, img, 2, 1, 1, Constants.PlayerResourcePoints,
+                        EntityResourceType.Rage);
+                    break;
+                case ClassType.Mage:
+                    player = new Warrior(playerName, 100, 100, health, Constants.PlayerArmorPoints,
+                        Constants.PlayerDamagePoints, img, 2, 1, 1, Constants.PlayerResourcePoints,
+                        EntityResourceType.Mana);
+                    break;
+                case ClassType.Hunter:
+                    player = new Warrior(playerName, 100, 100, health, Constants.PlayerArmorPoints,
+                        Constants.PlayerDamagePoints, img, 2, 1, 1, Constants.PlayerResourcePoints,
+                        EntityResourceType.Energy);
+                    break;
+
+            }
             return player;
         }
 
