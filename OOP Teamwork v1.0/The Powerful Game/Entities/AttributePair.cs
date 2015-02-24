@@ -23,6 +23,8 @@ namespace The_Powerful_Game.Entities
             this.maximumValue = maxValue;
         }
 
+
+        
         //Properties
         public int CurrentValue
         {

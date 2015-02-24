@@ -9,7 +9,7 @@ namespace The_Powerful_Game.CoreLogic
 
     public static class CollisionHandler
     {
-        public static void HandleEnemyCollision(Player player, Enemy enemy)
+        public static void HandleEnemyCollision(Warrior player, Enemy enemy)
         {
             double playerX = player.X + player.Image.Width / 2;
             double playerY = player.Y + player.Image.Height / 2;

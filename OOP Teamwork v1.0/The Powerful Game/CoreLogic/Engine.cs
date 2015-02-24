@@ -13,7 +13,7 @@ namespace The_Powerful_Game.CoreLogic
     public class Engine
     {
         private const int NumberOfEnemies = 3;
-        private Player player;
+        private Warrior player;
 
         public readonly List<Enemy> EnemiesList = new List<Enemy>(NumberOfEnemies);
 
@@ -53,12 +53,12 @@ namespace The_Powerful_Game.CoreLogic
             // Should build the map here.
         }
 
-        private Player GeneratePlayer()
+        private Warrior GeneratePlayer()
         {
             string playerName = "Player";
             var img = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.PlayerImage);
             var health = new AttributePair(Constants.PlayerHealthPoints);
-            var player = new Player(
+            var player = new Warrior(
                 playerName,
                 100,
                 100,
@@ -67,7 +67,7 @@ namespace The_Powerful_Game.CoreLogic
                 Constants.PlayerDamagePoints,
                 Constants.PlayerResourcePoints,
                 EntityResourceType.Energy,
-                img);
+                img,2,1,1);
 
             Gameplay.Root.Children.Add(img);
             return player;

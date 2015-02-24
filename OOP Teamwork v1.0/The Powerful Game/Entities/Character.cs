@@ -19,22 +19,24 @@ namespace The_Powerful_Game.Entities
         private int agilityModifier;
 
         private int level;
-        private long experience;
+        private int experience;
 
         private EntityResourceType resource;
 
 
-        protected Character(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image image, int strength, int inteligence, int agility, int level, int experience) : base(name, x, y, healthPoints, armorPoints, damage, image)
+        protected Character(string name, double x, double y, AttributePair healthPoints,
+            int armorPoints, int damage, Image image, int strength, int inteligence, int agility)
+            : base(name, x, y, healthPoints, armorPoints, damage, image)
         {
-            this.strength = 0;
-            this.inteligence = 0;
-            this.agility = 0;
+            this.Strength = strength;
+            this.Inteligence = inteligence;
+            this.Agility = agility;
         }
 
         public int Strength
         {
             get { return this.strength + this.strengthModifier; }
-            protected set { this.strength = value; }
+            set { this.strength = value; }
         }
 
         public int Inteligence
@@ -47,7 +49,7 @@ namespace The_Powerful_Game.Entities
         public int Agility
         {
             get { return this.agility + this.agilityModifier; }
-            protected set { this.agility = value; }
+            set { this.agility = value; }
         }
 
         public int Level
@@ -56,10 +58,10 @@ namespace The_Powerful_Game.Entities
             protected set { this.level = value; }
         }
 
-        public long Experience
+        public int Experience
         {
             get { return this.experience; }
-            protected set { this.experience = value; }
+            set { this.experience = value; }
         }
     }
 }

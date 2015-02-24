@@ -15,13 +15,13 @@ namespace The_Powerful_Game.Menu
     /// </summary>
     public partial class FightField : UserControl
     {
-        public Player Player { get; private set; }
+        public Warrior Player { get; private set; }
 
         public Enemy Enemy { get; private set; }
 
         public Fight Fighting { get; private set; }
 
-        public FightField(Player player, Enemy enemy)
+        public FightField(Warrior player, Enemy enemy)
         {
             this.Player = player;
             this.Enemy = enemy;

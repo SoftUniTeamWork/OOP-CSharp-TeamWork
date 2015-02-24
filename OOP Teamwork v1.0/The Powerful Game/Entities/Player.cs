@@ -7,13 +7,13 @@
     using System.Windows;
     using The_Powerful_Game.CoreLogic;
 
-    public class Player : Entity
+    public class Warrior : Character
     {
         private int resoursePoints;
         private EntityResourceType resourceType;
 
-        public Player(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, int resoursePoints, EntityResourceType resourceType, Image img)
-            : base(name, x, y, healthPoints, armorPoints, damage, img)
+        public Warrior(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, int resoursePoints, EntityResourceType resourceType, Image img, int strength, int inteligence, int agility)
+            : base(name, x, y, healthPoints, armorPoints, damage, img, strength, inteligence, agility)
         {
             this.ResoursePoints = resoursePoints;
             this.ResourceType = resourceType;
