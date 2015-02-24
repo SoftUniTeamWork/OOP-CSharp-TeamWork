@@ -74,7 +74,10 @@ namespace The_Powerful_Game.Entities
             set { this.experience = value; }
         }
 
-        internal abstract string Attack(Enemy enemy);
+public virtual string Attack(Enemy enemy)
+        {
+            throw new NotImplementedException();
+        }
 
         internal abstract string Spell(Enemy enemy);
 
