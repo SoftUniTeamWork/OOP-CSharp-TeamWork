@@ -12,15 +12,5 @@ namespace The_Powerful_Game.Entities
             strength, inteligence, agility, resourcePoints, resourceType)
         {
         }
-
-        public override void Update()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void Render()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

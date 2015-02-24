@@ -13,15 +13,5 @@ namespace The_Powerful_Game.Entities
         public Hunter(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image image, int strength, int inteligence, int agility, int resourcePoints, EntityResourceType resourceType) : base(name, x, y, healthPoints, armorPoints, damage, image, strength, inteligence, agility, resourcePoints, resourceType)
         {
         }
-
-        public override void Update()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Render()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

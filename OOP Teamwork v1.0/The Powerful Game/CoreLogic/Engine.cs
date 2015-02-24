@@ -1,4 +1,5 @@
-﻿using System.Windows.Media;
+﻿using System.Windows;
+using System.Windows.Media;
 using The_Powerful_Game.Enums;
 
 namespace The_Powerful_Game.CoreLogic
@@ -28,6 +29,7 @@ namespace The_Powerful_Game.CoreLogic
             if (this.player.isAlive)
             {
                 this.player.Update();
+                MessageBox.Show(this.player.HealthPoints.CurrentValue.ToString());
                 EnemiesList.ForEach(e =>
                 {
                     CollisionHandler.HandleEnemyCollision(this.player, e);

@@ -21,10 +21,9 @@
         public Entity(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image image)
         {
             this.Name = name;
-            healthPoints = new AttributePair();
+            this.healthPoints = healthPoints;
             this.ArmorPoints = armorPoints;
             this.Damage = damage;
-            //this.AttackSpeed = attackSpeed;
             this.Image = image;
             this.X = x;
             this.Y = y;
@@ -46,8 +45,6 @@
         public virtual AttributePair HealthPoints
         {
             get { return this.healthPoints; }
-            
-            
         }
 
         public virtual int ArmorPoints
@@ -68,20 +65,6 @@
             get { return this.damage; }
             set { this.damage = EntityValidator.DamageValidating(value); }
         }
-
-        // WILL BE REMOVED
-        //public double AttackSpeed
-        //{
-        //    get { return this.attackSpeed; }
-        //    set
-        //    {
-        //        if (value <= 0)
-        //        {
-        //            throw new ArgumentException("Attack speed cannot be less than 0,0 sec.");
-        //        }
-        //        this.attackSpeed = value;
-        //    }
-        //}
 
         public Image Image
         {

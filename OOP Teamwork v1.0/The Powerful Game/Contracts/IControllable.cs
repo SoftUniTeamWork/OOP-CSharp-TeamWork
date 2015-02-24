@@ -11,7 +11,8 @@ namespace The_Powerful_Game.Contracts
 {
     interface IControllable
     {
-        void KeyListener();
+        void Move();
+
         void Flee(Enemy enemy);
     }
 }

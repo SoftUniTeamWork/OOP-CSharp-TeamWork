@@ -79,8 +79,16 @@ namespace The_Powerful_Game.Entities
             throw new NotImplementedException();
         }
 
+        public override void Update()
+        {
+            if (this.HealthPoints.CurrentValue == 0)
+            {
+                this.isAlive = false;
+            }
+            Move();
+        }
 
-        public void KeyListener()
+        public void Move()
         {
             if (Keyboard.IsKeyDown(Key.Up))
             {
@@ -103,6 +111,11 @@ namespace The_Powerful_Game.Entities
             }
         }
 
+        public override void Render()
+        {
+            Canvas.SetLeft(this.Image, this.X);
+            Canvas.SetTop(this.Image, this.Y);
+        }
 
         public void Flee(Enemy enemy)
         {

@@ -11,31 +11,10 @@ namespace The_Powerful_Game.Entities
 
     public class Warrior : Character
     {
-
-
         public Warrior(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image img, int strength, int inteligence, int agility, int resourcePoints, EntityResourceType resourceType)
             : base(name, x, y, healthPoints, armorPoints, damage, img, strength, inteligence, agility, resourcePoints, resourceType)
         {
-            
         }
-
-        
-
-        public override void Update()
-        {
-            if (this.HealthPoints.CurrentValue == 0)
-            {
-                this.isAlive = false;
-            }
-            KeyListener();
-        }
-
-        public override void Render()
-        {
-            Canvas.SetLeft(this.Image, this.X);
-            Canvas.SetTop(this.Image, this.Y);
-        }
-
 
         public string Attack(Enemy enemy)
         {
@@ -87,9 +66,5 @@ namespace The_Powerful_Game.Entities
 
             return combatLogResult;
         }
-
-        
-
-        
     }
 }
