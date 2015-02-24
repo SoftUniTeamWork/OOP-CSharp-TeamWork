@@ -108,7 +108,6 @@
             return toString.ToString();
         }
 
-        
         //                                          DO NOT DELETE!!!
         //protected virtual int CalcDamage()
         //{

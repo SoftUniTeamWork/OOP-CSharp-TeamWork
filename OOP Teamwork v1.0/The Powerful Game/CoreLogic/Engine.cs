@@ -29,7 +29,6 @@ namespace The_Powerful_Game.CoreLogic
             if (this.player.isAlive)
             {
                 this.player.Update();
-                MessageBox.Show(this.player.HealthPoints.CurrentValue.ToString());
                 EnemiesList.ForEach(e =>
                 {
                     CollisionHandler.HandleEnemyCollision(this.player, e);
