@@ -65,9 +65,8 @@ namespace The_Powerful_Game.CoreLogic
                 health,
                 Constants.PlayerArmorPoints,
                 Constants.PlayerDamagePoints,
-                Constants.PlayerResourcePoints,
-                EntityResourceType.Energy,
-                img,2,1,1);
+                img, 2, 1, 1, Constants.PlayerResourcePoints,
+                EntityResourceType.Energy);
 
             Gameplay.Root.Children.Add(img);
             return player;
