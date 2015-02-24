@@ -27,7 +27,6 @@ namespace The_Powerful_Game.Entities
 
             string combatLogResult = "";
 
-            
             // Passive - 20% more damage with normal attacks
             int normalAttackDamage = (int)Math.Round(Damage * 6 / 5.0);
 
@@ -35,31 +34,31 @@ namespace The_Powerful_Game.Entities
             {
 
                 // Deal 100% damage
-                this.ProcessDamageTaken(normalAttackDamage);
+                enemy.ProcessDamageTaken(normalAttackDamage);
                 combatLogResult = "You deal " + normalAttackDamage + " damage.\n";
             }
             else if (fightCase > 30 && fightCase <= 55)
             {
                 // Deal 120% damage
-                this.ProcessDamageTaken((int)Math.Round(normalAttackDamage * 6 / 5.0));
+                enemy.ProcessDamageTaken((int)Math.Round(normalAttackDamage * 6 / 5.0));
                 combatLogResult = "You strike for " + (int)Math.Round(normalAttackDamage * 6 / 5.0) + " damage.\n";
             }
             else if (fightCase > 55 && fightCase <= 80)
             {
                 // Deal 80% damage
-                this.ProcessDamageTaken((int)Math.Round(normalAttackDamage * 4 / 5.0));
+                enemy.ProcessDamageTaken((int)Math.Round(normalAttackDamage * 4 / 5.0));
                 combatLogResult = "You hit for " + (int)Math.Round(normalAttackDamage * 4 / 5.0) + " damage.\n";
             }
             else if (fightCase > 80 && fightCase <= 90)
             {
                 // Stun for 1 turn and 50% damage
-                this.ProcessDamageTaken(normalAttackDamage / 2);
+                enemy.ProcessDamageTaken(normalAttackDamage / 2);
                 combatLogResult = "With a fierce strike you deal " + normalAttackDamage / 2 + " damage and stun your opponent for 1 round.\n";
             }
             else if (fightCase > 90 && fightCase <= 95) 
             {
                 // Deal Critical 150% damage
-                this.ProcessDamageTaken((int)Math.Round(normalAttackDamage * 3 / 2.0));
+                enemy.ProcessDamageTaken((int)Math.Round(normalAttackDamage * 3 / 2.0));
                 combatLogResult = "You attack with a massive blow for " + normalAttackDamage * 3 / 2.0 + " damage.\n";
             }
             else if (fightCase > 95)

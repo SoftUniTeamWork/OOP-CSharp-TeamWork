@@ -30,31 +30,31 @@
             if (fightCase <= 25)
             {
                 // Deal 100% damage
-                this.ProcessDamageTaken(Damage);
+                enemy.ProcessDamageTaken(Damage);
                 combatLogResult = "You deal " + Damage + " damage.\n";
             }
             else if (fightCase > 25 && fightCase <= 50)
             {
                 // Deal 120% damage
-                this.ProcessDamageTaken((int)Math.Round(Damage * 6 / 5.0));
+                enemy.ProcessDamageTaken((int)Math.Round(Damage * 6 / 5.0));
                 combatLogResult = "You strike for " + (int)Math.Round(Damage * 6 / 5.0) + " damage.\n";
             }
             else if (fightCase > 50 && fightCase <= 75)
             {
                 // Deal 80% damage
-                this.ProcessDamageTaken((int)Math.Round(Damage * 4 / 5.0));
+                enemy.ProcessDamageTaken((int)Math.Round(Damage * 4 / 5.0));
                 combatLogResult = "You hit for " + (int)Math.Round(Damage * 4 / 5.0) + " damage.\n";
             }
             else if (fightCase > 75 && fightCase <= 85)
             {
                 // Stun for 1 turn and 50% damage
-                this.ProcessDamageTaken(Damage / 2);
+                enemy.ProcessDamageTaken(Damage / 2);
                 combatLogResult = "With a fierce strike you deal " + Damage / 2 + " damage and stun your opponent for 1 round.\n";
             }
             else if (fightCase > 85 && fightCase <= 95) // Passive - 10% critical strike chance (instead of 5%)
             {
                 // Deal Critical 150% damage
-                this.ProcessDamageTaken((int)Math.Round(Damage * 3 / 2.0));
+                enemy.ProcessDamageTaken((int)Math.Round(Damage * 3 / 2.0));
                 combatLogResult = "You attack with a massive blow for " + Damage * 3 / 2.0 + " damage.\n";
             }
             else if (fightCase > 95)
