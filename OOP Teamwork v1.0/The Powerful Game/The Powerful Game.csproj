@@ -63,7 +63,9 @@
     <Compile Include="Entities\AttributePair.cs" />
     <Compile Include="Entities\Character.cs" />
     <Compile Include="Entities\Enemy.cs" />
+    <Compile Include="Entities\Hunter.cs" />
     <Compile Include="Entities\Warrior.cs" />
+    <Compile Include="Entities\Mage.cs" />
     <Compile Include="Exceptions\EntityDamageException.cs" />
     <Compile Include="Exceptions\EntityNameException.cs" />
     <Compile Include="Contracts\ISwitchable.cs" />

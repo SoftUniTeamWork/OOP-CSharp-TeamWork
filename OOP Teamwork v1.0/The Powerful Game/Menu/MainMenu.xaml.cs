@@ -28,7 +28,7 @@ namespace The_Powerful_Game.Menu
 
         private void newGameButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Switcher.Switch(new Gameplay());
+            Switcher.Switch(new Choosing());
         }
 
 

@@ -26,24 +26,24 @@ namespace The_Powerful_Game.Menu
 
         private void warriorButton_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Switcher.Switch(new Gameplay());
         }
 
         private void mageButton_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Switcher.Switch(new Gameplay());
         }
 
-
+        private void hunterButton_Click(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new Gameplay());
+        }
 
         public void UtilizeState(object state)
         {
             throw new NotImplementedException();
         }
 
-        private void hunterButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
