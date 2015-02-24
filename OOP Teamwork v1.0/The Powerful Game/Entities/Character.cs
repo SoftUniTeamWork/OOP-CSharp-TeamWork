@@ -79,6 +79,11 @@ namespace The_Powerful_Game.Entities
 
         public abstract string CastOffensiveSpell(Enemy enemy);
 
+	public virtual string Attack(Enemy enemy)
+        {
+            throw new NotImplementedException();
+        }
+
         public abstract string CastDeffensiveSpell(Enemy enemy);
 
         public override void Update()
