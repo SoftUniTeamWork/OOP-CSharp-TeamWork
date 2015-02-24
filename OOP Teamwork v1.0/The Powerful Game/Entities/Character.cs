@@ -24,12 +24,14 @@ namespace The_Powerful_Game.Entities
         private int level;
         private int experience;
 
-        private int resourcePoints;
+        private AttributePair resourcePoints;
         private EntityResourceType resourceType;
 
+        protected Abillity offensiveAbillity;
+        protected Abillity defensiveAbillity;
 
         protected Character(string name, double x, double y, AttributePair healthPoints,
-            int armorPoints, int damage, Image image, int strength, int inteligence, int agility, int resourcePoints, EntityResourceType resourceType)
+            int armorPoints, int damage, Image image, int strength, int inteligence, int agility, AttributePair resourcePoints, EntityResourceType resourceType)
             : base(name, x, y, healthPoints, armorPoints, damage, image)
         {
             this.Strength = strength;
@@ -51,14 +53,13 @@ namespace The_Powerful_Game.Entities
             protected set { this.inteligence = value; }
         }
 
-
         public int Agility
         {
             get { return this.agility + this.agilityModifier; }
             set { this.agility = value; }
         }
 
-        public int ResourcePoints { get; set; }
+        public AttributePair ResourcePoints { get; protected set; }
 
         public EntityResourceType ResourceType { get; set; }
 
@@ -74,9 +75,11 @@ namespace The_Powerful_Game.Entities
             set { this.experience = value; }
         }
 
-        internal abstract string Attack(Enemy enemy);
+        public abstract string Attack(Enemy enemy);
 
-        internal abstract string Spell(Enemy enemy);
+        public abstract string CastOffensiveSpell(Enemy enemy);
+
+        public abstract string CastDeffensiveSpell(Enemy enemy);
 
         public override void Update()
         {

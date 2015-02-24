@@ -59,24 +59,24 @@ namespace The_Powerful_Game.CoreLogic
         {
             string playerName = "Player";
             var img = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.PlayerImage);
-            var health = new AttributePair(Constants.PlayerHealthPoints);
+            var health = new AttributePair(Constants.PlayerHealthPoints, Constants.PlayerHealthPoints);
             Gameplay.Root.Children.Add(img);
             Character player = null;
             switch (Choosing.classType)
             {
                 case ClassType.Warrior:
                     player = new Warrior(playerName, 100, 100, health, Constants.PlayerArmorPoints,
-                        Constants.PlayerDamagePoints, img, 2, 1, 1, Constants.PlayerResourcePoints,
+                        Constants.PlayerDamagePoints, img, 2, 1, 1, new AttributePair(Constants.PlayerResourcePoints, Constants.PlayerResourcePoints),
                         EntityResourceType.Rage);
                     break;
                 case ClassType.Mage:
                     player = new Warrior(playerName, 100, 100, health, Constants.PlayerArmorPoints,
-                        Constants.PlayerDamagePoints, img, 2, 1, 1, Constants.PlayerResourcePoints,
+                        Constants.PlayerDamagePoints, img, 2, 1, 1, new AttributePair(Constants.PlayerResourcePoints, Constants.PlayerResourcePoints),
                         EntityResourceType.Mana);
                     break;
                 case ClassType.Hunter:
                     player = new Warrior(playerName, 100, 100, health, Constants.PlayerArmorPoints,
-                        Constants.PlayerDamagePoints, img, 2, 1, 1, Constants.PlayerResourcePoints,
+                        Constants.PlayerDamagePoints, img, 2, 1, 1, new AttributePair(Constants.PlayerResourcePoints, Constants.PlayerResourcePoints),
                         EntityResourceType.Energy);
                     break;
 
@@ -87,10 +87,10 @@ namespace The_Powerful_Game.CoreLogic
         private void GenerateEnemy(int x, int y)
         {
             Random newRandom = new Random();
-            
+
             string enemyName = "Enemy";
             var img = GenerateImage(enemyName, Constants.PlayerWidth, Constants.PlayerHeight, Constants.EnemyImage);
-            var health = new AttributePair(Constants.EnemyHealthPoints);
+            var health = new AttributePair(Constants.PlayerHealthPoints, Constants.PlayerHealthPoints);
             var enemy = new Enemy(
                 enemyName,
                 x,

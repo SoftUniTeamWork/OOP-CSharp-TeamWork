@@ -1,4 +1,6 @@
-﻿namespace The_Powerful_Game.Entities
+﻿using System.Windows.Forms;
+
+namespace The_Powerful_Game.Entities
 {
     using System;
     using System.Text;
@@ -38,14 +40,15 @@
             }
         }
 
+        public AttributePair HealthPoints
+        {
+            get { return this.healthPoints; }
+            protected set { this.healthPoints = value; }
+        }
+
         public double X { get; set; }
 
         public double Y { get; set; }
-
-        public virtual AttributePair HealthPoints
-        {
-            get { return this.healthPoints; }
-        }
 
         public virtual int ArmorPoints
         {
@@ -86,17 +89,9 @@
 
         public abstract void Render();
 
-        protected virtual void ProcessDamageTaken(int damage)
+        public virtual void ProcessDamageTaken(int damage)
         {
-            int healthLeft = this.HealthPoints.CurrentValue - (damage - this.ArmorPoints);
-            if (healthLeft >= 0)
-            {
-                this.HealthPoints.SetCurrent(healthLeft);
-            }
-            else
-            {
-                this.HealthPoints.SetCurrent(0);
-            }
+            this.HealthPoints = this.HealthPoints.Decrease(damage - this.ArmorPoints);
         }
 
         public override string ToString()
@@ -140,7 +135,7 @@
         //public void Attack(Entity target, int damage)
         //{
         //    int damageDealt = damage - target.ArmorPoints; // Damage dealth will be the damage of the attacker - armorPoints value of attacked
-        //    target.HealthPoints -= damageDealt; // Reduces target HP by "damageDealt"
+        //    target.healthPoints -= damageDealt; // Reduces target HP by "damageDealt"
         //}
     }
 }

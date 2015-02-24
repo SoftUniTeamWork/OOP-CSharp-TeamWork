@@ -1,20 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using The_Powerful_Game.Entities.Chooses;
-
-namespace The_Powerful_Game.Entities
+﻿namespace The_Powerful_Game.Entities
 {
+    using System;
+    using System.Windows.Controls;
+    using The_Powerful_Game.Entities.Chooses;
+
     public class Hunter : Character
     {
-        public Hunter(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image image, int strength, int inteligence, int agility, int resourcePoints, EntityResourceType resourceType) : base(name, x, y, healthPoints, armorPoints, damage, image, strength, inteligence, agility, resourcePoints, resourceType)
+        public Hunter(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image image, int strength, int inteligence, int agility, AttributePair resourcePoints, EntityResourceType resourceType)
+            : base(name, x, y, healthPoints, armorPoints, damage, image, strength, inteligence, agility, resourcePoints, resourceType)
         {
+            // Deals 80 damage to the enemy target.
+            this.offensiveAbillity = new Abillity("Power Shot", 20, 80);
+            // Grants the user 50 miss chance.
+            this.defensiveAbillity = new Abillity("Avoidance", 30, 50);
         }
 
-        internal override string Attack(Enemy enemy)
+        public override string Attack(Enemy enemy)
         {
             Random fightSituation = new Random();
             int fightCase = fightSituation.Next(1, 10);
@@ -26,26 +27,26 @@ namespace The_Powerful_Game.Entities
                 case 1:
                 case 2:
                     // Deal 100% damage
-                    this.ProcessDamageTaken(this.Damage);
+                    enemy.ProcessDamageTaken(this.Damage);
                     combatLogResult = "You deal " + this.Damage + " damage.\n";
 
                     break;
                 case 3:
                 case 4:
                     // Deal 120% damage
-                    this.ProcessDamageTaken((int)Math.Round(this.Damage * 6 / 5.0));
+                    enemy.ProcessDamageTaken((int)Math.Round(this.Damage * 6 / 5.0));
                     combatLogResult = "You strike for " + this.Damage + " damage.\n";
                     break;
                 case 5:
                 case 6:
                     // Deal 80% damage
 
-                    this.ProcessDamageTaken((int)Math.Round(this.Damage * 4 / 5.0));
+                    enemy.ProcessDamageTaken((int)Math.Round(this.Damage * 4 / 5.0));
                     combatLogResult = "You hit for " + this.Damage + " damage.\n";
                     break;
                 case 7:
                     // Deal Critical 200% damage
-                    this.ProcessDamageTaken(this.Damage * 2);
+                    enemy.ProcessDamageTaken(this.Damage * 2);
                     combatLogResult = "You attack with a massive blow for " + this.Damage + " damage.\n";
                     break;
                 case 8:
@@ -54,7 +55,7 @@ namespace The_Powerful_Game.Entities
                     break;
                 case 9:
                     // Stun for 1 turn and 50% damage
-                    this.ProcessDamageTaken(this.Damage / 2);
+                    enemy.ProcessDamageTaken(this.Damage / 2);
                     combatLogResult = "With a fierce strike you deal " + this.Damage + " damage and stun your opponent for 1 round.\n";
                     break;
                 case 10:
@@ -65,13 +66,14 @@ namespace The_Powerful_Game.Entities
             return combatLogResult;
         }
 
-        internal override string Spell(Enemy enemy)
+        public override string CastOffensiveSpell(Enemy enemy)
         {
-            string combatLogResult = "";
+            throw new NotImplementedException();
+        }
 
-
-
-            return combatLogResult;
+        public override string CastDeffensiveSpell(Enemy enemy)
+        {
+            throw new NotImplementedException();
         }
     }
 }

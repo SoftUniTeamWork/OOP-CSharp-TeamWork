@@ -50,7 +50,11 @@ namespace The_Powerful_Game.Menu
 
         private void ButtonSpellOnClick(object sender, RoutedEventArgs e)
         {
-            this.CombatLog.Text = this.Fighting.PlayerTurn("Skill1") + this.CombatLog.Text;
+            this.CombatLog.Text = this.Fighting.PlayerTurn("Offensive Skill") + this.CombatLog.Text;
+            if (!this.Fighting.PlayerTookTurn)
+            {
+                this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
+            }
         }
 
         private void ButtonDrinkPotionOnClick(object sender, RoutedEventArgs e)

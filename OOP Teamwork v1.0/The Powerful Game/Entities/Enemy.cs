@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using The_Powerful_Game.CoreLogic;
 using The_Powerful_Game.Menu;
 
 namespace The_Powerful_Game.Entities

@@ -7,11 +7,10 @@
         private int duration;
         private int effectValue;
 
-        public Abillity(string name, int cost, int duration, int effectValue)
+        public Abillity(string name, int cost, int effectValue)
         {
             this.Name = name;
             this.Cost = cost;
-            this.Duration = duration;
             this.EffectValue = effectValue;
         }
 
@@ -19,11 +18,9 @@
 
         public int Cost { get; private set; }
 
-        public int Duration { get; private set; }
-
         public int EffectValue { get; private set; }
 
-        internal string ApplyOffensiveEffect(Enemy enemy)
+        public string ApplyOffensiveEffect(Enemy enemy)
         {
             enemy.HealthPoints.Decrease(this.EffectValue);
             return null;

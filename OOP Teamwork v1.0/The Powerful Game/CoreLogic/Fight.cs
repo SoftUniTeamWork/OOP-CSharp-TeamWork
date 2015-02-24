@@ -1,6 +1,5 @@
 ﻿namespace The_Powerful_Game.CoreLogic
 {
-    using System;
     using System.Windows.Media;
     using The_Powerful_Game.Menu;
     using The_Powerful_Game.Entities;
@@ -12,11 +11,14 @@
         {
             this.Player = player;
             this.Enemy = enemy;
+            this.PlayerTookTurn = false;
         }
 
         private Character Player { get; set; }
 
         private Enemy Enemy { get; set; }
+
+        public bool PlayerTookTurn { get; private set; }
 
         public string EnemyTurn()
         {
@@ -34,11 +36,17 @@
                 case "Attack":
                     combatLogResult = this.Player.Attack(this.Enemy);
                     break;
-                case "Skill1":
-                    combatLogResult = this.Player.Spell(this.Enemy);
+                case "Offensive Skill":
+                    combatLogResult = this.Player.CastOffensiveSpell(this.Enemy);
+                    if (string.IsNullOrEmpty(combatLogResult))
+                    {
+                        this.PlayerTookTurn = true;
+                        
+                    }
                     break;
-                case "Skill2":
+                case "Deffensive Skill":
                     //combatLogResult = this.Player.CastSpell2(this.Enemy);
+
                     break;
             }
 

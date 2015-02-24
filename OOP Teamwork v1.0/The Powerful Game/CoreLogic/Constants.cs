@@ -14,7 +14,7 @@
 
         public static readonly string PlayerImage = @"pack://application:,,,/Resources/WoodElf.png";
 
-        public static readonly int EnemyHealthPoints = 100;
+        public static readonly int EnemyHealthPoints = 300;
         public static readonly int EnemyArmorPoints = 10;
         public static readonly int EnemyDamagePoints = 40;
 

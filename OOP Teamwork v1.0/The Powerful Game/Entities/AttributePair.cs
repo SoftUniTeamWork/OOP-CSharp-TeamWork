@@ -17,9 +17,9 @@ namespace The_Powerful_Game.Entities
         /// This constructor set attribute max value.
         /// </summary>
         /// <param name="maxValue">the max value</param>
-        public AttributePair(int maxValue)
+        public AttributePair(int currentValue, int maxValue)
         {
-            this.currentValue = maxValue;
+            this.currentValue = currentValue;
             this.maximumValue = maxValue;
         }
 
@@ -40,52 +40,47 @@ namespace The_Powerful_Game.Entities
             }
         }
 
-        public static AttributePair Zero
-        {
-            get
-            {
-                return new AttributePair();
-            }
-        }
-
         //Methods
         /// <summary>
         /// This method increment heal value and checks value for overflow.
         /// </summary>
         /// <param name="value">add health</param>
-        public void Increase(int value)   // value is ushort type, so that negative values can't be passed
+        public AttributePair Increase(int value)   // value is ushort type, so that negative values can't be passed
         {
             this.currentValue += value;
             if (this.currentValue > this.maximumValue)
             {
                 this.currentValue = this.maximumValue;
             }
+            return new AttributePair(this.currentValue, this.maximumValue);
         }
 
         /// <summary>
         /// This method takes damage. Checks if damage is zero.
         /// </summary>
         /// <param name="value">take damage</param>
-        public void Decrease(int value)
+        public AttributePair Decrease(int value)
         {
             this.currentValue -= value;
             if (this.currentValue < 0)
             {
                 this.currentValue = 0;
             }
+            return new AttributePair(this.currentValue, this.maximumValue);
         }
 
         /// <summary>
         /// This method sets the current value.
         /// </summary>
         /// <param name="value">current value</param>
-        public void SetCurrent(int value)  // used to set the currentValue
+        public AttributePair SetCurrent(int value)  // used to set the currentValue
         {
             this.currentValue = value;
             if (this.currentValue > this.maximumValue)
             {
                 this.currentValue = this.maximumValue;
             }
+            return new AttributePair(this.currentValue, this.maximumValue);
         }
 
         /// <summary>
