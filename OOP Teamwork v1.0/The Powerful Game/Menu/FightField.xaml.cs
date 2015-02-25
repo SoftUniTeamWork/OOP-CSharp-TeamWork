@@ -1,8 +1,5 @@
 ﻿namespace The_Powerful_Game.Menu
 {
-    using System;
-    using System.Windows.Controls;
-    using System.Windows.Media.Imaging;
     using System.Windows;
     using System.Windows.Forms;
     using System.Windows.Media;
@@ -47,16 +44,34 @@
         private void ButtonAttackOnClick(object sender, RoutedEventArgs e)
         {
             this.CombatLog.Text = this.Fighting.PlayerTurn("Attack") + this.CombatLog.Text;
-            this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
-        }
-
-        private void ButtonSpellOnClick(object sender, RoutedEventArgs e)
-        {
-            this.CombatLog.Text = this.Fighting.PlayerTurn("Offensive Skill") + this.CombatLog.Text;
-            if (this.Fighting.PlayerTookTurn)
+            if (this.Enemy.isAlive)
             {
                 this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
             }
+            MessageBox.Show(this.Player.HealthPoints.CurrentValue.ToString() + "\n" + this.Enemy.HealthPoints.CurrentValue.ToString());
+
+        }
+
+        private void ButtonOffensiveSpellOnClick(object sender, RoutedEventArgs e)
+        {
+            this.CombatLog.Text = this.Fighting.PlayerTurn("Offensive Skill") + this.CombatLog.Text;
+            if (this.Fighting.PlayerTookTurn && this.Enemy.isAlive)
+            {
+                this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
+            }
+            MessageBox.Show(this.Player.HealthPoints.CurrentValue.ToString() + "\n" + this.Enemy.HealthPoints.CurrentValue.ToString());
+
+        }
+
+        private void ButtonDeffensiveSpellOnClick(object sender, RoutedEventArgs e)
+        {
+            this.CombatLog.Text = this.Fighting.PlayerTurn("Deffensive Skill") + this.CombatLog.Text;
+            if (this.Fighting.PlayerTookTurn)
+            {
+                this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
+                this.Player.ArmorPoints -= this.Player.ArmorPoints / 2;
+            }
+            MessageBox.Show(this.Player.HealthPoints.CurrentValue.ToString() + "\n" + this.Enemy.HealthPoints.CurrentValue.ToString());
         }
 
         private void ButtonDrinkPotionOnClick(object sender, RoutedEventArgs e)

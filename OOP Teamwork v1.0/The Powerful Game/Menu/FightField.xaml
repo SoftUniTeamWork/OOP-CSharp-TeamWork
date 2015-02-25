@@ -5,7 +5,7 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 	mc:Ignorable="d"
 	x:Class="The_Powerful_Game.Menu.FightField"
-	d:DesignWidth="800" d:DesignHeight="600">
+	d:DesignWidth="640" d:DesignHeight="480" Width="800" Height="600">
 
     <UserControl.Resources>
         <Style TargetType="TextBlock"
@@ -50,6 +50,7 @@
             <Setter Property="Height"
                     Value="23"></Setter>
         </Style>
+
     </UserControl.Resources>
 
     <Grid x:Name="fight">
@@ -94,25 +95,26 @@
                         Content="Attack"
                         Click="ButtonAttackOnClick"
                         Height="26"
-                        Margin="0, 6, 0, 2">
+                        Margin="2, 6, 0, 2">
                     <Button.Background>
                         <ImageBrush ImageSource="../Resources/FightField/button-normal.png"></ImageBrush>
                     </Button.Background>
                 </Button>
                 <Button Style="{StaticResource ButtonMenuStyle}"
-                        Content="Potion"
-                        Click="ButtonDrinkPotionOnClick"
+                	Content="Offensive Spell"
+                	Click="ButtonOffensiveSpellOnClick"
+                	    Height="26"
+                	    Width="128"
+                        Margin="2, 2, 0 ,2">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
+                    </Button.Background>
+                </Button>
+                <Button Style="{StaticResource ButtonMenuStyle}"
+                        Content="Deffensive Spell"
+                        Click="ButtonDeffensiveSpellOnClick"
                         Height="26"
-                        Margin="0, -2, 0, 0">
-                    <Button.Background>
-                        <ImageBrush ImageSource="../Resources/FightField/button-normal.png"></ImageBrush>
-                    </Button.Background>
-                </Button>
-                <Button Style="{StaticResource ButtonMenuStyle}"
-                	Content="Spell"
-                	Click="ButtonSpellOnClick"
-                	Height="26"
-                	Width="128">
+                        Margin="2, 2, 0, 2">
                     <Button.Background>
                         <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
                     </Button.Background>
@@ -122,7 +124,7 @@
                 	Click="ButtonFledOnClick"
                         Height="26"
                         Width="128"
-                        Margin="0, 0, 0, 0">
+                        Margin="2, 2, 0, 2">
                     <Button.Background>
                         <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
                     </Button.Background>
@@ -130,9 +132,9 @@
             </Menu>
             <TextBox Height="138"
                      Name="CombatLog"
+                     Padding="6, 6, 6, 6"
                      Canvas.Left="171"
                      TextWrapping="Wrap"
-                     Text="Combat Log"
                      FontSize="12"
                      Foreground="White"
                      IsReadOnly = "True"

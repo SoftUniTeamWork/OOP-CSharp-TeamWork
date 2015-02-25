@@ -24,6 +24,7 @@
         {
             string combatLogResult = this.Enemy.Attack(this.Player);
             PlayerDeadCheck();
+            EnemyDeadCheck();
             return combatLogResult;
         }
 
@@ -40,13 +41,13 @@
                     combatLogResult = this.Player.CastOffensiveSpell(this.Enemy);
                     break;
                 case "Deffensive Skill":
-                    combatLogResult = this.Player.CastDeffensiveSpell();
+                    combatLogResult = this.Player.CastDeffensiveSpell(this.Enemy);
                     break;
             }
 
             this.PlayerTookTurn = !string.IsNullOrEmpty(combatLogResult);
             EnemyDeadCheck();
-            
+
             return combatLogResult;
         }
 
@@ -61,7 +62,15 @@
 
         private void EnemyDeadCheck()
         {
-            if (this.Enemy.HealthPoints.CurrentValue == 0)
+            if (this.Enemy.Fled)
+            {
+                MessageBox.Show("Your enemy has fled from the battle.\n");
+                this.Enemy.isAlive = false;
+                this.Enemy.Update();
+                CompositionTarget.Rendering += Gameplay.MainEngine.Run;
+                Switcher.Switch(Gameplay.Control);
+            }
+            else if (this.Enemy.HealthPoints.CurrentValue == 0)
             {
                 MessageBox.Show("You killed your enemy gain xp and reward.");
                 this.Enemy.isAlive = false;

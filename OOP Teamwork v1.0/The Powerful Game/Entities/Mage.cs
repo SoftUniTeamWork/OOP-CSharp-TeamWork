@@ -18,6 +18,8 @@ namespace The_Powerful_Game.Entities
             this.defensiveAbillity = new Abillity("Mana Shield", 20, 50);
         }
 
+        public override bool DeffensiveBuff { get; set; }
+
         public override string Attack(Enemy enemy)
         {
             Random fightSituation = new Random();
@@ -74,7 +76,7 @@ namespace The_Powerful_Game.Entities
             throw new NotImplementedException();
         }
 
-        public override string CastDeffensiveSpell()
+        public override string CastDeffensiveSpell(Enemy enemy)
         {
             throw new NotImplementedException();
         }

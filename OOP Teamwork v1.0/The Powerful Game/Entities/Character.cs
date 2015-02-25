@@ -58,6 +58,8 @@
 
         public EntityResourceType ResourceType { get; set; }
 
+        public abstract bool DeffensiveBuff { get; set; }
+
         public int Level
         {
             get { return this.level; }
@@ -74,7 +76,7 @@
 
         public abstract string CastOffensiveSpell(Enemy enemy);
 
-        public abstract string CastDeffensiveSpell();
+        public abstract string CastDeffensiveSpell(Enemy enemy);
 
         public override void Update()
         {

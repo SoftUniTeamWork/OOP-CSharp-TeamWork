@@ -9,13 +9,13 @@
         public Hunter(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image image, int strength, int inteligence, int agility, AttributePair resourcePoints, EntityResourceType resourceType)
             : base(name, x, y, healthPoints, armorPoints, damage, image, strength, inteligence, agility, resourcePoints, resourceType)
         {
-
             // Deals 80 damage to the enemy target.
             this.offensiveAbillity = new Abillity("Power Shot", 20, 80);
-            // Grants the user 50 miss chance.
+            // Grants the user 100% miss chance.
             this.defensiveAbillity = new Abillity("Avoidance", 30, 50);
-
         }
+
+        public override bool DeffensiveBuff { get; set; }
 
         public override string Attack(Enemy enemy)
         {
@@ -71,7 +71,7 @@
             throw new NotImplementedException();
         }
 
-        public override string CastDeffensiveSpell()
+        public override string CastDeffensiveSpell(Enemy enemy)
         {
             throw new NotImplementedException();
         }

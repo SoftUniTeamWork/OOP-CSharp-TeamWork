@@ -87,9 +87,10 @@
 
         public abstract void Render();
 
-        public virtual void ProcessDamageTaken(int damage)
+        public virtual int ProcessDamageTaken(int damage)
         {
             this.HealthPoints = this.HealthPoints.Decrease(damage - this.ArmorPoints);
+            return damage - this.ArmorPoints;
         }
 
         public override string ToString()
