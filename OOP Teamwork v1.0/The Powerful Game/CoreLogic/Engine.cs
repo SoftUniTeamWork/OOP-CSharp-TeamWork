@@ -56,27 +56,30 @@
         {
             string playerName = "Player";
 
-            var health = new AttributePair(Constants.PlayerHealthPoints, Constants.PlayerHealthPoints);
+            AttributePair health;
             Image playerImage = null;
             Character player = null;
             switch (Choosing.classType)
             {
                 case ClassType.Warrior:
+                    health = new AttributePair(Constants.WarriorHealthPoints, Constants.WarriorHealthPoints);
                     playerImage = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.WarriorImage);
-                    player = new Warrior(playerName, 100, 100, health, Constants.PlayerArmorPoints,
-                        Constants.PlayerDamagePoints, playerImage, 2, 1, 1, new AttributePair(Constants.PlayerResourcePoints, Constants.PlayerResourcePoints),
+                    player = new Warrior(playerName, 100, 100, health, Constants.WarriorArmorPoints,
+                        Constants.WarriorDamagePoints, playerImage, 2, 1, 1, new AttributePair(Constants.CharacterResourcePoints, Constants.CharacterResourcePoints),
                         EntityResourceType.Rage);
                     break;
                 case ClassType.Mage:
+                    health = new AttributePair(Constants.MageHealthPoints, Constants.MageHealthPoints);
                     playerImage = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.MageImage);
-                    player = new Mage(playerName, 100, 100, health, Constants.PlayerArmorPoints,
-                        Constants.PlayerDamagePoints, playerImage, 2, 1, 1, new AttributePair(Constants.PlayerResourcePoints, Constants.PlayerResourcePoints),
+                    player = new Mage(playerName, 100, 100, health, Constants.MageArmorPoints,
+                        Constants.MageDamagePoints, playerImage, 2, 1, 1, new AttributePair(Constants.CharacterResourcePoints, Constants.CharacterResourcePoints),
                         EntityResourceType.Mana);
                     break;
                 case ClassType.Hunter:
+                    health = new AttributePair(Constants.HunterHealthPoints, Constants.HunterHealthPoints);
                     playerImage = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.HunterImage);
-                    player = new Hunter(playerName, 100, 100, health, Constants.PlayerArmorPoints,
-                        Constants.PlayerDamagePoints, playerImage, 2, 1, 1, new AttributePair(Constants.PlayerResourcePoints, Constants.PlayerResourcePoints),
+                    player = new Hunter(playerName, 100, 100, health, Constants.HunterArmorPoints,
+                        Constants.HunterDamagePoints, playerImage, 2, 1, 1, new AttributePair(Constants.CharacterResourcePoints, Constants.CharacterResourcePoints),
                         EntityResourceType.Energy);
                     break;
 
@@ -91,7 +94,7 @@
 
             string enemyName = "Enemy";
             var img = GenerateImage(enemyName, Constants.PlayerWidth, Constants.PlayerHeight, Constants.EnemyImage);
-            var health = new AttributePair(Constants.PlayerHealthPoints, Constants.PlayerHealthPoints);
+            var health = new AttributePair(Constants.EnemyHealthPoints, Constants.EnemyHealthPoints);
             var enemy = new Enemy(
                 enemyName,
                 x,

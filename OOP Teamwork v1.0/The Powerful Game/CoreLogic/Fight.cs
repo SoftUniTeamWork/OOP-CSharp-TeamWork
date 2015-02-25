@@ -24,7 +24,7 @@
         {
             string combatLogResult = this.Enemy.Attack(this.Player);
             PlayerDeadCheck();
-            EnemyDeadCheck();
+            FightOverCheck();
             return combatLogResult;
         }
 
@@ -46,7 +46,7 @@
             }
 
             this.PlayerTookTurn = !string.IsNullOrEmpty(combatLogResult);
-            EnemyDeadCheck();
+            FightOverCheck();
 
             return combatLogResult;
         }
@@ -60,7 +60,7 @@
             }
         }
 
-        private void EnemyDeadCheck()
+        private void FightOverCheck()
         {
             if (this.Enemy.Fled)
             {
@@ -69,6 +69,10 @@
                 this.Enemy.Update();
                 CompositionTarget.Rendering += Gameplay.MainEngine.Run;
                 Switcher.Switch(Gameplay.Control);
+                if (this.Player is Mage)
+                {
+                    this.Player.RegenerateResource();
+                }
             }
             else if (this.Enemy.HealthPoints.CurrentValue == 0)
             {
@@ -77,6 +81,10 @@
                 this.Enemy.Update();
                 CompositionTarget.Rendering += Gameplay.MainEngine.Run;
                 Switcher.Switch(Gameplay.Control);
+                if (this.Player is Mage)
+                {
+                    this.Player.RegenerateResource();
+                }
             }
         }
     }

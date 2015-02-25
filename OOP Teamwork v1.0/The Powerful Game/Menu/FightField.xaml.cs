@@ -8,7 +8,6 @@
     using MessageBox = System.Windows.MessageBox;
     using UserControl = System.Windows.Controls.UserControl;
 
-
     /// <summary>
     /// Interaction logic for Fight.xaml
     /// </summary>
@@ -48,8 +47,11 @@
             {
                 this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
             }
-            MessageBox.Show(this.Player.HealthPoints.CurrentValue.ToString() + "\n" + this.Enemy.HealthPoints.CurrentValue.ToString());
-
+            MessageBox.Show("Player Health: "
+                            + this.Player.HealthPoints.CurrentValue.ToString()
+                            + "\n"
+                            + "Enemy Health: "
+                            + this.Enemy.HealthPoints.CurrentValue.ToString());
         }
 
         private void ButtonOffensiveSpellOnClick(object sender, RoutedEventArgs e)
@@ -59,8 +61,11 @@
             {
                 this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
             }
-            MessageBox.Show(this.Player.HealthPoints.CurrentValue.ToString() + "\n" + this.Enemy.HealthPoints.CurrentValue.ToString());
-
+            MessageBox.Show("Player Health: "
+                            + this.Player.HealthPoints.CurrentValue.ToString()
+                            + "\n"
+                            + "Enemy Health: "
+                            + this.Enemy.HealthPoints.CurrentValue.ToString());
         }
 
         private void ButtonDeffensiveSpellOnClick(object sender, RoutedEventArgs e)
@@ -71,7 +76,12 @@
                 this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
                 this.Player.ArmorPoints -= this.Player.ArmorPoints / 2;
             }
-            MessageBox.Show(this.Player.HealthPoints.CurrentValue.ToString() + "\n" + this.Enemy.HealthPoints.CurrentValue.ToString());
+            MessageBox.Show(
+                            "Player Health: "
+                            + this.Player.HealthPoints.CurrentValue.ToString()
+                            + "\n"
+                            + "Enemy Health: "
+                            + this.Enemy.HealthPoints.CurrentValue.ToString());
         }
 
         private void ButtonDrinkPotionOnClick(object sender, RoutedEventArgs e)

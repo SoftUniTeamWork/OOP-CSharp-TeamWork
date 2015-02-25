@@ -58,7 +58,8 @@
             {
                 // Enemy stuns you and deals 50% damage
                 int damageDealt = player.ProcessDamageTaken((int)Math.Round(this.Damage / 2.0));
-                combatLogResult = "The enemy dashes you knocking you on the ground. You lose your turn and " + damageDealt + " Health Points.\n";
+                combatLogResult = "The enemy dashes you knocking you on the ground. You lose your turn and "
+                    + damageDealt + " Health Points.\n";
             }
             else if (fightCase > 90 && fightCase <= 94)
             {
@@ -85,11 +86,15 @@
             }
             else if (fightCase == 106)
             {
-
+                player.ResourcePoints = player.ResourcePoints.Increase((int)this.Damage * 3 / 5);
+                int damageDealt = player.ProcessDamageTaken(this.Damage * 1 / 3);
+                combatLogResult = string.Format("The Enemy hits your mana shield dealing {0} and restoring {1} mana.\n", damageDealt, (int)this.Damage * 3 / 5);
+                player.DeffensiveBuff = false;
             }
             else if (fightCase == 107)
             {
-
+                combatLogResult = string.Format("The Enemy reaches to hit you but you Avoid.\n");
+                player.DeffensiveBuff = false;
             }
 
             return combatLogResult;

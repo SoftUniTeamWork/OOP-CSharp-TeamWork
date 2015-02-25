@@ -7,7 +7,8 @@
 
     public class Warrior : Character
     {
-        public Warrior(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image img, int strength, int inteligence, int agility, AttributePair resourcePoints, EntityResourceType resourceType)
+        public Warrior(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image img, int strength,
+            int inteligence, int agility, AttributePair resourcePoints, EntityResourceType resourceType)
             : base(name, x, y, healthPoints, armorPoints, damage, img, strength, inteligence, agility, resourcePoints, resourceType)
         {
             // Doubles player damage for the next attack.
@@ -65,9 +66,8 @@
                 combatLogResult = "You miss your enemy.\n";
             }
 
-            this.GenerateRage();
+            this.RegenerateResource();
             return combatLogResult;
-
         }
 
         public override string CastOffensiveSpell(Enemy enemy)
@@ -77,15 +77,15 @@
             {
                 this.ResourcePoints = this.ResourcePoints.Decrease(this.offensiveAbillity.Cost);
                 enemy.ProcessDamageTaken(this.Damage + this.offensiveAbillity.EffectValue);
-                combatLogResult = string.Format("You strike with the Gods' strength for {0}.\n",
-                    this.Damage + this.offensiveAbillity.EffectValue);
+                combatLogResult = string.Format("You strike with the {1} for {0}.\n",
+                    this.Damage + this.offensiveAbillity.EffectValue, this.offensiveAbillity.Name);
             }
             else
             {
                 MessageBox.Show(string.Format("Not enough {0} for {1}!", this.ResourceType.ToString(), this.offensiveAbillity.Name));
             }
 
-            this.GenerateRage();
+            this.RegenerateResource();
             return combatLogResult;
         }
 
@@ -104,11 +104,11 @@
                 MessageBox.Show(string.Format("Not enough {0} for {1}!", this.ResourceType.ToString(), this.defensiveAbillity.Name));
             }
 
-            this.GenerateRage();
+            this.RegenerateResource();
             return combatLogResult;
         }
 
-        public void GenerateRage()
+        public override void RegenerateResource()
         {
             this.ResourcePoints = this.ResourcePoints.Increase(10);
         }

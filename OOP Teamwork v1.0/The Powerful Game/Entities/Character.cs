@@ -54,9 +54,11 @@
             set { this.agility = value; }
         }
 
-        public AttributePair ResourcePoints { get; protected set; }
+        public AttributePair ResourcePoints { get; internal set; }
 
         public EntityResourceType ResourceType { get; set; }
+
+        public abstract void RegenerateResource();
 
         public abstract bool DeffensiveBuff { get; set; }
 
@@ -91,22 +93,22 @@
         {
             if (Keyboard.IsKeyDown(Key.Up))
             {
-                this.Y -= Constants.PlayerMoveSpeed;
+                this.Y -= Constants.CharacterMoveSpeed;
             }
 
             if (Keyboard.IsKeyDown(Key.Down))
             {
-                this.Y += Constants.PlayerMoveSpeed;
+                this.Y += Constants.CharacterMoveSpeed;
             }
 
             if (Keyboard.IsKeyDown(Key.Left))
             {
-                this.X -= Constants.PlayerMoveSpeed;
+                this.X -= Constants.CharacterMoveSpeed;
             }
 
             if (Keyboard.IsKeyDown(Key.Right))
             {
-                this.X += Constants.PlayerMoveSpeed;
+                this.X += Constants.CharacterMoveSpeed;
             }
         }
 
