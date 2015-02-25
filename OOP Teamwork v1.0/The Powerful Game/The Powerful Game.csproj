@@ -81,6 +81,11 @@
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\Location\ItemLocation.cs" />
     <Compile Include="Items\Weapon.cs" />
+    <Compile Include="Map\Map.cs" />
+    <Compile Include="Map\Tile.cs" />
+    <Compile Include="Map\Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Menu\Choosing.xaml.cs">
       <DependentUpon>Choosing.xaml</DependentUpon>
     </Compile>
@@ -141,6 +146,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Map\Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Menu\Choosing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
