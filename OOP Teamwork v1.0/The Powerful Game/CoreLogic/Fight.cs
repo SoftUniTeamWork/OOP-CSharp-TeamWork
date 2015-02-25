@@ -22,7 +22,7 @@
 
         public string EnemyTurn()
         {
-            string combatLogResult = this.Enemy.Attack();
+            string combatLogResult = this.Enemy.Attack(this.Player);
             PlayerDeadCheck();
             return combatLogResult;
         }
@@ -38,18 +38,15 @@
                     break;
                 case "Offensive Skill":
                     combatLogResult = this.Player.CastOffensiveSpell(this.Enemy);
-                    if (string.IsNullOrEmpty(combatLogResult))
-                    {
-                        this.PlayerTookTurn = true;
-                    }
                     break;
                 case "Deffensive Skill":
-                    //combatLogResult = this.Player.CastSpell2(this.Enemy);
-
+                    combatLogResult = this.Player.CastDeffensiveSpell();
                     break;
             }
 
+            this.PlayerTookTurn = !string.IsNullOrEmpty(combatLogResult);
             EnemyDeadCheck();
+            
             return combatLogResult;
         }
 

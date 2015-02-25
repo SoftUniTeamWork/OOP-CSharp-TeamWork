@@ -66,9 +66,10 @@
                    Margin="0,10,83,0"
                    Text="Orc Revenger"
                    Width="220"/>
-        <Image Style="{StaticResource Character}"
-               Source="../Resources/FightField/player-withgrass.png"
-               Margin="95,106,511,184" Height="310"/>
+        <Image x:Name="PlayerImage" 
+               Source="../Resources/Classes/Warrior.png"
+               Width="194" Margin="84,122,522,184"/>
+
         <Image Style="{StaticResource Character}"
                Source="../Resources/FightField/enemy-withgrass.png"
                HorizontalAlignment="Center"

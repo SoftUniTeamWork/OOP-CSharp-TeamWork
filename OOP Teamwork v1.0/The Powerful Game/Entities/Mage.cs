@@ -74,7 +74,7 @@ namespace The_Powerful_Game.Entities
             throw new NotImplementedException();
         }
 
-        public override string CastDeffensiveSpell(Enemy enemy)
+        public override string CastDeffensiveSpell()
         {
             throw new NotImplementedException();
         }

@@ -1,8 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Media;
-using The_Powerful_Game.Enums;
-
-namespace The_Powerful_Game.CoreLogic
+﻿namespace The_Powerful_Game.CoreLogic
 {
     using System;
     using System.Collections.Generic;
@@ -10,6 +6,7 @@ namespace The_Powerful_Game.CoreLogic
     using System.Windows.Media.Imaging;
     using The_Powerful_Game.Entities;
     using The_Powerful_Game.Entities.Chooses;
+    using The_Powerful_Game.Enums;
     using The_Powerful_Game.Menu;
 
     public class Engine
@@ -58,29 +55,33 @@ namespace The_Powerful_Game.CoreLogic
         private Character GeneratePlayer()
         {
             string playerName = "Player";
-            var img = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.PlayerImage);
+
             var health = new AttributePair(Constants.PlayerHealthPoints, Constants.PlayerHealthPoints);
-            Gameplay.Root.Children.Add(img);
+            Image playerImage = null;
             Character player = null;
             switch (Choosing.classType)
             {
                 case ClassType.Warrior:
+                    playerImage = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.WarriorImage);
                     player = new Warrior(playerName, 100, 100, health, Constants.PlayerArmorPoints,
-                        Constants.PlayerDamagePoints, img, 2, 1, 1, new AttributePair(Constants.PlayerResourcePoints, Constants.PlayerResourcePoints),
+                        Constants.PlayerDamagePoints, playerImage, 2, 1, 1, new AttributePair(Constants.PlayerResourcePoints, Constants.PlayerResourcePoints),
                         EntityResourceType.Rage);
                     break;
                 case ClassType.Mage:
-                    player = new Warrior(playerName, 100, 100, health, Constants.PlayerArmorPoints,
-                        Constants.PlayerDamagePoints, img, 2, 1, 1, new AttributePair(Constants.PlayerResourcePoints, Constants.PlayerResourcePoints),
+                    playerImage = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.MageImage);
+                    player = new Mage(playerName, 100, 100, health, Constants.PlayerArmorPoints,
+                        Constants.PlayerDamagePoints, playerImage, 2, 1, 1, new AttributePair(Constants.PlayerResourcePoints, Constants.PlayerResourcePoints),
                         EntityResourceType.Mana);
                     break;
                 case ClassType.Hunter:
-                    player = new Warrior(playerName, 100, 100, health, Constants.PlayerArmorPoints,
-                        Constants.PlayerDamagePoints, img, 2, 1, 1, new AttributePair(Constants.PlayerResourcePoints, Constants.PlayerResourcePoints),
+                    playerImage = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.HunterImage);
+                    player = new Hunter(playerName, 100, 100, health, Constants.PlayerArmorPoints,
+                        Constants.PlayerDamagePoints, playerImage, 2, 1, 1, new AttributePair(Constants.PlayerResourcePoints, Constants.PlayerResourcePoints),
                         EntityResourceType.Energy);
                     break;
 
             }
+            Gameplay.Root.Children.Add(playerImage);
             return player;
         }
 

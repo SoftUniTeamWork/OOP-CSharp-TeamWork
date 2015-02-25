@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Input;
-using The_Powerful_Game.Contracts;
-using The_Powerful_Game.CoreLogic;
-using The_Powerful_Game.Entities.Chooses;
-
-namespace The_Powerful_Game.Entities
+﻿namespace The_Powerful_Game.Entities
 {
+    using System.Windows.Controls;
+    using System.Windows.Input;
+    using The_Powerful_Game.Contracts;
+    using The_Powerful_Game.CoreLogic;
+    using The_Powerful_Game.Entities.Chooses;
+
     public abstract class Character : Entity, IControllable
     {
         private int strength;
@@ -79,7 +74,7 @@ namespace The_Powerful_Game.Entities
 
         public abstract string CastOffensiveSpell(Enemy enemy);
 
-        public abstract string CastDeffensiveSpell(Enemy enemy);
+        public abstract string CastDeffensiveSpell();
 
         public override void Update()
         {

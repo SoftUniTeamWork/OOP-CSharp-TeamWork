@@ -1,7 +1,8 @@
-﻿using System.Windows.Controls;
-
-namespace The_Powerful_Game.Menu
+﻿namespace The_Powerful_Game.Menu
 {
+    using System;
+    using System.Windows.Controls;
+    using System.Windows.Media.Imaging;
     using System.Windows;
     using System.Windows.Forms;
     using System.Windows.Media;
@@ -9,6 +10,7 @@ namespace The_Powerful_Game.Menu
     using The_Powerful_Game.Entities;
     using MessageBox = System.Windows.MessageBox;
     using UserControl = System.Windows.Controls.UserControl;
+
 
     /// <summary>
     /// Interaction logic for Fight.xaml
@@ -51,7 +53,7 @@ namespace The_Powerful_Game.Menu
         private void ButtonSpellOnClick(object sender, RoutedEventArgs e)
         {
             this.CombatLog.Text = this.Fighting.PlayerTurn("Offensive Skill") + this.CombatLog.Text;
-            if (!this.Fighting.PlayerTookTurn)
+            if (this.Fighting.PlayerTookTurn)
             {
                 this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
             }

@@ -1,26 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
-namespace The_Powerful_Game.Menu
+﻿namespace The_Powerful_Game.Menu
 {
+    using System;
+    using System.Windows;
+    using System.Windows.Controls;
+
     /// <summary>
     /// Interaction logic for MainMenu.xaml
     /// </summary>
     public partial class MainMenu : UserControl, ISwitchable
     {
-
-
         public MainMenu()
         {
             InitializeComponent();
@@ -30,7 +18,6 @@ namespace The_Powerful_Game.Menu
         {
             Switcher.Switch(new Choosing());
         }
-
 
         private void optionButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
@@ -54,9 +41,5 @@ namespace The_Powerful_Game.Menu
 
        
         #endregion
-
-       
-
-        
     }
 }

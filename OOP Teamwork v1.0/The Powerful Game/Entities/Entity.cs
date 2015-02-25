@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace The_Powerful_Game.Entities
+﻿namespace The_Powerful_Game.Entities
 {
     using System;
     using System.Text;

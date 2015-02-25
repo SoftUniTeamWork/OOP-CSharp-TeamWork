@@ -1,11 +1,8 @@
-﻿using System.Windows;
-using The_Powerful_Game.CoreLogic;
-using The_Powerful_Game.Menu;
-
-namespace The_Powerful_Game.Entities
+﻿namespace The_Powerful_Game.Entities
 {
     using System;
     using System.Windows.Controls;
+    using The_Powerful_Game.Menu;
 
     public class Enemy : Entity
     {
@@ -14,7 +11,7 @@ namespace The_Powerful_Game.Entities
         {
         }
 
-        public string Attack()
+        public string Attack(Character player)
         {
             Random fightSituation = new Random();
             int fightCase = fightSituation.Next(1, 10);

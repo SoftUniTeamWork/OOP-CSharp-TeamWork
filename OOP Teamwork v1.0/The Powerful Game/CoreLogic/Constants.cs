@@ -1,4 +1,8 @@
-﻿namespace The_Powerful_Game.CoreLogic
+﻿using System;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+
+namespace The_Powerful_Game.CoreLogic
 {
     public static class Constants
     {
@@ -12,7 +16,9 @@
         public static readonly int PlayerDamagePoints = 30;
         public static readonly int PlayerMoveSpeed = 2;
 
-        public static readonly string PlayerImage = @"pack://application:,,,/Resources/WoodElf.png";
+        public static readonly string WarriorImage = @"pack://application:,,,/Resources/Classes/Warrior.png";
+        public static readonly string HunterImage = @"pack://application:,,,/Resources/Classes/Hunter.png";
+        public static readonly string MageImage = @"pack://application:,,,/Resources/Classes/Mage.png";
 
         public static readonly int EnemyHealthPoints = 200;
         public static readonly int EnemyArmorPoints = 10;
@@ -20,10 +26,10 @@
 
         public static readonly string EnemyImage = @"pack://application:,,,/Resources/3D-Orc.png";
 
-        public static readonly int PlayerWidth = 30;
-        public static readonly int PlayerHeight = 30;
+        public static readonly int PlayerWidth = 40;
+        public static readonly int PlayerHeight = 40;
 
-        public static readonly int EnemyWidth = 30;
-        public static readonly int EnemyHeight = 30;
+        public static readonly int EnemyWidth = 40;
+        public static readonly int EnemyHeight = 40;
     }
 }

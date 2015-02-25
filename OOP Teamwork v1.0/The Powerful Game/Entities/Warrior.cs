@@ -1,6 +1,4 @@
-﻿using The_Powerful_Game.Contracts;
-
-namespace The_Powerful_Game.Entities
+﻿namespace The_Powerful_Game.Entities
 {
     using System;
     using System.Windows.Controls;
@@ -16,13 +14,13 @@ namespace The_Powerful_Game.Entities
             // Doubles player damage for the next attack.
             this.offensiveAbillity = new Abillity("God Strength", 50, this.Damage);
             // Increases player's armour points by 50%.
-            this.defensiveAbillity = new Abillity("Taunt", 40, this.ArmorPoints / 2);
+            this.defensiveAbillity = new Abillity("Taunt", 40, this.ArmorPoints);
         }
 
-        public override string Attack(Enemy enemy)       
-	{
+        public override string Attack(Enemy enemy)
+        {
             Random fightSituation = new Random();
-            
+
             int fightCase = fightSituation.Next(1, 101);
 
             string combatLogResult = "";
@@ -32,7 +30,6 @@ namespace The_Powerful_Game.Entities
 
             if (fightCase <= 30)
             {
-
                 // Deal 100% damage
                 enemy.ProcessDamageTaken(normalAttackDamage);
                 combatLogResult = "You deal " + normalAttackDamage + " damage.\n";
@@ -55,7 +52,7 @@ namespace The_Powerful_Game.Entities
                 enemy.ProcessDamageTaken(normalAttackDamage / 2);
                 combatLogResult = "With a fierce strike you deal " + normalAttackDamage / 2 + " damage and stun your opponent for 1 round.\n";
             }
-            else if (fightCase > 90 && fightCase <= 95) 
+            else if (fightCase > 90 && fightCase <= 95)
             {
                 // Deal Critical 150% damage
                 enemy.ProcessDamageTaken((int)Math.Round(normalAttackDamage * 3 / 2.0));
@@ -84,14 +81,25 @@ namespace The_Powerful_Game.Entities
             }
             else
             {
-                MessageBox.Show("Not enough resources!");
+                MessageBox.Show(string.Format("Not enough {0} for {1}!", this.ResourceType.ToString(), this.offensiveAbillity.Name));
             }
             return combatLogResult;
         }
 
-        public override string CastDeffensiveSpell(Enemy enemy)
+        public override string CastDeffensiveSpell()
         {
-            throw new NotImplementedException();
+            string combatLogResult = "";
+            if (this.ResourcePoints.CurrentValue >= this.defensiveAbillity.Cost)
+            {
+                this.ArmorPoints += this.defensiveAbillity.EffectValue;
+                combatLogResult = string.Format("Taunting the enemy grants you double armor points for their attack.");
+            }
+            else
+            {
+                MessageBox.Show(string.Format("Not enough {0} for {1}!", this.ResourceType.ToString(), this.defensiveAbillity.Name));
+            }
+
+            return combatLogResult;
         }
 
         public void GenerateRage()
