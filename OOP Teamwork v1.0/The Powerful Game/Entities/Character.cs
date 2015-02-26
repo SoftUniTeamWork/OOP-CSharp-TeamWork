@@ -2,7 +2,7 @@
 {
     using System.Windows.Controls;
     using System.Windows.Input;
-    using System.Collections.Generic;
+    using System.Collections.Generic;   
     using The_Powerful_Game.Enums;
     using The_Powerful_Game.Items;
     using The_Powerful_Game.Contracts;
@@ -26,7 +26,7 @@
         private AttributePair resourcePoints;
         private EntityResourceType resourceType;
 
-        public readonly List<Item> Inventory = new List<Item>(6);
+        public readonly List<Item> Inventory = new List<Item>();
 
         protected Abillity offensiveAbillity;
         protected Abillity defensiveAbillity;
@@ -123,10 +123,13 @@
 
         public void EquipItem(Item item)
         {
-            this.Inventory.Add(item);
-            if (item is GearItem)
+            if (item != null)
             {
-                this.ApplyItemModifiers(item as GearItem);
+                this.Inventory.Add(item);
+                if (item is GearItem)
+                {
+                    this.ApplyItemModifiers(item as GearItem);
+                }
             }
         }
 
@@ -162,7 +165,8 @@
         {
             this.ResourcePoints = this.ResourcePoints.Increase(resourcePotion.ConsumptionValue);
             this.Inventory.Remove(resourcePotion);
-            return "You drink a Resource Potion. Your Resource Points are now " + this.ResourcePoints.CurrentValue + "\n";
+            return "You drink a Resource Potion. Your " + this.ResourceType
+                + " Points are now " + this.ResourcePoints.CurrentValue + "\n";
         }
 
         public void Flee(Enemy enemy)

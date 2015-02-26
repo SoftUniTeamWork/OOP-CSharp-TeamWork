@@ -1,4 +1,7 @@
-﻿namespace The_Powerful_Game.CoreLogic
+﻿using System;
+using The_Powerful_Game.Items;
+
+namespace The_Powerful_Game.CoreLogic
 {
     using System.Windows.Media;
     using The_Powerful_Game.Menu;
@@ -64,7 +67,7 @@
         {
             if (this.Enemy.Fled)
             {
-                MessageBox.Show("Your enemy has fled from the battle.\n");
+                MessageBox.Show("The enemy fled the battlefield like a coward.\n");
                 this.Enemy.isAlive = false;
                 this.Enemy.Update();
                 CompositionTarget.Rendering += Gameplay.MainEngine.Run;
@@ -76,16 +79,51 @@
             }
             else if (this.Enemy.HealthPoints.CurrentValue == 0)
             {
-                MessageBox.Show("You killed your enemy gain xp and reward.");
+                MessageBox.Show("Glorious Victory!");
                 this.Enemy.isAlive = false;
                 this.Enemy.Update();
+
+                this.Player.EquipItem(this.DropItem());
+
                 CompositionTarget.Rendering += Gameplay.MainEngine.Run;
                 Switcher.Switch(Gameplay.Control);
+
                 if (this.Player is Mage)
                 {
                     this.Player.RegenerateResource();
                 }
             }
+        }
+
+        private Item DropItem()
+        {
+            Item droppedItem = null;
+            if (this.Player.Inventory.Count < 6)
+            {
+                Random itemRandomizer = new Random();
+                int gearOrConsumable = itemRandomizer.Next(0, 100);
+
+                if (gearOrConsumable < 30)
+                {
+                    int weaponOrGear = itemRandomizer.Next(0, 100);
+                    if (weaponOrGear > 50)
+                    {
+                        droppedItem = ItemList.EquipableItems[itemRandomizer.Next(6, ItemList.EquipableItems.Count + 1)];
+                    }
+                    else
+                    {
+                        droppedItem = ItemList.EquipableItems[itemRandomizer.Next(0, (ItemList.EquipableItems.Count / 2) + 1)];
+                    }
+                    MessageBox.Show(string.Format("The enemy dropped {0} - {1}.", droppedItem.Type, droppedItem.Name));
+                }
+                else
+                {
+                    droppedItem = ItemList.EquipableItems[itemRandomizer.Next(0, ItemList.ConsumableItems.Count + 1)];
+                    MessageBox.Show(string.Format("The enemy dropped {0}.", droppedItem.Name));
+                }
+            }
+
+            return droppedItem;
         }
     }
 }

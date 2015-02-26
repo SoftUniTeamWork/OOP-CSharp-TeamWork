@@ -70,6 +70,7 @@
     <Compile Include="Entities\Character.cs" />
     <Compile Include="Entities\Enemy.cs" />
     <Compile Include="Entities\Hunter.cs" />
+    <Compile Include="Entities\Merchant.cs" />
     <Compile Include="Entities\Warrior.cs" />
     <Compile Include="Entities\Mage.cs" />
     <Compile Include="Enums\ClassType.cs" />

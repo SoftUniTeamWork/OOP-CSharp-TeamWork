@@ -16,13 +16,13 @@
 
         public Enemy Enemy { get; private set; }
 
-        public Fight Fighting { get; private set; }
+        public Fight Fight { get; private set; }
 
         public FightField(Character player, Enemy enemy)
         {
             this.Player = player;
             this.Enemy = enemy;
-            this.Fighting = new Fight(player, enemy);
+            this.Fight = new Fight(player, enemy);
 
             InitializeComponent();
         }
@@ -41,28 +41,28 @@
 
         private void ButtonAttackOnClick(object sender, RoutedEventArgs e)
         {
-            this.CombatLog.Text = this.Fighting.PlayerTurn("Attack") + this.CombatLog.Text;
+            this.CombatLog.Text = this.Fight.PlayerTurn("Attack") + this.CombatLog.Text;
             if (this.Enemy.isAlive)
             {
-                this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
+                this.CombatLog.Text = this.Fight.EnemyTurn() + this.CombatLog.Text;
             }
         }
 
         private void ButtonOffensiveSpellOnClick(object sender, RoutedEventArgs e)
         {
-            this.CombatLog.Text = this.Fighting.PlayerTurn("Offensive Skill") + this.CombatLog.Text;
-            if (this.Fighting.PlayerTookTurn && this.Enemy.isAlive)
+            this.CombatLog.Text = this.Fight.PlayerTurn("Offensive Skill") + this.CombatLog.Text;
+            if (this.Fight.PlayerTookTurn && this.Enemy.isAlive)
             {
-                this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
+                this.CombatLog.Text = this.Fight.EnemyTurn() + this.CombatLog.Text;
             }
         }
 
         private void ButtonDeffensiveSpellOnClick(object sender, RoutedEventArgs e)
         {
-            this.CombatLog.Text = this.Fighting.PlayerTurn("Deffensive Skill") + this.CombatLog.Text;
-            if (this.Fighting.PlayerTookTurn)
+            this.CombatLog.Text = this.Fight.PlayerTurn("Deffensive Skill") + this.CombatLog.Text;
+            if (this.Fight.PlayerTookTurn)
             {
-                this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
+                this.CombatLog.Text = this.Fight.EnemyTurn() + this.CombatLog.Text;
                 this.Player.ArmorPoints -= this.Player.ArmorPoints / 2;
             }
         }
@@ -92,5 +92,6 @@
                 MessageBox.Show("No Resource Potions available.");
             }
         }
+
     }
 }
