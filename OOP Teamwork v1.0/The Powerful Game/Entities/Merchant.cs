@@ -5,7 +5,7 @@ using The_Powerful_Game.Items;
 
 namespace The_Powerful_Game.Entities
 {
-    class Merchant : Entity
+    public class Merchant : Entity
     {
         // List of Item`s You can buy
         private List<Item> productsList;
