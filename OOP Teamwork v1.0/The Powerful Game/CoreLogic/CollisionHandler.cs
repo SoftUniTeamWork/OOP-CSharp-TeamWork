@@ -43,12 +43,7 @@ namespace The_Powerful_Game.CoreLogic
                 return false;
             }
 
-            if (Gameplay.numMap[y][x] == 2 || Gameplay.numMap[y][x] == 1)
-            {
-                return false;
-            }
-
-            return true;
+            return Gameplay.numMap[y][x] != 2 && Gameplay.numMap[y][x] != 1;
         }
     }
 }
