@@ -65,6 +65,7 @@
     <Compile Include="CoreLogic\Constants.cs" />
     <Compile Include="CoreLogic\EntityGenerator.cs" />
     <Compile Include="CoreLogic\Fight.cs" />
+    <Compile Include="CoreLogic\Trade.cs" />
     <Compile Include="Entities\Abillity.cs" />
     <Compile Include="Entities\AttributePair.cs" />
     <Compile Include="Entities\Character.cs" />

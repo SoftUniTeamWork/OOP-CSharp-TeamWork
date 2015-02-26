@@ -72,6 +72,7 @@ namespace The_Powerful_Game.CoreLogic
                 this.Enemy.Update();
                 CompositionTarget.Rendering += Gameplay.MainEngine.Run;
                 Switcher.Switch(Gameplay.Control);
+
                 if (this.Player is Mage)
                 {
                     this.Player.RegenerateResource();
@@ -82,7 +83,6 @@ namespace The_Powerful_Game.CoreLogic
                 MessageBox.Show("Glorious Victory!");
                 this.Enemy.isAlive = false;
                 this.Enemy.Update();
-
                 this.Player.EquipItem(this.DropItem());
 
                 CompositionTarget.Rendering += Gameplay.MainEngine.Run;
@@ -114,9 +114,11 @@ namespace The_Powerful_Game.CoreLogic
                     {
                         droppedItem = ItemList.EquipableItems[itemRandomizer.Next(0, (ItemList.EquipableItems.Count / 2) + 1)];
                     }
+
+                    ItemList.EquipableItems.Remove(droppedItem);
                     MessageBox.Show(string.Format("The enemy dropped {0} - {1}.", droppedItem.Type, droppedItem.Name));
                 }
-                else
+                else if (gearOrConsumable >= 30 && gearOrConsumable < 60)
                 {
                     droppedItem = ItemList.EquipableItems[itemRandomizer.Next(0, ItemList.ConsumableItems.Count + 1)];
                     MessageBox.Show(string.Format("The enemy dropped {0}.", droppedItem.Name));

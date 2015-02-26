@@ -148,10 +148,31 @@
             this.Agility += item.AgilityModifier;
         }
 
-        public void Sell(Item item)
+        public void RevertItemModifiers(GearItem item)
+        {
+            if (item is Weapon)
+            {
+                this.Damage -= (item as Weapon).DamageModifier;
+            }
+            else if (item is Armor)
+            {
+                this.ArmorPoints -= (item as Armor).ArmorModifier;
+            }
+            this.Strength -= item.StrengthModifier;
+            this.Inteligence -= item.IntelectModifier;
+            this.Agility -= item.AgilityModifier;
+        }
+
+        public void SellItemToMerchant(Item item)
         {
             this.Inventory.Remove(item);
+            if (item is GearItem)
+            {
+                this.RevertItemModifiers(item as GearItem);
+            }
+            
             this.Gold += item.Price;
+            ItemList.EquipableItems.Add(item);
         }
 
         public string DrinkHealthPotion(HealthPotion healthPotion)
