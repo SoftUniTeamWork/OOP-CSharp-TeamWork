@@ -8,6 +8,7 @@
     {
         private const int NumberOfEnemies = 10;
         private Character player;
+        private Merchant merchant;
 
         public readonly List<Enemy> EnemiesList = new List<Enemy>(NumberOfEnemies);
 
@@ -35,6 +36,8 @@
         private void Initialize()
         {
             this.player = EntityGenerator.GeneratePlayer();
+            this.merchant = EntityGenerator.GenerateMerchant();
+
             Random enemyPosition = new Random();
 
             while (this.EnemiesList.Count < NumberOfEnemies)

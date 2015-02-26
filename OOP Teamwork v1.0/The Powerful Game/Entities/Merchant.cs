@@ -1,11 +1,14 @@
-﻿namespace The_Powerful_Game.Entities
+﻿
+using The_Powerful_Game.Contracts;
+
+namespace The_Powerful_Game.Entities
 {
     using System;
     using System.Collections.Generic;
     using System.Windows.Controls;
     using The_Powerful_Game.Items;
 
-    public class Merchant : Entity
+    public class Merchant : Entity,IRenderable
     {
         // List of Item`s You can buy
         private List<Item> productsList;
@@ -43,7 +46,8 @@
 
         public override void Render()
         {
-            throw new NotImplementedException();
+            Canvas.SetLeft(this.Image, this.X);
+            Canvas.SetTop(this.Image, this.Y);
         }
     }
 }

@@ -28,6 +28,24 @@ namespace The_Powerful_Game.CoreLogic
             }
         }
 
+
+        public static void HandleMerchantCollision(Character player, Merchant merchant)
+        {
+            double playerX = player.X + player.Image.Width / 2;
+            double playerY = player.Y + player.Image.Height / 2;
+
+            double merchantX = merchant.X + merchant.Image.Width / 2;
+            double merchantY = merchant.Y + merchant.Image.Height / 2;
+
+            double distance = Math.Sqrt(Math.Pow(playerX - merchantX, 2) + Math.Pow(playerY - merchantY, 2));
+
+            if (distance <= player.Image.Width * 2 / 3 &&
+                distance <= merchant.Image.Height * 3 / 2)
+            {
+                CompositionTarget.Rendering -= Gameplay.MainEngine.Run;
+                Switcher.Switch(new Shop(player, merchant));
+            }
+        }
         public static bool HandleMapObjectCollision(int futureX, int futureY)
         {
             int x = (int)futureX / Constants.TileSize;

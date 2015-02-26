@@ -1,4 +1,6 @@
-﻿namespace The_Powerful_Game.CoreLogic
+﻿using System.Collections.Generic;
+
+namespace The_Powerful_Game.CoreLogic
 {
     using System;
     using System.Windows.Controls;
@@ -6,6 +8,7 @@
     using The_Powerful_Game.Entities;
     using The_Powerful_Game.Entities.Chooses;
     using The_Powerful_Game.Enums;
+    using The_Powerful_Game.Items;
     using The_Powerful_Game.Menu;
 
     public static class EntityGenerator
@@ -73,6 +76,18 @@
 
             Gameplay.Root.Children.Add(img);
             return enemy;
+        }
+
+        public static Merchant GenerateMerchant()
+        {
+            string merchantName = "Player";
+            List<Item> products = new List<Item>();
+            AttributePair health = new AttributePair(Constants.WarriorHealthPoints, Constants.WarriorHealthPoints);
+            Image merchantImage = GenerateImage(merchantName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.WarriorImage);
+            Merchant merchant = new Merchant(merchantName,0,0,health,Constants.WarriorArmorPoints,
+                        Constants.WarriorDamagePoints, merchantImage, products);
+            Gameplay.Root.Children.Add(merchantImage);
+            return merchant;
         }
     }
 }
