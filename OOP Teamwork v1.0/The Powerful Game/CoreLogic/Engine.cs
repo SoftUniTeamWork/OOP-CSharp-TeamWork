@@ -42,8 +42,6 @@
                 this.EnemiesList.Add(EntityGenerator.GenerateEnemy(enemyPosition.Next(0, Constants.MapWidth - 150),
                     enemyPosition.Next(Constants.EnemyHeight, Constants.MapHeight - Constants.EnemyHeight)));
             }
-
-            // Should build the map here.
         }
     }
 }

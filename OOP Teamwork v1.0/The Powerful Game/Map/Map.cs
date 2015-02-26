@@ -1,34 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-
-namespace The_Powerful_Game.Map
+﻿namespace The_Powerful_Game.Map
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Windows.Media;
+    using System.Windows.Media.Imaging;
+
     public class Map
     {
-        //Fields
         private int rows;
         private int columns;
         private int[][] numMap;
         private List<Tile> tiles = new List<Tile>();
-        //Constructors
+
         public Map(int rows, int columns, int[][] numMap)
         {
             this.Rows = rows;
             this.Columns = columns;
             this.NumMap = numMap;
-
-            // grass --> 0
-            // tree --> 1
-            // water --> 2
-            // bridge --> 3
-
-
 
             for (int r = 0; r < numMap.Length; r++)
             {
@@ -59,7 +47,6 @@ namespace The_Powerful_Game.Map
                     {
                         Background = new ImageBrush(new BitmapImage(new Uri(path))),
                     });
-
                 }
             }
         }
@@ -69,9 +56,6 @@ namespace The_Powerful_Game.Map
             get { return this.numMap; }
             set { this.numMap = value; }
         }
-
-
-        //Properties
 
         public int Rows
         {

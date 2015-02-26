@@ -18,27 +18,27 @@
             <ColumnDefinition Width="51*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="243*"/>
-            <RowDefinition Height="33*"/>
-            <RowDefinition Height="156*"/>
-            <RowDefinition Height="248*"/>
+            <RowDefinition Height="363*"/>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="246*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="warriorButton" Margin="0.2,0,1.6,34.2" VerticalAlignment="Bottom" Height="186" Width="206" FontSize="21.333" Click="warriorButton_Click" Grid.Column="1">
-            <Image Source="/Resources/Classes/Warrior.png" Stretch="Fill" Height="186" Width="206" RenderTransformOrigin="0.528,1.169">
+        <Button x:Name="warriorButton" Margin="2,0,4,34" VerticalAlignment="Bottom" Height="270" FontSize="21.333" Click="warriorButton_Click" Grid.Column="1">
+            <Image Source="/Resources/Classes/Warrior.png" Stretch="Fill" Height="270" Width="206" RenderTransformOrigin="0,0">
             </Image>
         </Button>
-        <Button x:Name="mageButton" Margin="0.2,0,1.6,34.2" VerticalAlignment="Bottom" Height="186" Width="206" FontSize="21.333" Click="mageButton_Click" Grid.Column="3">
-            <Image Source="/Resources/Classes/Mage.png" Stretch="Fill" Height="186" Width="206" RenderTransformOrigin="0.479,0.507"/>
+        <Button x:Name="mageButton" Margin="3,0,4,34" VerticalAlignment="Bottom" Height="270" FontSize="21.333" Click="mageButton_Click" Grid.Column="3">
+            <Image Source="/Resources/Classes/Mage.png" Stretch="Fill" Height="270" Width="206" RenderTransformOrigin="0.479,0.507"/>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="0.2,0,1.6,34.2" VerticalAlignment="Bottom" Height="186" Width="206" Grid.Column="5" Click="hunterButton_Click">
-            <Image Source="/Resources/Classes/Hunter.png" Height="186" Width="206" Stretch="Fill"/>
+        <Button HorizontalAlignment="Left" Margin="0,0,0,34" VerticalAlignment="Bottom" Height="270" Width="206" Grid.Column="5" Click="hunterButton_Click">
+            <Image Source="/Resources/Classes/Hunter.png" Height="270" Width="206" Stretch="Fill"/>
         </Button>
-        <TextBlock Grid.Column="3" Margin="0.4,2,0.4,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="154" Text="&#x9;The arcane magic available to mages is both great and dangerous. Mages can wear only cloth armor, but arcane shields and enchantments give them additional protection. To keep enemies at bay, magi can summon bursts of fire to incinerate distant targets and cause entire areas to erupt, setting groups of foes ablaze."/>
-        <TextBlock HorizontalAlignment="Left" Margin="0.2,3,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="153" Width="213" Text="&#x9;The warrior class  fills both the roles of tanking and damage. The warrior has the widest array of weapons to choose from in the game, being able to equip every weapon type in the game except for wands. Warriors can use a wide array of combat skills depending on their specific roles in a fight." Grid.Column="1" Grid.ColumnSpan="2"/>
-        <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="0.8,0,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="156" Width="212" Text="&#x9;From an early age the call of the wild draws some adventurers from the comfort of their homes into the unforgiving primal world outside. Those who endure become hunters. Masters of their environment, they are able to slip like ghosts through the trees and lay traps in the paths of their enemies."/>
-        <TextBlock Grid.Column="3" HorizontalAlignment="Left" Margin="0.4,214,0,0" FontFamily="Comic Sans MS" FontSize="14" TextWrapping="Wrap" Text="&#x9;Class Mage" VerticalAlignment="Top" Width="212" Height="29"/>
-        <TextBlock HorizontalAlignment="Left" Margin="0.2,214,0,0" FontFamily="Comic Sans MS" FontSize="14" TextWrapping="Wrap" Text="&#x9;Class Warrior" VerticalAlignment="Top" Height="29" Width="213" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="0.8,214,0,0" FontFamily="Comic Sans MS" FontSize="14" TextWrapping="Wrap" Text="&#x9;Class Hunter" VerticalAlignment="Top" Height="29" Width="170"/>
+        <TextBlock Grid.Column="3" Margin="0,1,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Height="154" Text="&#x9;The arcane magic available to mages is both great and dangerous. Mages can wear only cloth armor, but arcane shields and enchantments give them additional protection. To keep enemies at bay, magi can summon bursts of fire to incinerate distant targets and cause entire areas to erupt, setting groups of foes ablaze."/>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Height="153" Width="213" Text="&#x9;The warrior class  fills both the roles of tanking and damage. The warrior has the widest array of weapons to choose from in the game, being able to equip every weapon type in the game except for wands. Warriors can use a wide array of combat skills depending on their specific roles in a fight." Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="1,2,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Height="156" Width="212" Text="&#x9;From an early age the call of the wild draws some adventurers from the comfort of their homes into the unforgiving primal world outside. Those who endure become hunters. Masters of their environment, they are able to slip like ghosts through the trees and lay traps in the paths of their enemies."/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="113,2,0,0" FontFamily="Comic Sans MS" FontSize="14" TextWrapping="Wrap" Text="&#x9;Class Mage" VerticalAlignment="Top" Width="212" Height="29" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="67,0,0,0" FontFamily="Comic Sans MS" FontSize="14" TextWrapping="Wrap" Text="&#x9;Class Warrior" VerticalAlignment="Top" Height="29" Width="213" Grid.ColumnSpan="2" Grid.Row="2"/>
+        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="111,0,0,0" FontFamily="Comic Sans MS" FontSize="14" TextWrapping="Wrap" Text="&#x9;Class Hunter" VerticalAlignment="Top" Height="29" Width="205" Grid.Row="2" Grid.ColumnSpan="2"/>
 
 
     </Grid>

@@ -50,9 +50,7 @@
             <Setter Property="Height"
                     Value="23"></Setter>
         </Style>
-
     </UserControl.Resources>
-
     <Grid x:Name="fight">
         <Grid.Background>
             <ImageBrush ImageSource="../Resources/FightField/bg-full.jpg"></ImageBrush>
@@ -60,24 +58,24 @@
         <TextBlock Style="{StaticResource NameStyle}"
                    HorizontalAlignment="Left"
                    Text="The Ork Slayer"
-                   Margin="84,10,0,0" 
+                   Margin="168,11,0,0" 
                    Width="220"/>
         <TextBlock Style="{StaticResource NameStyle}"
                    HorizontalAlignment="Right" 
-                   Margin="0,10,83,0"
+                   Margin="0,11,197,0"
                    Text="Orc Revenger"
                    Width="220"/>
         <Image x:Name="PlayerImage" 
                Source="../Resources/Classes/Warrior.png"
-               Width="194" Margin="84,122,522,0" Height="294" VerticalAlignment="Top"/>
+               Width="194" Margin="168,145,638,0" Height="294" VerticalAlignment="Top"/>
 
         <Image Style="{StaticResource Character}"
                Source="../Resources/FightField/enemy-withgrass.png"
                HorizontalAlignment="Center"
-               Margin="523,106,83,184"
-               Width="194" Height="310"/>
+               Margin="623,145,183,253"
+               Width="194" Height="282"/>
         <TextBlock HorizontalAlignment="Left"
-            Margin="42,410,0,0"
+            Margin="142,444,0,0"
             TextWrapping="Wrap"
             VerticalAlignment="Top"
             Height="6"
@@ -86,7 +84,7 @@
                 <ImageBrush ImageSource="../Resources/xp/xp0.png"></ImageBrush>
             </TextBlock.Background>
         </TextBlock>
-        <Canvas HorizontalAlignment="Center" VerticalAlignment="Center" Height="158" Margin="42,432,41,0" Width="717">
+        <Canvas HorizontalAlignment="Center" VerticalAlignment="Center" Height="158" Margin="142,466,141,56" Width="717">
             <Menu Height="148" Width="166" >
                 <Menu.Background>
                     <ImageBrush ImageSource="../Resources/FightField/buttons-bg.jpg"></ImageBrush>
@@ -137,8 +135,8 @@
                         </Button.Background>
                     </Button>
                 </StackPanel>
-                
-               
+
+
                 <Button Style="{StaticResource ButtonMenuStyle}"
             		Content="Fled"
             		Click="ButtonFleeOnClick"
@@ -165,7 +163,7 @@
             </TextBox>
         </Canvas>
         <TextBox HorizontalAlignment="Left"
-                 Margin="42,39,0,538"
+                 Margin="142,41,0,616"
                  TextWrapping="Wrap"
                  Width="262"
                  IsReadOnly="True">
@@ -175,7 +173,7 @@
         </TextBox>
         <TextBox HorizontalAlignment="Left"
                  Height="23"
-                 Margin="497,39,0,0"
+                 Margin="568,40,0,0"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
                  Width="262"
@@ -186,7 +184,7 @@
         </TextBox>
         <TextBox HorizontalAlignment="Left"
         	Height="23"
-        	Margin="42,67,0,0"
+        	Margin="142,71,0,0"
         	TextWrapping="Wrap"
         	VerticalAlignment="Top"
         	Width="262"
@@ -198,7 +196,7 @@
         </TextBox>
         <TextBox HorizontalAlignment="Left"
         	Height="23"
-        	Margin="42,95,0,0"
+        	Margin="142,100,0,0"
         	TextWrapping="Wrap"
         	VerticalAlignment="Top"
         	Width="262"

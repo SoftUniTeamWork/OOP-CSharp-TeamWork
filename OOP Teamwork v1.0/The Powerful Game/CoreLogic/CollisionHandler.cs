@@ -28,22 +28,17 @@ namespace The_Powerful_Game.CoreLogic
             }
         }
 
-        public static void HandleMapObjectCollision(Character player)
+        public static bool HandleMapObjectCollision(int futureX, int futureY)
         {
-            int x = (int)(player.X + player.Image.Width / 2) / 25;
-            int y = (int)(player.Y + player.Image.Height / 2) / 25;
+            int x = (int)futureX / 40;
+            int y = (int)futureY / 40;
 
-            if (Keyboard.IsKeyDown(Key.Enter))
+            if (Gameplay.numMap[y][x] == 2 || Gameplay.numMap[y][x] == 1)
             {
-                if (Gameplay.numMap[y][x] == 0)
-                {
-                    MessageBox.Show(x.ToString() + "\n" + y.ToString() + "\nGRASS");
-                }
-                if (Gameplay.numMap[y][x] == 1)
-                {
-                    MessageBox.Show(x.ToString() + "\n" + y.ToString() + "\nFOREST");
-                }
+                return false;
             }
+
+            return true;
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     using System.Windows.Controls;
     using System.Windows.Input;
-    using System.Collections.Generic;   
+    using System.Collections.Generic;
     using The_Powerful_Game.Enums;
     using The_Powerful_Game.Items;
     using The_Powerful_Game.Contracts;
@@ -89,7 +89,6 @@
             {
                 this.isAlive = false;
             }
-            CollisionHandler.HandleMapObjectCollision(this);
             Move();
         }
 
@@ -101,22 +100,26 @@
 
         public void Move()
         {
-            if (Keyboard.IsKeyDown(Key.Up))
+            if (Keyboard.IsKeyDown(Key.Up) && CollisionHandler.HandleMapObjectCollision(
+                (int)(this.X + this.Image.Width / 2), (int)(this.Y + this.Image.Height * 2 / 3) - 5))
             {
                 this.Y -= Constants.CharacterMoveSpeed;
             }
 
-            if (Keyboard.IsKeyDown(Key.Down))
+            if (Keyboard.IsKeyDown(Key.Down) && CollisionHandler.HandleMapObjectCollision(
+                (int)(this.X + this.Image.Width / 2), (int)(this.Y + this.Image.Height * 2 / 3) + 5))
             {
                 this.Y += Constants.CharacterMoveSpeed;
             }
 
-            if (Keyboard.IsKeyDown(Key.Left))
+            if (Keyboard.IsKeyDown(Key.Left) && CollisionHandler.HandleMapObjectCollision(
+                (int)(this.X + this.Image.Width / 2) - 5, (int)(this.Y + this.Image.Height * 2 / 3)))
             {
                 this.X -= Constants.CharacterMoveSpeed;
             }
 
-            if (Keyboard.IsKeyDown(Key.Right))
+            if (Keyboard.IsKeyDown(Key.Right) && CollisionHandler.HandleMapObjectCollision(
+                (int)(this.X + this.Image.Width / 2) + 5, (int)(this.Y + this.Image.Height * 2 / 3)))
             {
                 this.X += Constants.CharacterMoveSpeed;
             }
@@ -171,7 +174,7 @@
             {
                 this.RevertItemModifiers(item as GearItem);
             }
-            
+
             this.Gold += item.Price;
             ItemList.EquipableItems.Add(item);
         }
