@@ -23,7 +23,7 @@
                     health = new AttributePair(Constants.WarriorHealthPoints, Constants.WarriorHealthPoints);
                     playerImage = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.WarriorImage);
                     player = new Warrior(playerName, 100, 100, health, Constants.WarriorArmorPoints,
-                        Constants.WarriorDamagePoints, playerImage, 2, 1, 1, new AttributePair(Constants.CharacterResourcePoints, Constants.CharacterResourcePoints),
+                        Constants.WarriorDamagePoints, playerImage, 2, 1, 1, new AttributePair(Constants.WarriorResourcePoints, Constants.CharacterResourcePoints),
                         EntityResourceType.Rage);
                     break;
                 case ClassType.Mage:

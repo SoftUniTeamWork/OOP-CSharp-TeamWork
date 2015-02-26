@@ -11,6 +11,8 @@ namespace The_Powerful_Game.CoreLogic
         public static readonly int MapHeight = 600;
 
         public static readonly int CharacterResourcePoints = 100;
+        public static readonly int WarriorResourcePoints = 0;
+
         public static readonly int CharacterMoveSpeed = 2;
 
         public static readonly int WarriorHealthPoints = 400;
