@@ -17,7 +17,6 @@
             this.Type = type;
             this.Price = price;
         }
-
         public string Name
         {
             get { return this.name; }

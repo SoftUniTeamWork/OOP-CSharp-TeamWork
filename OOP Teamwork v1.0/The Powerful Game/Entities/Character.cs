@@ -21,6 +21,7 @@
 
         private int level;
         private int experience;
+        private int gold = 0;
 
         private AttributePair resourcePoints;
         private EntityResourceType resourceType;
@@ -40,8 +41,8 @@
             this.ResourcePoints = resourcePoints;
             this.ResourceType = resourceType;
 
-            this.Equip(new HealthPotion("Health Potion", ItemType.Consumable, 20, 100));
-            this.Equip(new ResourcePotion("Resource Potion", ItemType.Consumable, 20, 75));
+            this.EquipItem(new HealthPotion("Health Potion", ItemType.Consumable, 20, 100));
+            this.EquipItem(new ResourcePotion("Resource Potion", ItemType.Consumable, 20, 75));
         }
 
         public int Strength
@@ -53,13 +54,19 @@
         public int Inteligence
         {
             get { return this.inteligence + this.inteligenceModifier; }
-            protected set { this.inteligence = value; }
+            set { this.inteligence = value; }
         }
 
         public int Agility
         {
             get { return this.agility + this.agilityModifier; }
             set { this.agility = value; }
+        }
+
+        public int Gold
+        {
+            get { return this.gold; }
+            set { this.gold = value; }
         }
 
         public AttributePair ResourcePoints { get; internal set; }
@@ -75,18 +82,6 @@
         public abstract string CastDeffensiveSpell(Enemy enemy);
 
         public abstract void RegenerateResource();
-
-        //public int Level
-        //{
-        //    get { return this.level; }
-        //    protected set { this.level = value; }
-        //}
-
-        //public int Experience
-        //{
-        //    get { return this.experience; }
-        //    set { this.experience = value; }
-        //}
 
         public override void Update()
         {
@@ -126,9 +121,34 @@
             }
         }
 
-        public void Equip(Item item)
+        public void EquipItem(Item item)
         {
             this.Inventory.Add(item);
+            if (item is GearItem)
+            {
+                this.ApplyItemModifiers(item as GearItem);
+            }
+        }
+
+        public void ApplyItemModifiers(GearItem item)
+        {
+            if (item is Weapon)
+            {
+                this.Damage += (item as Weapon).DamageModifier;
+            }
+            else if (item is Armor)
+            {
+                this.ArmorPoints += (item as Armor).ArmorModifier;
+            }
+            this.Strength += item.StrengthModifier;
+            this.Inteligence += item.IntelectModifier;
+            this.Agility += item.AgilityModifier;
+        }
+
+        public void Sell(Item item)
+        {
+            this.Inventory.Remove(item);
+            this.Gold += item.Price;
         }
 
         public string DrinkHealthPotion(HealthPotion healthPotion)

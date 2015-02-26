@@ -3,15 +3,15 @@
     using The_Powerful_Game.Contracts;
     using The_Powerful_Game.Enums;
 
-    public class Weapon : Item, IEquipable
+    public class Weapon : GearItem
     {
-        public Weapon(string name, ItemType type, int price, int equipEffect)
-            : base(name, type, price)
+        public Weapon(string name, ItemType type, int price, int str, int intelect, int agi, int damage)
+            : base(name, type, price, str, intelect, agi)
         {
-            this.EquipEffect = equipEffect;
+            this.DamageModifier += damage;
         }
 
-        public int EquipEffect { get; set; }
+        public int DamageModifier { get; set; }
 
         public override object Clone()
         {

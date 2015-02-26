@@ -80,6 +80,7 @@
     <Compile Include="Exceptions\ItemTypeException.cs" />
     <Compile Include="Items\Armor.cs" />
     <Compile Include="Items\Consumable.cs" />
+    <Compile Include="Items\GearItem.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Enums\ItemType.cs" />
     <Compile Include="Items\HealthPotion.cs" />

@@ -2,6 +2,10 @@
 {
     public interface IEquipable
     {
-        int EquipEffect { get; set; }
+        int StrengthModifier { get; set; }
+
+        int IntelectModifier { get; set; }
+
+        int AgilityModifier { get; set; }
     }
 }
