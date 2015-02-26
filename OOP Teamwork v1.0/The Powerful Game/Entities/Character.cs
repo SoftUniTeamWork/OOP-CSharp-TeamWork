@@ -89,6 +89,7 @@
             {
                 this.isAlive = false;
             }
+            CollisionHandler.HandleMapObjectCollision(this);
             Move();
         }
 
