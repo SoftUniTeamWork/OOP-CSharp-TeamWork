@@ -11,7 +11,7 @@
     /// </summary>
     public partial class Gameplay : UserControl, ISwitchable
     {
-        int[][] numMap = new int[16][]
+        public static int[][] numMap = new int[16][]
             {
                 new int[] {0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,1,1,1},
                 new int[] {0,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,3,0,0,0,0,1,1,1},
