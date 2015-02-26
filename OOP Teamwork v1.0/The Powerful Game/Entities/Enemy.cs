@@ -1,4 +1,6 @@
-﻿namespace The_Powerful_Game.Entities
+﻿using The_Powerful_Game.Contracts;
+
+namespace The_Powerful_Game.Entities
 {
     using System;
     using System.Windows.Controls;
@@ -6,7 +8,7 @@
     using System.Windows.Media;
     using The_Powerful_Game.Menu;
 
-    public class Enemy : Entity
+    public class Enemy : Entity,IUpdatable,IRenderable
     {
         public Enemy(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image img)
             : base(name, x, y, healthPoints, armorPoints, damage, img)

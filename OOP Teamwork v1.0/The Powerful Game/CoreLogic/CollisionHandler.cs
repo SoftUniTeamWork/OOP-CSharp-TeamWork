@@ -33,12 +33,7 @@ namespace The_Powerful_Game.CoreLogic
             int x = (int)futureX / 40;
             int y = (int)futureY / 40;
 
-            if (Gameplay.numMap[y][x] == 2 || Gameplay.numMap[y][x] == 1)
-            {
-                return false;
-            }
-
-            return true;
+            return Gameplay.numMap[y][x] != 2 && Gameplay.numMap[y][x] != 1;
         }
     }
 }
