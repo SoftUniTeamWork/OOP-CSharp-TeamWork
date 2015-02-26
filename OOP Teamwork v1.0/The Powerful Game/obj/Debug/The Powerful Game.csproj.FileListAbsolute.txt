@@ -152,3 +152,4 @@ C:\Users\Tapac\Desktop\The Powerful Game\obj\Debug\The_Powerful_Game.Properties.
 C:\Users\Tapac\Desktop\The Powerful Game\obj\Debug\The Powerful Game.csproj.GenerateResource.Cache
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game_MarkupCompile.lref
+C:\Users\melloboy89\Documents\RPG\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game.csprojResolveAssemblyReference.cache

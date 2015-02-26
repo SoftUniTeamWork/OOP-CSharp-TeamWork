@@ -1,6 +1,6 @@
 ﻿<Window x:Class="The_Powerful_Game.PageSwitcher"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="WPF Page Switch" Height="600" Width="800" ResizeMode="NoResize"
+    Title="WPF Page Switch" Height="680" Width="1000" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
 </Window>
