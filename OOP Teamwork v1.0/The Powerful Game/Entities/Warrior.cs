@@ -1,4 +1,6 @@
-﻿namespace The_Powerful_Game.Entities
+﻿using The_Powerful_Game.Validations;
+
+namespace The_Powerful_Game.Entities
 {
     using System;
     using System.Windows.Controls;
@@ -15,6 +17,13 @@
             this.offensiveAbillity = new Abillity("God Strength", 50, this.Damage);
             // Increases player's armour points by 50%.
             this.defensiveAbillity = new Abillity("Taunt", 40, this.ArmorPoints);
+        }
+
+        // Increase damage by every Strength point
+        public override int Damage
+        {
+            get { return this.Damage; }
+            set { this.Damage = EntityValidator.DamageValidating(value + this.Strength); }
         }
 
         public override bool DeffensiveBuff { get; set; }

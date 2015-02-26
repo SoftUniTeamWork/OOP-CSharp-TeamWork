@@ -1,4 +1,6 @@
-﻿namespace The_Powerful_Game.Entities
+﻿using The_Powerful_Game.Validations;
+
+namespace The_Powerful_Game.Entities
 {
     using System;
     using System.Windows.Controls;
@@ -17,6 +19,12 @@
             this.defensiveAbillity = new Abillity("Avoidance", 60, 50);
         }
 
+        // Increase damage for every agility point you have
+        public override int Damage
+        {
+            get { return this.Damage; }
+            set { this.Damage = EntityValidator.DamageValidating(value + this.Agility); }
+        }
         private int RegenerationCounter { get; set; }
 
         public override bool DeffensiveBuff { get; set; }

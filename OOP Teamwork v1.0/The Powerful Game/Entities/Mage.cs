@@ -1,4 +1,6 @@
-﻿namespace The_Powerful_Game.Entities
+﻿using The_Powerful_Game.Validations;
+
+namespace The_Powerful_Game.Entities
 {
     using System;
     using System.Windows.Controls;
@@ -17,6 +19,12 @@
             this.defensiveAbillity = new Abillity("Mana Shield", 0, 50);
         }
 
+        // Increase damage for every inteligence point you have
+        public override int Damage
+        {
+            get { return this.Damage; }
+            set { this.Damage = EntityValidator.DamageValidating(value + this.Inteligence); }
+        }
         public override bool DeffensiveBuff { get; set; }
 
         public override string Attack(Enemy enemy)
