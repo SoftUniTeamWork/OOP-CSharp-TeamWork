@@ -30,8 +30,18 @@ namespace The_Powerful_Game.CoreLogic
 
         public static bool HandleMapObjectCollision(int futureX, int futureY)
         {
-            int x = (int)futureX / 40;
-            int y = (int)futureY / 40;
+            int x = (int)futureX / Constants.TileSize;
+            int y = (int)futureY / Constants.TileSize;
+
+            if (!(futureY - Constants.PlayerHeight / 2 > 0) || !(futureY < Constants.MapHeight - Constants.PlayerHeight * 3 / 2 ))
+            {
+                return false;
+            }
+
+            if (!(futureX - Constants.PlayerWidth / 2 > 0) || !(futureX < Constants.MapWidth - Constants.PlayerWidth / 2))
+            {
+                return false;
+            }
 
             if (Gameplay.numMap[y][x] == 2 || Gameplay.numMap[y][x] == 1)
             {

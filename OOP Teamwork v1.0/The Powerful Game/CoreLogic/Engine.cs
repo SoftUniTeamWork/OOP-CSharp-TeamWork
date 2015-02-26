@@ -6,7 +6,7 @@
 
     public class Engine
     {
-        private const int NumberOfEnemies = 3;
+        private const int NumberOfEnemies = 10;
         private Character player;
 
         public readonly List<Enemy> EnemiesList = new List<Enemy>(NumberOfEnemies);
@@ -37,10 +37,16 @@
             this.player = EntityGenerator.GeneratePlayer();
             Random enemyPosition = new Random();
 
-            for (var i = 0; i < NumberOfEnemies; i++)
+            while (this.EnemiesList.Count < NumberOfEnemies)
             {
-                this.EnemiesList.Add(EntityGenerator.GenerateEnemy(enemyPosition.Next(0, Constants.MapWidth - 150),
-                    enemyPosition.Next(Constants.EnemyHeight, Constants.MapHeight - Constants.EnemyHeight)));
+                int possibleX = enemyPosition.Next(0, Constants.MapWidth - Constants.EnemyWidth);
+                int possibleY = enemyPosition.Next(0, Constants.MapHeight - Constants.EnemyHeight);
+
+                if (CollisionHandler.HandleMapObjectCollision(
+                    possibleX + Constants.EnemyWidth / 2, possibleY + Constants.EnemyHeight / 2))
+                {
+                    this.EnemiesList.Add(EntityGenerator.GenerateEnemy(possibleX, possibleY));
+                }
             }
         }
     }
