@@ -1,6 +1,4 @@
-﻿using System.Windows;
-
-namespace The_Powerful_Game.CoreLogic
+﻿namespace The_Powerful_Game.CoreLogic
 {
     using System;
     using System.Windows.Media;

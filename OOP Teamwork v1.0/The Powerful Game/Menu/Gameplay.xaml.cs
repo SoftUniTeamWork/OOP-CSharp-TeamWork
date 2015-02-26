@@ -11,7 +11,7 @@
     /// </summary>
     public partial class Gameplay : UserControl, ISwitchable
     {
-        int[][] numMap = new int[24][]
+        public static int[][] numMap = new int[24][]
             {
                 new int[] {0,0,0,1,1,1,1,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,2,0,0,0,0,1,1,1,1},
                 new int[] {0,0,0,1,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,3,0,0,0,0,1,1,1,1},
@@ -38,7 +38,7 @@
                 new int[] {1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
                 new int[] {1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1}
             };
-        public static Canvas Root { get;private set; }
+        public static Canvas Root { get; private set; }
 
         public static Engine MainEngine { get; private set; }
 

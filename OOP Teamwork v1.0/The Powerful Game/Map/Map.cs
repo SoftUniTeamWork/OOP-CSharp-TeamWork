@@ -37,7 +37,7 @@ namespace The_Powerful_Game.Map
                     Random random = new Random();
 
 
-                    string path = "Resources/MapObjects/";
+                    string path = @"pack://application:,,,/Resources/MapObjects/";
 
                     switch (numMap[r][c])
                     {
@@ -57,9 +57,7 @@ namespace The_Powerful_Game.Map
 
                     this.tiles.Add(new Tile()
                     {
-                        Data = string.Format("  {0}\n  {1}", r, c),
-                        Background = new ImageBrush(new BitmapImage(
-                            new Uri(path, UriKind.Relative))),
+                        Background = new ImageBrush(new BitmapImage(new Uri(path))),
                     });
 
                 }
