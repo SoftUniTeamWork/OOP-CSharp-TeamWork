@@ -28,6 +28,9 @@
                     e.Update();
                 });
 
+                CollisionHandler.HandleMerchantCollision(this.player, this.merchant);
+
+                this.merchant.Render();
                 this.player.Render();
                 EnemiesList.ForEach(e => e.Render());
             }
@@ -35,15 +38,15 @@
 
         private void Initialize()
         {
-            this.player = EntityGenerator.GeneratePlayer();
-            this.merchant = EntityGenerator.GenerateMerchant();
+            Random posRandom = new Random();
 
-            Random enemyPosition = new Random();
+            this.player = EntityGenerator.GeneratePlayer();
+            this.merchant = EntityGenerator.GenerateMerchant(150, 100);
 
             while (this.EnemiesList.Count < NumberOfEnemies)
             {
-                int possibleX = enemyPosition.Next(0, Constants.MapWidth - Constants.EnemyWidth);
-                int possibleY = enemyPosition.Next(0, Constants.MapHeight - Constants.EnemyHeight);
+                int possibleX = posRandom.Next(0, Constants.MapWidth - Constants.EnemyWidth);
+                int possibleY = posRandom.Next(0, Constants.MapHeight - Constants.EnemyHeight);
 
                 if (CollisionHandler.HandleMapObjectCollision(
                     possibleX + Constants.EnemyWidth / 2, possibleY + Constants.EnemyHeight / 2))

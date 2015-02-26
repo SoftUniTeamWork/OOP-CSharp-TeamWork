@@ -1,11 +1,9 @@
-﻿
-using The_Powerful_Game.Contracts;
-
-namespace The_Powerful_Game.Entities
+﻿namespace The_Powerful_Game.Entities
 {
     using System;
     using System.Collections.Generic;
     using System.Windows.Controls;
+    using The_Powerful_Game.Contracts;
     using The_Powerful_Game.Items;
 
     public class Merchant : Entity,IRenderable

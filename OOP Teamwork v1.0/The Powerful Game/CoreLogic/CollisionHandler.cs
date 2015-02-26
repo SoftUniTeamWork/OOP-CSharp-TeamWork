@@ -1,7 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Input;
-
-namespace The_Powerful_Game.CoreLogic
+﻿namespace The_Powerful_Game.CoreLogic
 {
     using System;
     using System.Windows.Media;
@@ -27,7 +24,6 @@ namespace The_Powerful_Game.CoreLogic
                 Switcher.Switch(new FightField(player, enemy));
             }
         }
-
 
         public static void HandleMerchantCollision(Character player, Merchant merchant)
         {

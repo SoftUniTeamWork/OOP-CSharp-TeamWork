@@ -78,13 +78,13 @@ namespace The_Powerful_Game.CoreLogic
             return enemy;
         }
 
-        public static Merchant GenerateMerchant()
+        public static Merchant GenerateMerchant(int x, int y)
         {
-            string merchantName = "Player";
+            string merchantName = "Merchant";
             List<Item> products = new List<Item>();
             AttributePair health = new AttributePair(Constants.WarriorHealthPoints, Constants.WarriorHealthPoints);
             Image merchantImage = GenerateImage(merchantName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.WarriorImage);
-            Merchant merchant = new Merchant(merchantName,0,0,health,Constants.WarriorArmorPoints,
+            Merchant merchant = new Merchant(merchantName, x, y, health, Constants.WarriorArmorPoints,
                         Constants.WarriorDamagePoints, merchantImage, products);
             Gameplay.Root.Children.Add(merchantImage);
             return merchant;

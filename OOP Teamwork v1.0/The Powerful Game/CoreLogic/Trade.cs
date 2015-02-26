@@ -1,7 +1,7 @@
-﻿using The_Powerful_Game.Entities;
-
-namespace The_Powerful_Game.CoreLogic
+﻿namespace The_Powerful_Game.CoreLogic
 {
+    using The_Powerful_Game.Entities;
+
     public class Trade
     {
         public Trade(Character player, Merchant merchant)

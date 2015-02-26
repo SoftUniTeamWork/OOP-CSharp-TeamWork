@@ -1,27 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
-namespace The_Powerful_Game.Menu
+﻿namespace The_Powerful_Game.Menu
 {
+    using System.Windows.Controls;
+    using The_Powerful_Game.CoreLogic;
+    using The_Powerful_Game.Entities;
+
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
     public partial class Shop : UserControl
     {
-        public Shop()
+        public Character Player { get; private set; }
+
+        public Merchant Merchant { get; private set; }
+
+        public Trade Trade { get; private set; }
+
+        public Shop(Character player, Merchant merchant)
         {
-            //InitializeComponent();
+            this.Player = player;
+            this.Merchant = merchant;
+            this.Trade = new Trade(player, merchant);
+
+            InitializeComponent();
         }
     }
 }
