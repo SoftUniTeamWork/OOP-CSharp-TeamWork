@@ -11,8 +11,7 @@
         private string name;
         private AttributePair healthPoints;
         private int armorPoints;
-        private int damage;
-        private int defense;
+        protected int damage;
         private double attackSpeed;
         private Image image;
 
@@ -61,7 +60,7 @@
             }
         }
 
-        public int Damage
+        public virtual int Damage
         {
             get { return this.damage; }
             set { this.damage = EntityValidator.DamageValidating(value); }

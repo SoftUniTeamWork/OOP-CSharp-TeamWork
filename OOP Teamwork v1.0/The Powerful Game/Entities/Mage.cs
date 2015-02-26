@@ -22,9 +22,10 @@ namespace The_Powerful_Game.Entities
         // Increase damage for every inteligence point you have
         public override int Damage
         {
-            get { return this.Damage; }
-            set { this.Damage = EntityValidator.DamageValidating(value + this.Inteligence); }
+            get { return this.damage; }
+            set { this.damage = EntityValidator.DamageValidating(value + this.Inteligence); }
         }
+
         public override bool DeffensiveBuff { get; set; }
 
         public override string Attack(Enemy enemy)

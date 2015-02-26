@@ -22,8 +22,8 @@ namespace The_Powerful_Game.Entities
         // Increase damage for every agility point you have
         public override int Damage
         {
-            get { return this.Damage; }
-            set { this.Damage = EntityValidator.DamageValidating(value + this.Agility); }
+            get { return this.damage; }
+            set { this.damage = EntityValidator.DamageValidating(value + this.Agility); }
         }
         private int RegenerationCounter { get; set; }
 
