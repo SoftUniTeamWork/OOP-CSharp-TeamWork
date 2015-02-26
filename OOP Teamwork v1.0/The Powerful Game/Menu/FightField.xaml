@@ -69,7 +69,7 @@
                    Width="220"/>
         <Image x:Name="PlayerImage" 
                Source="../Resources/Classes/Warrior.png"
-               Width="194" Margin="84,122,522,184"/>
+               Width="194" Margin="84,122,522,0" Height="294" VerticalAlignment="Top"/>
 
         <Image Style="{StaticResource Character}"
                Source="../Resources/FightField/enemy-withgrass.png"
@@ -77,7 +77,7 @@
                Margin="523,106,83,184"
                Width="194" Height="310"/>
         <TextBlock HorizontalAlignment="Left"
-            Margin="42,421,0,0"
+            Margin="42,410,0,0"
             TextWrapping="Wrap"
             VerticalAlignment="Top"
             Height="6"
@@ -86,51 +86,70 @@
                 <ImageBrush ImageSource="../Resources/xp/xp0.png"></ImageBrush>
             </TextBlock.Background>
         </TextBlock>
-        <Canvas HorizontalAlignment="Left" Height="158" Margin="42,432,0,0" VerticalAlignment="Top" Width="717">
-            <Menu Height="138" Canvas.Left="10" Canvas.Top="10" Width="146">
+        <Canvas HorizontalAlignment="Center" VerticalAlignment="Center" Height="158" Margin="42,432,41,0" Width="717">
+            <Menu Height="148" Width="166" >
                 <Menu.Background>
                     <ImageBrush ImageSource="../Resources/FightField/buttons-bg.jpg"></ImageBrush>
                 </Menu.Background>
                 <Button Style="{StaticResource ButtonMenuStyle}"
-                        Content="Attack"
-                        Click="ButtonAttackOnClick"
-                        Height="26"
-                        Margin="2, 6, 0, 2">
-                    <Button.Background>
-                        <ImageBrush ImageSource="../Resources/FightField/button-normal.png"></ImageBrush>
-                    </Button.Background>
-                </Button>
-                <Button Style="{StaticResource ButtonMenuStyle}"
-                	Content="Offensive Spell"
-                	Click="ButtonOffensiveSpellOnClick"
-                	    Height="26"
-                	    Width="128"
-                        Margin="2, 2, 0 ,2">
+            		Content="Attack"
+            		Click="ButtonAttackOnClick"
+            		Height="26" Width="154"
+                    Margin="0, 5, 0, 0">
                     <Button.Background>
                         <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
                     </Button.Background>
                 </Button>
                 <Button Style="{StaticResource ButtonMenuStyle}"
-                        Content="Deffensive Spell"
-                        Click="ButtonDeffensiveSpellOnClick"
-                        Height="26"
-                        Margin="2, 2, 0, 2">
+            		Content="Offensive Spell"
+            		Click="ButtonOffensiveSpellOnClick"
+            		Height="26"
+            		Width="154">
                     <Button.Background>
                         <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
                     </Button.Background>
                 </Button>
                 <Button Style="{StaticResource ButtonMenuStyle}"
-                	Content="Fled"
-                	Click="ButtonFledOnClick"
-                        Height="26"
-                        Width="128"
-                        Margin="2, 2, 0, 2">
+            		Content="Deffensive Spell"
+            		Click="ButtonDeffensiveSpellOnClick"
+            		Height="26" Width="154">
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
+                    </Button.Background>
+                </Button>
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource ButtonMenuStyle}"
+            		Content="Health Potion"
+            		Click="ButtonDrinkHealthPotionOnClick"
+            		Height="26"
+            		Width="77">
+                        <Button.Background>
+                            <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Style="{StaticResource ButtonMenuStyle}"
+                	Content="Res. Potion"
+                	Click="ButtonDrinkResourcePotionOnClick"
+                	Height="26"
+                	Width="77">
+                        <Button.Background>
+                            <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+                
+               
+                <Button Style="{StaticResource ButtonMenuStyle}"
+            		Content="Fled"
+            		Click="ButtonFleeOnClick"
+            		Height="26"
+            		Width="154">
                     <Button.Background>
                         <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
                     </Button.Background>
                 </Button>
             </Menu>
-            <TextBox Height="138"
+            <TextBox Height="148"
                      Name="CombatLog"
                      Padding="6, 6, 6, 6"
                      Canvas.Left="171"
@@ -138,7 +157,6 @@
                      FontSize="12"
                      Foreground="White"
                      IsReadOnly = "True"
-                     Canvas.Top="10"
                      Width="536"
                      VerticalScrollBarVisibility="Auto">
                 <TextBox.Background>
@@ -147,10 +165,8 @@
             </TextBox>
         </Canvas>
         <TextBox HorizontalAlignment="Left"
-                 Height="23"
-                 Margin="42,39,0,0"
+                 Margin="42,39,0,538"
                  TextWrapping="Wrap"
-                 VerticalAlignment="Top"
                  Width="262"
                  IsReadOnly="True">
             <TextBox.Background>

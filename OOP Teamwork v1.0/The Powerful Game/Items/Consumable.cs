@@ -1,21 +1,18 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Security.RightsManagement;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿namespace The_Powerful_Game.Items
+{
+    using The_Powerful_Game.Contracts;
+    using The_Powerful_Game.Enums;
 
-//namespace The_Powerful_Game.Items
-//{
-//    class Consumable : Item
-//    {
-//        public Consumable(string name, int price) : base(name, price)
-//        {
-//        }
+    public abstract class Consumable : Item, IConsumable
+    {
+        protected Consumable(string name, ItemType type, int price, int consumptionValue)
+            : base(name, type, price)
+        {
+            this.ConsumptionValue = consumptionValue;
+        }
 
-//        public virtual void Use()
-//        {
-            
-//        }
-//    }
-//}
+        public int ConsumptionValue { get; set; }
+
+        public abstract void Consume();
+    }
+}

@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
@@ -54,12 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Contracts\IConsumable.cs" />
     <Compile Include="Contracts\IControllable.cs" />
+    <Compile Include="Contracts\IEquipable.cs" />
     <Compile Include="Contracts\IRenderable.cs" />
     <Compile Include="Contracts\IUpdatable.cs" />
     <Compile Include="CoreLogic\CollisionHandler.cs" />
     <Compile Include="CoreLogic\Engine.cs" />
     <Compile Include="CoreLogic\Constants.cs" />
+    <Compile Include="CoreLogic\EntityGenerator.cs" />
     <Compile Include="CoreLogic\Fight.cs" />
     <Compile Include="Entities\Abillity.cs" />
     <Compile Include="Entities\AttributePair.cs" />
@@ -76,10 +80,11 @@
     <Compile Include="Exceptions\ItemTypeException.cs" />
     <Compile Include="Items\Armor.cs" />
     <Compile Include="Items\Consumable.cs" />
-    <Compile Include="Items\GearItem.cs" />
-    <Compile Include="Items\HandsCount\Hands.cs" />
     <Compile Include="Items\Item.cs" />
-    <Compile Include="Items\Location\ItemLocation.cs" />
+    <Compile Include="Enums\ItemType.cs" />
+    <Compile Include="Items\HealthPotion.cs" />
+    <Compile Include="Items\ItemList.cs" />
+    <Compile Include="Items\ResourcePotion.cs" />
     <Compile Include="Items\Weapon.cs" />
     <Compile Include="Map\Map.cs" />
     <Compile Include="Map\Tile.cs" />

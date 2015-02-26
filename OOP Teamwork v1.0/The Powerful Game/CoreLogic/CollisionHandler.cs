@@ -26,10 +26,5 @@ namespace The_Powerful_Game.CoreLogic
                 Switcher.Switch(new FightField(player, enemy));
             }
         }
-
-        //public static void HandleObstacleCollision(Player player, Obstacle obstacle)
-        //{
-            
-        //}
     }
 }

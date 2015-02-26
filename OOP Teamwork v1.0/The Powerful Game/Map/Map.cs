@@ -26,10 +26,10 @@ namespace The_Powerful_Game.Map
                 {
                     var tile = new Tile();
                     tile.Data = string.Format("Row {0}, Column {1}", r, c);
-                    tile.Bacground =
+                    tile.Background =
                         new SolidColorBrush(Color.FromArgb(255, (byte) random.Next(256), (byte) random.Next(256),
                             (byte) random.Next(256)));
-                    tiles.Add(tile);
+                    this.Tiles.Add(tile);
 
                 }
             }

@@ -9,6 +9,7 @@ namespace The_Powerful_Game.Map
     public class Tile
     {
         public string Data { get; set; }
+
         public SolidColorBrush Background { get; set; }
     }
 }

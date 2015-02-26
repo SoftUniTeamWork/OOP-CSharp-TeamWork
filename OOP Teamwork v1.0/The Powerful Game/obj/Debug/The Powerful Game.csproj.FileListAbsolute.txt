@@ -118,3 +118,7 @@ D:\All\SU\Level 2\OOP\TW\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Men
 D:\All\SU\Level 2\OOP\TW\trunk\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Choosing.g.cs
 C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Choosing.baml
 C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Menu\Choosing.g.cs
+C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Map\Window1.g.cs
+C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\The Powerful Game_MarkupCompile.lref
+C:\Users\Tapac\Documents\GitHub\OOP-CSharp-TeamWork\OOP Teamwork v1.0\The Powerful Game\obj\Debug\Map\Window1.baml

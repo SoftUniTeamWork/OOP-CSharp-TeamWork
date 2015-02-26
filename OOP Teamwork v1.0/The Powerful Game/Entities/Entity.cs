@@ -89,8 +89,9 @@
 
         public virtual int ProcessDamageTaken(int damage)
         {
-            this.HealthPoints = this.HealthPoints.Decrease(damage - this.ArmorPoints);
-            return damage - this.ArmorPoints;
+            int balance = damage - this.ArmorPoints <= 0 ? 0 : damage - this.ArmorPoints;
+            this.HealthPoints = this.HealthPoints.Decrease(balance);
+            return balance;
         }
 
         public override string ToString()
@@ -101,40 +102,5 @@
 
             return toString.ToString();
         }
-
-        //                                          DO NOT DELETE!!!
-        //protected virtual int CalcDamage()
-        //{
-        //    Random getDamage = new Random();
-        //    int diff = (int)Math.Round(Damage / 10.0); // Difference between min and max damage
-        //    int minDmgFormula = (Damage - diff); // Min damage
-        //    int maxDmgFormula = (Damage + diff); // Max damage
-        //    int damageDone = getDamage.Next(minDmgFormula, maxDmgFormula); // Random number between min and max damage
-
-        //    if (CalcCritChance() == true)
-        //    {
-        //        damageDone = damageDone * 2;
-        //    }
-
-        //    return damageDone;
-        //}
-
-        //public bool CalcCritChance()
-        //{
-        //    Random getChance = new Random();
-        //    bool isCrit = false;
-        //    int chance = getChance.Next(1, 100);
-        //    if (chance > 85)
-        //    {
-        //        isCrit = true;
-        //    }
-        //    return isCrit;
-        //}
-
-        //public void Attack(Entity target, int damage)
-        //{
-        //    int damageDealt = damage - target.ArmorPoints; // Damage dealth will be the damage of the attacker - armorPoints value of attacked
-        //    target.healthPoints -= damageDealt; // Reduces target HP by "damageDealt"
-        //}
     }
 }

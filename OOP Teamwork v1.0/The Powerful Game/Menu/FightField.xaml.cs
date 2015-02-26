@@ -3,14 +3,13 @@
     using System.Windows;
     using System.Windows.Forms;
     using System.Windows.Media;
+    using System.Linq;
+    using The_Powerful_Game.Items;
     using The_Powerful_Game.CoreLogic;
     using The_Powerful_Game.Entities;
     using MessageBox = System.Windows.MessageBox;
     using UserControl = System.Windows.Controls.UserControl;
 
-    /// <summary>
-    /// Interaction logic for Fight.xaml
-    /// </summary>
     public partial class FightField : UserControl
     {
         public Character Player { get; private set; }
@@ -28,9 +27,9 @@
             InitializeComponent();
         }
 
-        private void ButtonFledOnClick(object sender, RoutedEventArgs e)
+        private void ButtonFleeOnClick(object sender, RoutedEventArgs e)
         {
-            DialogResult dialogResult = (DialogResult)MessageBox.Show("Are you sure you want to fled?", "Are you sure?", MessageBoxButton.YesNo);
+            DialogResult dialogResult = (DialogResult)MessageBox.Show("Are you sure you want to flee?", "Are you sure?", MessageBoxButton.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 MessageBox.Show("Whew! You fled from The Orc Revenger!");
@@ -47,11 +46,6 @@
             {
                 this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
             }
-            MessageBox.Show("Player Health: "
-                            + this.Player.HealthPoints.CurrentValue.ToString()
-                            + "\n"
-                            + "Enemy Health: "
-                            + this.Enemy.HealthPoints.CurrentValue.ToString());
         }
 
         private void ButtonOffensiveSpellOnClick(object sender, RoutedEventArgs e)
@@ -61,11 +55,6 @@
             {
                 this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
             }
-            MessageBox.Show("Player Health: "
-                            + this.Player.HealthPoints.CurrentValue.ToString()
-                            + "\n"
-                            + "Enemy Health: "
-                            + this.Enemy.HealthPoints.CurrentValue.ToString());
         }
 
         private void ButtonDeffensiveSpellOnClick(object sender, RoutedEventArgs e)
@@ -76,24 +65,31 @@
                 this.CombatLog.Text = this.Fighting.EnemyTurn() + this.CombatLog.Text;
                 this.Player.ArmorPoints -= this.Player.ArmorPoints / 2;
             }
-            MessageBox.Show(
-                            "Player Health: "
-                            + this.Player.HealthPoints.CurrentValue.ToString()
-                            + "\n"
-                            + "Enemy Health: "
-                            + this.Enemy.HealthPoints.CurrentValue.ToString());
         }
 
-        private void ButtonDrinkPotionOnClick(object sender, RoutedEventArgs e)
+        private void ButtonDrinkHealthPotionOnClick(object sender, RoutedEventArgs e)
         {
-            DialogResult dialogResult = (DialogResult)MessageBox.Show("Press yes for health potion, no for mana or cancel for not?", "Drink potion?", MessageBoxButton.YesNoCancel);
-            if (dialogResult == DialogResult.Yes)
+            var potion = (HealthPotion)this.Player.Inventory.FirstOrDefault(i => i is HealthPotion);
+            if (potion != null)
             {
-                this.CombatLog.Text += "You used health potion\n";
+                this.CombatLog.Text = this.Player.DrinkHealthPotion(potion) + this.CombatLog.Text;
             }
-            else if (dialogResult == DialogResult.No)
+            else
             {
-                this.CombatLog.Text += "You used mana potion\n";
+                MessageBox.Show("No Health Potions available.");
+            }
+        }
+
+        private void ButtonDrinkResourcePotionOnClick(object sender, RoutedEventArgs e)
+        {
+            var potion = (ResourcePotion)this.Player.Inventory.FirstOrDefault(i => i is ResourcePotion);
+            if (potion != null)
+            {
+                this.CombatLog.Text = this.Player.DrinkResourcePotion(potion) + this.CombatLog.Text;
+            }
+            else
+            {
+                MessageBox.Show("No Resource Potions available.");
             }
         }
     }

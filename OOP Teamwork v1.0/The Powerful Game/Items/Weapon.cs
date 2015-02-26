@@ -1,62 +1,21 @@
-﻿using System.Text;
-using The_Powerful_Game.Items.HandsCount;
-
-namespace The_Powerful_Game.Items
+﻿namespace The_Powerful_Game.Items
 {
-    public class Weapon : Item
+    using The_Powerful_Game.Contracts;
+    using The_Powerful_Game.Enums;
+
+    public class Weapon : Item, IEquipable
     {
-        private Hands hands;
-        private int damageValue;
-        private int damageModifier;
-        public Weapon(string name, string type, int price, int levelRequired, Hands hands, int damageValue, int damageModifier)
-            : base(name, type, price, levelRequired)
+        public Weapon(string name, ItemType type, int price, int equipEffect)
+            : base(name, type, price)
         {
-            this.Hands = hands;
-            this.DamageValue = damageValue;
-            this.damageModifier = damageModifier;
+            this.EquipEffect = equipEffect;
         }
 
-        public Hands Hands
-        {
-            get { return this.hands; }
-            set { this.hands = value; }
-        }
-
-        public int DamageValue
-        {
-            get { return this.damageValue; }
-            set { this.damageValue = value; }
-        }
-
-        public int DamageModifier
-        {
-            get { return this.damageModifier; }
-            set { this.damageModifier = value; }
-        }
+        public int EquipEffect { get; set; }
 
         public override object Clone()
         {
-            return new Weapon(
-                this.Name,
-                this.Type,
-                this.Price,
-                this.LevelRequired,
-                this.Hands,
-                this.DamageValue,
-                this.DamageModifier);
-        }
-
-        public override string ToString()
-        {
-            StringBuilder toString = new StringBuilder();
-
-            toString.AppendFormat("{0}, {1}, {2}, {3}",
-                base.ToString(),
-                this.Hands,
-                this.DamageValue,
-                this.DamageModifier);
-
-            return toString.ToString();
+            throw new System.NotImplementedException();
         }
     }
 }

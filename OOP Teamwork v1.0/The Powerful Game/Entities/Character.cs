@@ -2,6 +2,9 @@
 {
     using System.Windows.Controls;
     using System.Windows.Input;
+    using System.Collections.Generic;
+    using The_Powerful_Game.Enums;
+    using The_Powerful_Game.Items;
     using The_Powerful_Game.Contracts;
     using The_Powerful_Game.CoreLogic;
     using The_Powerful_Game.Entities.Chooses;
@@ -22,6 +25,8 @@
         private AttributePair resourcePoints;
         private EntityResourceType resourceType;
 
+        public readonly List<Item> Inventory = new List<Item>(6);
+
         protected Abillity offensiveAbillity;
         protected Abillity defensiveAbillity;
 
@@ -34,6 +39,9 @@
             this.Agility = agility;
             this.ResourcePoints = resourcePoints;
             this.ResourceType = resourceType;
+
+            this.Equip(new HealthPotion("Health Potion", ItemType.Consumable, 20, 100));
+            this.Equip(new ResourcePotion("Resource Potion", ItemType.Consumable, 20, 75));
         }
 
         public int Strength
@@ -58,27 +66,27 @@
 
         public EntityResourceType ResourceType { get; set; }
 
-        public abstract void RegenerateResource();
-
         public abstract bool DeffensiveBuff { get; set; }
-
-        public int Level
-        {
-            get { return this.level; }
-            protected set { this.level = value; }
-        }
-
-        public int Experience
-        {
-            get { return this.experience; }
-            set { this.experience = value; }
-        }
 
         public abstract string Attack(Enemy enemy);
 
         public abstract string CastOffensiveSpell(Enemy enemy);
 
         public abstract string CastDeffensiveSpell(Enemy enemy);
+
+        public abstract void RegenerateResource();
+
+        //public int Level
+        //{
+        //    get { return this.level; }
+        //    protected set { this.level = value; }
+        //}
+
+        //public int Experience
+        //{
+        //    get { return this.experience; }
+        //    set { this.experience = value; }
+        //}
 
         public override void Update()
         {
@@ -87,6 +95,12 @@
                 this.isAlive = false;
             }
             Move();
+        }
+
+        public override void Render()
+        {
+            Canvas.SetLeft(this.Image, this.X);
+            Canvas.SetTop(this.Image, this.Y);
         }
 
         public void Move()
@@ -112,10 +126,23 @@
             }
         }
 
-        public override void Render()
+        public void Equip(Item item)
         {
-            Canvas.SetLeft(this.Image, this.X);
-            Canvas.SetTop(this.Image, this.Y);
+            this.Inventory.Add(item);
+        }
+
+        public string DrinkHealthPotion(HealthPotion healthPotion)
+        {
+            this.HealthPoints = this.HealthPoints.Increase(healthPotion.ConsumptionValue);
+            this.Inventory.Remove(healthPotion);
+            return "You drink a Health Potion. Your Health is now " + this.HealthPoints.CurrentValue + "\n";
+        }
+
+        public string DrinkResourcePotion(ResourcePotion resourcePotion)
+        {
+            this.ResourcePoints = this.ResourcePoints.Increase(resourcePotion.ConsumptionValue);
+            this.Inventory.Remove(resourcePotion);
+            return "You drink a Resource Potion. Your Resource Points are now " + this.ResourcePoints.CurrentValue + "\n";
         }
 
         public void Flee(Enemy enemy)
