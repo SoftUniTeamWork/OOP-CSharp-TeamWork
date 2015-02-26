@@ -21,7 +21,7 @@ namespace The_Powerful_Game.Menu
     {
         public Shop()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
     }
 }

@@ -1,8 +1,7 @@
-﻿using System;
-using The_Powerful_Game.Items;
-
-namespace The_Powerful_Game.CoreLogic
+﻿namespace The_Powerful_Game.CoreLogic
 {
+    using System;
+    using The_Powerful_Game.Items;
     using System.Windows.Media;
     using The_Powerful_Game.Menu;
     using The_Powerful_Game.Entities;
@@ -118,9 +117,9 @@ namespace The_Powerful_Game.CoreLogic
                     ItemList.EquipableItems.Remove(droppedItem);
                     MessageBox.Show(string.Format("The enemy dropped {0} - {1}.", droppedItem.Type, droppedItem.Name));
                 }
-                else if (gearOrConsumable >= 30 && gearOrConsumable < 60)
+                else if (gearOrConsumable >= 30 && gearOrConsumable < 80)
                 {
-                    droppedItem = ItemList.EquipableItems[itemRandomizer.Next(0, ItemList.ConsumableItems.Count + 1)];
+                    droppedItem = ItemList.ConsumableItems[itemRandomizer.Next(0, ItemList.ConsumableItems.Count)];
                     MessageBox.Show(string.Format("The enemy dropped {0}.", droppedItem.Name));
                 }
             }

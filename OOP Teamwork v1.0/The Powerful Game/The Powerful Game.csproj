@@ -109,6 +109,9 @@
     <Compile Include="Menu\Option.xaml.cs">
       <DependentUpon>Option.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Menu\Shop.xaml.cs">
+      <DependentUpon>Shop.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageSwitcher.xaml.cs">
       <DependentUpon>PageSwitcher.xaml</DependentUpon>
     </Compile>
@@ -174,6 +177,10 @@
     <Page Include="Menu\Option.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\Shop.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="PageSwitcher.xaml">
       <SubType>Designer</SubType>

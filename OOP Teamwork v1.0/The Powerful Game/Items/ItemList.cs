@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace The_Powerful_Game.Items
+﻿namespace The_Powerful_Game.Items
 {
     using The_Powerful_Game.Entities;
     using The_Powerful_Game.Enums;
