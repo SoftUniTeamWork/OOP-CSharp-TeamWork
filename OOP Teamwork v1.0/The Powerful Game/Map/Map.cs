@@ -5,35 +5,74 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace The_Powerful_Game.Map
 {
-    class Map
+    public class Map
     {
         //Fields
         private int rows;
         private int columns;
-        private List<Tile> tiles = new List<Tile>(); 
+        private int[][] numMap;
+        private List<Tile> tiles = new List<Tile>();
         //Constructors
-        public Map(int rows, int columns)
+        public Map(int rows, int columns, int[][] numMap)
         {
             this.Rows = rows;
             this.Columns = columns;
-            Random random = new Random();
-            for (int r = 0; r < columns; r++)
+            this.NumMap = numMap;
+
+            // grass --> 0
+            // tree --> 1
+            // water --> 2
+            // bridge --> 3
+
+
+
+            for (int r = 0; r < numMap.Length; r++)
             {
-                for (int c = 0; c < columns; c++)
+                for (int c = 0; c < numMap[r].Length; c++)
                 {
-                    var tile = new Tile();
-                    tile.Data = string.Format("Row {0}, Column {1}", r, c);
-                    tile.Background =
-                        new SolidColorBrush(Color.FromArgb(255, (byte) random.Next(256), (byte) random.Next(256),
-                            (byte) random.Next(256)));
-                    this.Tiles.Add(tile);
+                    Random random = new Random();
+
+
+                    string path = "Resources/MapObjects/";
+
+                    switch (numMap[r][c])
+                    {
+                        case 0:
+                            path += "grass.png";
+                            break;
+                        case 1:
+                            path += "tree.png";
+                            break;
+                        case 2:
+                            path += "water.png";
+                            break;
+                        case 3:
+                            path += "bridge.png";
+                            break;
+                    }
+
+                    this.tiles.Add(new Tile()
+                    {
+                        Data = string.Format("  {0}\n  {1}", r, c),
+                        Background = new ImageBrush(new BitmapImage(
+                            new Uri(path, UriKind.Relative))),
+                    });
 
                 }
             }
         }
+
+        public int[][] NumMap
+        {
+            get { return this.numMap; }
+            set { this.numMap = value; }
+        }
+
+
         //Properties
 
         public int Rows

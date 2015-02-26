@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Controls;
-using The_Powerful_Game.Items;
-
-namespace The_Powerful_Game.Entities
+﻿namespace The_Powerful_Game.Entities
 {
-    class Merchant : Entity
+    using System;
+    using System.Collections.Generic;
+    using System.Windows.Controls;
+    using The_Powerful_Game.Items;
+
+    public class Merchant : Entity
     {
         // List of Item`s You can buy
         private List<Item> productsList;
