@@ -11,8 +11,15 @@
     {
         public MainMenu()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
+
+        #region ISwitchable Members
+        public void UtilizeState(object state)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
 
         private void newGameButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
@@ -23,23 +30,15 @@
         {
             Switcher.Switch(new Option());
         }
-        private void creditsButton_Click(object sender, RoutedEventArgs e)
-        {
-            Switcher.Switch(new Credits());
-        }
 
         private void quitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        #region ISwitchable Members
-        public void UtilizeState(object state)
+        private void creditsButton_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Switcher.Switch(new Credits());
         }
-
-       
-        #endregion
     }
 }

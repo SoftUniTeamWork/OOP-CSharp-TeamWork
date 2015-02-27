@@ -8,8 +8,19 @@
 
     public class Mage : Character
     {
-        public Mage(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image image, int strength,
-            int inteligence, int agility, AttributePair resourcePoints, EntityResourceType resourceType)
+        public Mage(
+            string name,
+            double x,
+            double y, 
+            AttributePair healthPoints, 
+            int armorPoints, 
+            int damage,
+            Image image,
+            int strength,
+            int inteligence, 
+            int agility,
+            AttributePair resourcePoints, 
+            EntityResourceType resourceType)
             : base(name, x, y, healthPoints, armorPoints, damage, image, strength, inteligence, agility, resourcePoints, resourceType)
         {
             // Deals 80 damage to the enemy
@@ -39,7 +50,7 @@
 
             int fightCase = fightSituation.Next(1, 101);
 
-            string combatLogResult = "";
+            string combatLogResult = string.Empty;
 
             // Passive - 10% chance to cast aditional offensive spell.
             int normalAttackDamage = this.Damage;
@@ -90,13 +101,15 @@
 
         public override string CastOffensiveSpell(Enemy enemy)
         {
-            string combatLogResult = "";
+            string combatLogResult = string.Empty;
             if (this.ResourcePoints.CurrentValue > this.offensiveAbillity.Cost)
             {
                 this.ResourcePoints = this.ResourcePoints.Decrease(this.offensiveAbillity.Cost);
                 enemy.ProcessDamageTaken(this.offensiveAbillity.EffectValue);
-                combatLogResult = string.Format("You cast unescapable {0} freezing everything in its path and dealing {1}.\n",
-                    this.offensiveAbillity.Name, this.offensiveAbillity.EffectValue);
+                combatLogResult = string.Format(
+                    "You cast unescapable {0} freezing everything in its path and dealing {1}.\n",
+                    this.offensiveAbillity.Name, 
+                    this.offensiveAbillity.EffectValue);
             }
             else
             {
@@ -108,7 +121,7 @@
 
         public override string CastDeffensiveSpell(Enemy enemy)
         {
-            string combatLogResult = "";
+            string combatLogResult = string.Empty;
             if (this.ResourcePoints.CurrentValue > this.defensiveAbillity.Cost)
             {
                 this.ResourcePoints = this.ResourcePoints.Decrease(this.defensiveAbillity.Cost);

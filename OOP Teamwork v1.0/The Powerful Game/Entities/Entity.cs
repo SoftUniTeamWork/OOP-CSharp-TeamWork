@@ -8,10 +8,10 @@
 
     public abstract class Entity : IUpdatable, IRenderable
     {
+        protected int damage;
         private string name;
         private AttributePair healthPoints;
         private int armorPoints;
-        protected int damage;
         private double attackSpeed;
         private Image image;
 

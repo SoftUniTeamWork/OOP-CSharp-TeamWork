@@ -15,12 +15,6 @@ namespace The_Powerful_Game.Menu
 
     public partial class FightField : UserControl
     {
-        public Character Player { get; private set; }
-
-        public Enemy Enemy { get; private set; }
-
-        public Fight Fight { get; private set; }
-
         public FightField(Character player, Enemy enemy)
         {
             this.Player = player;
@@ -28,9 +22,15 @@ namespace The_Powerful_Game.Menu
             this.Fight = new Fight(player, enemy);
 
             this.DataContext = this;
-            
-            InitializeComponent();
+
+            this.InitializeComponent();
         }
+
+        public Character Player { get; private set; }
+
+        public Enemy Enemy { get; private set; }
+
+        public Fight Fight { get; private set; }
 
         private void ButtonFleeOnClick(object sender, RoutedEventArgs e)
         {
@@ -39,7 +39,7 @@ namespace The_Powerful_Game.Menu
             {
                 MessageBox.Show("Whew! You fled from The Orc Revenger!");
                 CompositionTarget.Rendering += Gameplay.MainEngine.Run;
-                Player.Flee(this.Enemy);
+                this.Player.Flee(this.Enemy);
                 Switcher.Switch(Gameplay.Control);
             }
         }

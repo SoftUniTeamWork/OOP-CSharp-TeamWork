@@ -33,7 +33,7 @@
                 fightCase = 107;
             }
 
-            string combatLogResult = "";
+            string combatLogResult = string.Empty;
 
             if (fightCase <= 30)
             {

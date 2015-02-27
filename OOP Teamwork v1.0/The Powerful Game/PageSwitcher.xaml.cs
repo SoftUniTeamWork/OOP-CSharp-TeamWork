@@ -12,7 +12,7 @@ namespace The_Powerful_Game
     {
         public PageSwitcher()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             Switcher.pageSwitcher = this;
             Switcher.Switch(new MainMenu());
         }

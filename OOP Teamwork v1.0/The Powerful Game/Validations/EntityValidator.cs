@@ -18,7 +18,7 @@ namespace The_Powerful_Game.Validations
         internal static string NameValidating(string str)
         {
             str = str.Trim();
-            bool isInvalid = str.Equals(null) || str.Equals("");
+            bool isInvalid = str.Equals(null) || str.Equals(string.Empty);
             if (isInvalid)
             {
                 throw new EntityNameException("Entity Name cannot be null or empty.", "EntityName");

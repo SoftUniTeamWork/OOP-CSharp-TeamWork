@@ -9,6 +9,9 @@
     using CoreLogic;
     public abstract class Character : Entity, IControllable
     {
+        protected Abillity offensiveAbillity;
+        protected Abillity defensiveAbillity;
+
         private int strength;
         private int inteligence;
         private int agility;
@@ -26,11 +29,19 @@
 
         public readonly List<Item> Inventory = new List<Item>();
 
-        protected Abillity offensiveAbillity;
-        protected Abillity defensiveAbillity;
-
-        protected Character(string name, double x, double y, AttributePair healthPoints,
-            int armorPoints, int damage, Image image, int strength, int inteligence, int agility, AttributePair resourcePoints, EntityResourceType resourceType)
+        protected Character(
+            string name,
+            double x, 
+            double y,
+            AttributePair healthPoints,
+            int armorPoints,
+            int damage, 
+            Image image, 
+            int strength, 
+            int inteligence, 
+            int agility,
+            AttributePair resourcePoints,
+            EntityResourceType resourceType)
             : base(name, x, y, healthPoints, armorPoints, damage, image)
         {
             this.Strength = strength;
@@ -105,7 +116,7 @@
             {
                 this.isAlive = false;
             }
-            Move();
+            this.Move();
         }
 
         public override void Render()
@@ -117,28 +128,32 @@
         public void Move()
         {
             if (Keyboard.IsKeyDown(Key.Up) &&
-                CollisionHandler.HandleMapObjectCollision((int)(this.X + this.Image.Width / 2),
+                CollisionHandler.HandleMapObjectCollision(
+                (int)(this.X + this.Image.Width / 2),
                 (int)(this.Y + this.Image.Height * 2 / 3) - 5))
             {
                 this.Y -= Constants.CharacterMoveSpeed;
             }
 
             if (Keyboard.IsKeyDown(Key.Down) &&
-                CollisionHandler.HandleMapObjectCollision((int)(this.X + this.Image.Width / 2), 
+                CollisionHandler.HandleMapObjectCollision(
+                (int)(this.X + this.Image.Width / 2), 
                 (int)(this.Y + this.Image.Height * 2 / 3) + 5))
             {
                 this.Y += Constants.CharacterMoveSpeed;
             }
 
             if (Keyboard.IsKeyDown(Key.Left) &&
-                CollisionHandler.HandleMapObjectCollision((int)(this.X + this.Image.Width / 2) - 5,
+                CollisionHandler.HandleMapObjectCollision(
+                (int)(this.X + this.Image.Width / 2) - 5,
                 (int)(this.Y + this.Image.Height * 2 / 3)))
             {
                 this.X -= Constants.CharacterMoveSpeed;
             }
 
             if (Keyboard.IsKeyDown(Key.Right) &&
-                CollisionHandler.HandleMapObjectCollision((int)(this.X + this.Image.Width / 2) + 5,
+                CollisionHandler.HandleMapObjectCollision(
+                (int)(this.X + this.Image.Width / 2) + 5,
                 (int)(this.Y + this.Image.Height * 2 / 3)))
             {
                 this.X += Constants.CharacterMoveSpeed;

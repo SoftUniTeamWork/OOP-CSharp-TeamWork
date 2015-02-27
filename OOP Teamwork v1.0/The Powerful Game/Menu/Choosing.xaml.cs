@@ -16,9 +16,14 @@
             InitializeComponent();
         }
 
-        private void warriorButton_Click(object sender, RoutedEventArgs e)
+        public void UtilizeState(object state)
         {
-            classType = ClassType.Warrior;;
+            throw new NotImplementedException();
+        }
+
+        private void hunterButton_Click(object sender, RoutedEventArgs e)
+        {
+            classType = ClassType.Hunter;
             Switcher.Switch(new Gameplay());
         }
 
@@ -28,15 +33,10 @@
             Switcher.Switch(new Gameplay());
         }
 
-        private void hunterButton_Click(object sender, RoutedEventArgs e)
+        private void warriorButton_Click(object sender, RoutedEventArgs e)
         {
-            classType = ClassType.Hunter;
+            classType = ClassType.Warrior;
             Switcher.Switch(new Gameplay());
-        }
-
-        public void UtilizeState(object state)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -16,24 +16,24 @@
             this.PlayerTookTurn = false;
         }
 
+        public bool PlayerTookTurn { get; private set; }
+
         private Character Player { get; set; }
 
         private Enemy Enemy { get; set; }
-
-        public bool PlayerTookTurn { get; private set; }
 
         public string EnemyTurn()
         {
             string combatLogResult = this.Enemy.Attack(this.Player);
 
-            PlayerDeadCheck();
-            FightOverCheck();
+            this.PlayerDeadCheck();
+            this.FightOverCheck();
             return combatLogResult;
         }
 
         public string PlayerTurn(string choice)
         {
-            string combatLogResult = "";
+            string combatLogResult = string.Empty;
 
             switch (choice)
             {
@@ -49,7 +49,7 @@
             }
 
             this.PlayerTookTurn = !string.IsNullOrEmpty(combatLogResult);
-            FightOverCheck();
+            this.FightOverCheck();
 
             return combatLogResult;
         }

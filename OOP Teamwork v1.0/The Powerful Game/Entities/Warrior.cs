@@ -8,8 +8,19 @@
 
     public class Warrior : Character
     {
-        public Warrior(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image img, int strength,
-            int inteligence, int agility, AttributePair resourcePoints, EntityResourceType resourceType)
+        public Warrior(
+            string name,
+            double x,
+            double y, 
+            AttributePair healthPoints,
+            int armorPoints, 
+            int damage, 
+            Image img, 
+            int strength,
+            int inteligence,
+            int agility, 
+            AttributePair resourcePoints,
+            EntityResourceType resourceType)
             : base(name, x, y, healthPoints, armorPoints, damage, img, strength, inteligence, agility, resourcePoints, resourceType)
         {
             // Doubles player damage for the next attack.
@@ -39,10 +50,10 @@
 
             int fightCase = fightSituation.Next(1, 101);
 
-            string combatLogResult = "";
+            string combatLogResult = string.Empty;
 
             // Passive - 20% more damage with normal attacks
-            int normalAttackDamage = (int)Math.Round(Damage * 6 / 5.0);
+            int normalAttackDamage = (int)Math.Round(this.Damage * 6 / 5.0);
 
             if (fightCase <= 30)
             {
@@ -86,13 +97,15 @@
 
         public override string CastOffensiveSpell(Enemy enemy)
         {
-            string combatLogResult = "";
+            string combatLogResult = string.Empty;
             if (this.ResourcePoints.CurrentValue >= this.offensiveAbillity.Cost)
             {
                 this.ResourcePoints = this.ResourcePoints.Decrease(this.offensiveAbillity.Cost);
                 enemy.ProcessDamageTaken(this.Damage + this.offensiveAbillity.EffectValue);
-                combatLogResult = string.Format("You strike with the {1} for {0}.\n",
-                    this.Damage + this.offensiveAbillity.EffectValue, this.offensiveAbillity.Name);
+                combatLogResult = string.Format(
+                    "You strike with the {1} for {0}.\n",
+                    this.Damage + this.offensiveAbillity.EffectValue, 
+                    this.offensiveAbillity.Name);
             }
             else
             {
@@ -105,7 +118,7 @@
 
         public override string CastDeffensiveSpell(Enemy enemy)
         {
-            string combatLogResult = "";
+            string combatLogResult = string.Empty;
             if (this.ResourcePoints.CurrentValue >= this.defensiveAbillity.Cost)
             {
                 this.ResourcePoints = this.ResourcePoints.Decrease(this.defensiveAbillity.Cost);

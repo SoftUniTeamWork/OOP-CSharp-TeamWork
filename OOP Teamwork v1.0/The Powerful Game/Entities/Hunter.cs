@@ -8,8 +8,19 @@
 
     public class Hunter : Character
     {
-        public Hunter(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image image, int strength,
-            int inteligence, int agility, AttributePair resourcePoints, EntityResourceType resourceType)
+        public Hunter(
+            string name,
+            double x,
+            double y, 
+            AttributePair healthPoints,
+            int armorPoints, 
+            int damage,
+            Image image, 
+            int strength,
+            int inteligence,
+            int agility, 
+            AttributePair resourcePoints, 
+            EntityResourceType resourceType)
             : base(name, x, y, healthPoints, armorPoints, damage, image, strength, inteligence, agility, resourcePoints, resourceType)
         {
             // Deals 80 damage to the enemy target.
@@ -43,7 +54,7 @@
             string combatLogResult = "";
 
             // Passive - 10% more Critical Strike chance
-            int normalAttackDamage = Damage;
+            int normalAttackDamage = this.Damage;
 
             if (fightCase <= 25)
             {
@@ -93,8 +104,10 @@
             {
                 this.ResourcePoints = this.ResourcePoints.Decrease(this.offensiveAbillity.Cost);
                 enemy.ProcessDamageTaken(this.offensiveAbillity.EffectValue);
-                combatLogResult = string.Format("You shoot a {1} through your enemy for {0}.\n",
-                    this.Damage + this.offensiveAbillity.EffectValue, this.offensiveAbillity.Name);
+                combatLogResult = string.Format(
+                    "You shoot a {1} through your enemy for {0}.\n",
+                    this.Damage + this.offensiveAbillity.EffectValue,
+                    this.offensiveAbillity.Name);
                 this.RegenerationCounter++;
             }
             else
@@ -108,7 +121,7 @@
 
         public override string CastDeffensiveSpell(Enemy enemy)
         {
-            string combatLogResult = "";
+            string combatLogResult = string.Empty;
             if (this.ResourcePoints.CurrentValue >= this.defensiveAbillity.Cost)
             {
                 this.ResourcePoints = this.ResourcePoints.Decrease(this.defensiveAbillity.Cost);

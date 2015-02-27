@@ -3,10 +3,9 @@
     using System;
     using System.Collections.Generic;
     using System.Windows.Controls;
-    using Contracts;
     using Items;
 
-    public class Merchant : Entity,IRenderable
+    public class Merchant : Entity
     {
         // List of Item`s You can buy
         private List<Item> productsList;
@@ -25,7 +24,7 @@
 
         public void SellItemToPlayer(Item item, Character player)
         {
-            ProductsList.Remove(item);
+            this.ProductsList.Remove(item);
             player.Gold -= item.Price;
             player.Inventory.Add(item);
         }
@@ -34,7 +33,7 @@
         {
             player.Inventory.Remove(item);
             player.Gold += item.Price;
-            ProductsList.Add(item);
+            this.ProductsList.Add(item);
         }
 
         public override void Update()

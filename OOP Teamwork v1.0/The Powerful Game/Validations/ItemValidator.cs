@@ -1,16 +1,16 @@
-﻿using System;
-using System.Text.RegularExpressions;
-using The_Powerful_Game.Exceptions;
-
-namespace The_Powerful_Game.Validations
+﻿namespace The_Powerful_Game.Validations
 {
+    using System;
+    using System.Text.RegularExpressions;
+    using The_Powerful_Game.Exceptions;
+
     public static class ItemValidator
     {
         internal static string ItemNameValidating(string value)
         {
             string pattern = @"[\!\@\#\$\%\^\&\*\+\=\/\\]+";
             Regex r = new Regex(pattern);
-            if (value.Equals("") || value.Equals(null) || (value.Length < 1 && value.Equals(" ")))
+            if (value.Equals(string.Empty) || value.Equals(null) || (value.Length < 1 && value.Equals(" ")))
             {
                 throw new ItemNameException("Item name must  non-null and non-whitespaces and non-empty.", "Item name");
             }
@@ -24,7 +24,7 @@ namespace The_Powerful_Game.Validations
         internal static string ItemTypeValidating(string value)
         {
             value = value.Trim().ToLower();
-            bool isNullOrEmpty = value.Equals(null) || value.Equals("");
+            bool isNullOrEmpty = value.Equals(null) || value.Equals(string.Empty);
             bool isValidType = value.Equals("one-handed") || value.Equals("two-handed") || value.Equals("off-hand") || value.Equals("ranged") || value.Equals("shield");
             if (isNullOrEmpty)
             {

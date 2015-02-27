@@ -6,15 +6,15 @@
 
     public class Engine
     {
+        public readonly List<Enemy> EnemiesList = new List<Enemy>(NumberOfEnemies);
+
         private const int NumberOfEnemies = 10;
         private Character player;
         private Merchant merchant;
 
-        public readonly List<Enemy> EnemiesList = new List<Enemy>(NumberOfEnemies);
-
         public Engine()
         {
-            Initialize();
+            this.Initialize();
         }
 
         public void Run(object sender, EventArgs args)
@@ -22,7 +22,7 @@
             if (this.player.isAlive)
             {
                 this.player.Update();
-                EnemiesList.ForEach(e =>
+                this.EnemiesList.ForEach(e =>
                 {
                     CollisionHandler.HandleEnemyCollision(this.player, e);
                     e.Update();
@@ -32,7 +32,7 @@
 
                 this.merchant.Render();
                 this.player.Render();
-                EnemiesList.ForEach(e => e.Render());
+                this.EnemiesList.ForEach(e => e.Render());
             }
         }
 

@@ -47,7 +47,7 @@
             int x = (int)futureX / Constants.TileSize;
             int y = (int)futureY / Constants.TileSize;
 
-            if (!(futureY - Constants.PlayerHeight / 2 > 0) || !(futureY < Constants.MapHeight - Constants.PlayerHeight * 3 / 2 ))
+            if (!(futureY - Constants.PlayerHeight / 2 > 0) || !(futureY < Constants.MapHeight - Constants.PlayerHeight * 3 / 2))
             {
                 return false;
             }
