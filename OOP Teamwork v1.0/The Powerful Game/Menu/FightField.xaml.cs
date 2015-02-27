@@ -1,4 +1,7 @@
-﻿namespace The_Powerful_Game.Menu
+﻿using System;
+using System.Windows.Media.Imaging;
+
+namespace The_Powerful_Game.Menu
 {
     using System.Windows;
     using System.Windows.Forms;
@@ -24,6 +27,8 @@
             this.Enemy = enemy;
             this.Fight = new Fight(player, enemy);
 
+            this.DataContext = this;
+            
             InitializeComponent();
         }
 

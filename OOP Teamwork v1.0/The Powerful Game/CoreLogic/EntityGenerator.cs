@@ -15,7 +15,7 @@ namespace The_Powerful_Game.CoreLogic
     {
         public static Character GeneratePlayer()
         {
-            string playerName = "Player";
+            string playerName = "Pancho";
 
             AttributePair health;
             Image playerImage = null;

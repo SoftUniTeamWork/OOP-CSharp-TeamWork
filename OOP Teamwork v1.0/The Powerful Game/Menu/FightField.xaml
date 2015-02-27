@@ -3,83 +3,38 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:ap="clr-namespace:The_Powerful_Game.Entities"
 	mc:Ignorable="d"
 	x:Class="The_Powerful_Game.Menu.FightField"
-	d:DesignWidth="640" d:DesignHeight="480" Width="1000" Height="680">
+	Width="1000" Height="680">
 
     <UserControl.Resources>
-        <Style TargetType="TextBlock"
-               x:Key="NameStyle">
-            <Setter Property="Width"
-                    Value="135"></Setter>
-            <Setter Property="Height"
-                    Value="29"></Setter>
-            <Setter Property="TextWrapping"
-                    Value="Wrap"></Setter>
-            <Setter Property="FontSize"
-                    Value="20"></Setter>
-            <Setter Property="VerticalAlignment"
-                    Value="Top"></Setter>
-            <Setter Property="TextAlignment"
-                    Value="Center"></Setter>
-        </Style>
-        <Style x:Key="Health"
-                TargetType="Rectangle">
-            <Setter Property="Width"
-                    Value="296"></Setter>
-            <Setter Property="Height"
-                    Value="26"></Setter>
-            <Setter Property="VerticalAlignment"
-                    Value="Top"></Setter>
-        </Style>
-        <Style x:Key="Character"
-               TargetType="Image">
-            <Setter Property="Height"
-                    Value="285"></Setter>
-            <Setter Property="Width"
-                    Value="194"></Setter>
-            <Setter Property="VerticalAlignment"
-                    Value="Center"></Setter>
-        </Style>
-        <Style x:Key="ButtonMenuStyle"
-               TargetType="Button">
-            <Setter Property="Foreground"
-                    Value="White"></Setter>
-            <Setter Property="Width"
-                    Value="128"></Setter>
-            <Setter Property="Height"
-                    Value="23"></Setter>
-        </Style>
+        <BitmapImage x:Key="EnemyImage" UriSource="../Resources/3D-Orc.png" />
     </UserControl.Resources>
-    <Grid x:Name="fight">
+    <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="../Resources/FightField/bg-full.jpg"></ImageBrush>
         </Grid.Background>
-        <TextBlock Style="{StaticResource NameStyle}"
-                   HorizontalAlignment="Left"
-                   Text="The Ork Slayer"
-                   Margin="168,11,0,0" 
-                   Width="220"/>
-        <TextBlock Style="{StaticResource NameStyle}"
-                   HorizontalAlignment="Right" 
-                   Margin="0,11,197,0"
-                   Text="Orc Revenger"
-                   Width="220"/>
-        <Image x:Name="PlayerImage" 
-               Source="../Resources/Classes/Warrior.png"
-               Width="194" Margin="168,145,638,0" Height="294" VerticalAlignment="Top"/>
-
-        <Image Style="{StaticResource Character}"
-               Source="../Resources/FightField/enemy-withgrass.png"
-               HorizontalAlignment="Center"
-               Margin="623,145,183,253"
-               Width="194" Height="282"/>
         <TextBlock HorizontalAlignment="Left"
-            Margin="142,444,0,0"
-            TextWrapping="Wrap"
-            VerticalAlignment="Top"
-            Height="6"
-            Width="717">
+                   TextAlignment="Center"
+                   FontSize="20"
+                   Text="{Binding Path=Player.Name}"
+                   Margin="168,11,0,639" 
+                   Width="220"/>
+        <TextBlock 
+            HorizontalAlignment="Right" 
+                   TextAlignment="Center"
+                   FontSize="20"
+                   Margin="0,11,197,640"
+                   Text="{Binding Path=Enemy.Name}"
+                   Width="220"/>
+        <Image Source="{Binding Path=Player.Image.Source}"
+               Width="200" Margin="168,144,632,236" Height="300"/>
+        <Image Source="{StaticResource EnemyImage}"
+               Width="194" Height="282" Margin="623,145,183,253"/>
+        <TextBlock
+            Margin="142,449,141,225"
+            Height="6" Width="717">
             <TextBlock.Background>
                 <ImageBrush ImageSource="../Resources/xp/xp0.png"></ImageBrush>
             </TextBlock.Background>
@@ -89,56 +44,58 @@
                 <Menu.Background>
                     <ImageBrush ImageSource="../Resources/FightField/buttons-bg.jpg"></ImageBrush>
                 </Menu.Background>
-                <Button Style="{StaticResource ButtonMenuStyle}"
-            		Content="Attack"
-            		Click="ButtonAttackOnClick"
-            		Height="26" Width="154"
-                    Margin="0, 5, 0, 0">
+                <Button Content="Attack"
+                        Foreground="White"
+            		    Click="ButtonAttackOnClick"
+            		    Height="26" Width="154"
+                        Margin="0, 5, 0, 0">
                     <Button.Background>
                         <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
                     </Button.Background>
                 </Button>
-                <Button Style="{StaticResource ButtonMenuStyle}"
-            		Content="Offensive Spell"
-            		Click="ButtonOffensiveSpellOnClick"
-            		Height="26"
-            		Width="154">
+                <Button Content="Offensive Spell"
+                        Foreground="White"
+            		    Click="ButtonOffensiveSpellOnClick"
+            		    Height="26"
+            		    Width="154">
                     <Button.Background>
                         <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
                     </Button.Background>
                 </Button>
-                <Button Style="{StaticResource ButtonMenuStyle}"
-            		Content="Deffensive Spell"
-            		Click="ButtonDeffensiveSpellOnClick"
-            		Height="26" Width="154">
+                <Button 
+                        Content="Deffensive Spell"
+                        Foreground="White"
+            		    Click="ButtonDeffensiveSpellOnClick"
+            		    Height="26" Width="154">
                     <Button.Background>
                         <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
                     </Button.Background>
                 </Button>
                 <StackPanel Orientation="Horizontal">
-                    <Button Style="{StaticResource ButtonMenuStyle}"
-            		Content="Health Potion"
-            		Click="ButtonDrinkHealthPotionOnClick"
-            		Height="26"
-            		Width="77">
+                    <Button 
+            		    Content="Health Potion"
+                        Foreground="White"
+            		    Click="ButtonDrinkHealthPotionOnClick"
+            		    Height="26"
+            		    Width="77">
                         <Button.Background>
                             <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
                         </Button.Background>
                     </Button>
-                    <Button Style="{StaticResource ButtonMenuStyle}"
-                	Content="Res. Potion"
-                	Click="ButtonDrinkResourcePotionOnClick"
-                	Height="26"
-                	Width="77">
+                    <Button 
+                        Content="Res. Potion"
+                        Foreground="White"
+                	    Click="ButtonDrinkResourcePotionOnClick"
+                	    Height="26"
+                	    Width="77">
                         <Button.Background>
                             <ImageBrush ImageSource="../Resources/FightField/button-normal.png"/>
                         </Button.Background>
                     </Button>
                 </StackPanel>
-
-
-                <Button Style="{StaticResource ButtonMenuStyle}"
-            		Content="Fled"
+                <Button
+            		Content="Flee"
+                    Foreground="White"
             		Click="ButtonFleeOnClick"
             		Height="26"
             		Width="154">
@@ -164,14 +121,16 @@
         </Canvas>
         <TextBox HorizontalAlignment="Left"
                  Margin="142,41,0,616"
-                 TextWrapping="Wrap"
+                 FontSize="20"
+                 Foreground="Black"
+                 TextAlignment="Center"
                  Width="262"
                  IsReadOnly="True">
             <TextBox.Background>
                 <ImageBrush ImageSource="../Resources/hp/hp0013.png"></ImageBrush>
             </TextBox.Background>
         </TextBox>
-        <TextBox HorizontalAlignment="Left"
+                <TextBox HorizontalAlignment="Left"
                  Height="23"
                  Margin="568,40,0,0"
                  TextWrapping="Wrap"
