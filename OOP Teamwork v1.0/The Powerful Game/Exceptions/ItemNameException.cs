@@ -1,6 +1,7 @@
 ﻿namespace The_Powerful_Game.Exceptions
 {
     using System;
+
     public class ItemNameException : ApplicationException
     {
         public ItemNameException()

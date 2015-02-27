@@ -3,7 +3,6 @@
     using System;
     using System.Windows.Controls;
     using Menu;
-    using Contracts;
 
     public class Enemy : Entity
     {
@@ -28,6 +27,7 @@
             {
                 fightCase = 106;
             }
+
             if (player is Hunter && player.DeffensiveBuff)
             {
                 fightCase = 107;
@@ -101,7 +101,7 @@
 
         public override void Update()
         {
-            if (!this.isAlive)
+            if (!this.IsAlive)
             {
                 Gameplay.Root.Children.Remove(this.Image);
                 Gameplay.MainEngine.EnemiesList.Remove(this);

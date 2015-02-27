@@ -1,14 +1,17 @@
 ﻿namespace The_Powerful_Game.Entities
 {
+    using System.Collections.Generic;
     using System.Windows.Controls;
     using System.Windows.Input;
-    using System.Collections.Generic;
-    using Enums;
-    using Items;
     using Contracts;
     using CoreLogic;
+    using Enums;
+    using Items;
+    
     public abstract class Character : Entity, IControllable
     {
+        public readonly List<Item> Inventory = new List<Item>();
+
         protected Abillity offensiveAbillity;
         protected Abillity defensiveAbillity;
 
@@ -27,18 +30,16 @@
         private AttributePair resourcePoints;
         private EntityResourceType resourceType;
 
-        public readonly List<Item> Inventory = new List<Item>();
-
         protected Character(
             string name,
-            double x, 
+            double x,
             double y,
             AttributePair healthPoints,
             int armorPoints,
-            int damage, 
-            Image image, 
-            int strength, 
-            int inteligence, 
+            int damage,
+            Image image,
+            int strength,
+            int inteligence,
             int agility,
             AttributePair resourcePoints,
             EntityResourceType resourceType)
@@ -66,6 +67,7 @@
             {
                 return this.inteligence + this.inteligenceModifier;
             }
+
             set
             {
                 this.inteligence = value;
@@ -78,6 +80,7 @@
             {
                 return this.agility + this.agilityModifier;
             }
+
             set
             {
                 this.agility = value;
@@ -90,6 +93,7 @@
             {
                 return this.gold;
             }
+
             set
             {
                 this.gold = value;
@@ -114,8 +118,9 @@
         {
             if (this.HealthPoints.CurrentValue == 0)
             {
-                this.isAlive = false;
+                this.IsAlive = false;
             }
+
             this.Move();
         }
 
@@ -137,7 +142,7 @@
 
             if (Keyboard.IsKeyDown(Key.Down) &&
                 CollisionHandler.HandleMapObjectCollision(
-                (int)(this.X + this.Image.Width / 2), 
+                (int)(this.X + this.Image.Width / 2),
                 (int)(this.Y + this.Image.Height * 2 / 3) + 5))
             {
                 this.Y += Constants.CharacterMoveSpeed;

@@ -18,6 +18,7 @@
             {
                 throw new ItemNameException("Item name contains invalid symbols. Invalid symbols are[!@#$%^&*+=/\\]", "ItemName");
             }
+
             return value;
         }
 
@@ -34,6 +35,7 @@
             {
                 throw new ItemTypeException("Item type does not exist.", "ItemType");
             }
+
             value = value[0].ToString().ToUpper() + value.Substring(1, value.Length - 1);
             return value;
         }
@@ -44,6 +46,7 @@
             {
                 throw new IndexOutOfRangeException("Price must be greater than 0.");
             }
+
             return value;
         }
 
@@ -53,6 +56,7 @@
             {
                 throw new IndexOutOfRangeException("Level required must be greater than 0.");
             }
+
             return value;
         }
     }

@@ -13,6 +13,5 @@
         public Character Player { get; set; }
 
         public Merchant Merchant { get; set; }
-
     }
 }

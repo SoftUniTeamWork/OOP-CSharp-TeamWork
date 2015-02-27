@@ -42,6 +42,7 @@
                 Switcher.Switch(new Shop(player, merchant));
             }
         }
+
         public static bool HandleMapObjectCollision(int futureX, int futureY)
         {
             int x = (int)futureX / Constants.TileSize;
@@ -57,7 +58,7 @@
                 return false;
             }
 
-            return Gameplay.numMap[y][x] != 2 && Gameplay.numMap[y][x] != 1;
+            return Gameplay.NumMap[y][x] != 2 && Gameplay.NumMap[y][x] != 1;
         }
     }
 }

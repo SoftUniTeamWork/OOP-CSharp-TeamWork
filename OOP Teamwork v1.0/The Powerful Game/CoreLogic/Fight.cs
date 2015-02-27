@@ -1,10 +1,10 @@
 ﻿namespace The_Powerful_Game.CoreLogic
 {
     using System;
-    using Items;
     using System.Windows.Media;
-    using Menu;
     using Entities;
+    using Items;
+    using Menu;
     using MessageBox = System.Windows.MessageBox;
 
     public class Fight
@@ -68,7 +68,7 @@
             if (this.Enemy.Fled)
             {
                 MessageBox.Show("The enemy fled the battlefield like a coward.\n");
-                this.Enemy.isAlive = false;
+                this.Enemy.IsAlive = false;
                 this.Enemy.Update();
                 CompositionTarget.Rendering += Gameplay.MainEngine.Run;
                 Switcher.Switch(Gameplay.Control);
@@ -81,7 +81,7 @@
             else if (this.Enemy.HealthPoints.CurrentValue == 0)
             {
                 MessageBox.Show("Glorious Victory!");
-                this.Enemy.isAlive = false;
+                this.Enemy.IsAlive = false;
                 this.Enemy.Update();
                 this.Player.EquipItem(this.DropItem());
 

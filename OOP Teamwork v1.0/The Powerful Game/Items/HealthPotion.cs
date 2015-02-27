@@ -1,6 +1,7 @@
 ﻿namespace The_Powerful_Game.Items
 {
     using Enums;
+
     public class HealthPotion : Consumable
     {
         public HealthPotion(string name, ItemType type, int price, int consumptionValue)

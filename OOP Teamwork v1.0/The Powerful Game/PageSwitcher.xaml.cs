@@ -1,10 +1,10 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Controls;
-using The_Powerful_Game.Menu;
-
-namespace The_Powerful_Game
+﻿namespace The_Powerful_Game
 {
+    using System;
+    using System.Windows;
+    using System.Windows.Controls;
+    using The_Powerful_Game.Menu;
+
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
@@ -13,7 +13,7 @@ namespace The_Powerful_Game
         public PageSwitcher()
         {
             this.InitializeComponent();
-            Switcher.pageSwitcher = this;
+            Switcher.PageSwitcher = this;
             Switcher.Switch(new MainMenu());
         }
 
@@ -28,10 +28,14 @@ namespace The_Powerful_Game
             ISwitchable s = nextPage as ISwitchable;
 
             if (s != null)
+            {
                 s.UtilizeState(state);
+            }
             else
+            {
                 throw new ArgumentException("NextPage is not ISwitchable! "
                   + nextPage.Name.ToString());
+            }
         }
     }
 }

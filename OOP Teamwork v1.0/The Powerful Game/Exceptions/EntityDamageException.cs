@@ -1,11 +1,11 @@
-﻿using System;
-
-namespace The_Powerful_Game.Exceptions
+﻿namespace The_Powerful_Game.Exceptions
 {
+    using System;
+
     /// <summary>
     /// Entity damage exception thrower messenger.
     /// </summary>
-    class EntityDamageException : ApplicationException
+    public class EntityDamageException : ApplicationException
     {
         /// <summary>
         /// Default message is Damage is under 0.

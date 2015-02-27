@@ -21,22 +21,22 @@
         }
         #endregion
 
-        private void newGameButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void NewGameButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Switcher.Switch(new Choosing());
         }
 
-        private void optionButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void OptionButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Switcher.Switch(new Option());
         }
 
-        private void quitButton_Click(object sender, RoutedEventArgs e)
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        private void creditsButton_Click(object sender, RoutedEventArgs e)
+        private void CreditsButton_Click(object sender, RoutedEventArgs e)
         {
             Switcher.Switch(new Credits());
         }

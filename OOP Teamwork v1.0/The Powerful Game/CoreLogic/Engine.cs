@@ -19,7 +19,7 @@
 
         public void Run(object sender, EventArgs args)
         {
-            if (this.player.isAlive)
+            if (this.player.IsAlive)
             {
                 this.player.Update();
                 this.EnemiesList.ForEach(e =>

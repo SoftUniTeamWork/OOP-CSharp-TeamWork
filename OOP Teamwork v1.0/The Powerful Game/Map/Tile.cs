@@ -7,6 +7,7 @@
         public Tile()
         {
         }
+
         public string Data { get; set; }
 
         public ImageBrush Background { get; set; }

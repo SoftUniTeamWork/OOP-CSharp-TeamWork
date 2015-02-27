@@ -1,10 +1,9 @@
-﻿using System;
-
-namespace The_Powerful_Game.Exceptions
+﻿namespace The_Powerful_Game.Exceptions
 {
+    using System;
+
     public class EntityNameException : ApplicationException
     {
-
         public EntityNameException()
         {
             throw new ApplicationException("Your name is null or empty.");

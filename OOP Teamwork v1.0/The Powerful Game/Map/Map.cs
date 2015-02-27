@@ -24,7 +24,6 @@
                 {
                     Random random = new Random();
 
-
                     string path = @"pack://application:,,,/Resources/MapObjects/";
 
                     switch (numMap[r][c])
@@ -62,6 +61,7 @@
             get { return this.rows; }
             set { this.rows = value; }
         }
+
         public int Columns
         {
             get { return this.columns; }

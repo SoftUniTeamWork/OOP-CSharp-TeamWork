@@ -1,7 +1,7 @@
-﻿using The_Powerful_Game.Exceptions;
-
-namespace The_Powerful_Game.Validations
+﻿namespace The_Powerful_Game.Validations
 {
+    using The_Powerful_Game.Exceptions;
+
     /// <summary>
     /// Entity validations are doing here. Validations for Name and Damage.
     /// </summary>
@@ -23,6 +23,7 @@ namespace The_Powerful_Game.Validations
             {
                 throw new EntityNameException("Entity Name cannot be null or empty.", "EntityName");
             }
+
             return str;
         }
 
@@ -40,6 +41,7 @@ namespace The_Powerful_Game.Validations
             {
                 throw new EntityDamageException("Entity cannot make negative damage.", "damage");
             }
+
             return value;
         }
     }

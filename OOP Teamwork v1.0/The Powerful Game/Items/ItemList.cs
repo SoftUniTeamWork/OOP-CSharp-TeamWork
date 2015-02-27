@@ -1,7 +1,7 @@
 ﻿namespace The_Powerful_Game.Items
 {
-    using Enums;
     using System.Collections.Generic;
+    using Enums;
 
     public static class ItemList
     {

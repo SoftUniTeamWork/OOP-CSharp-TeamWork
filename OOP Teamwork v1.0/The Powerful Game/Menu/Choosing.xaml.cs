@@ -10,10 +10,11 @@
     /// </summary>
     public partial class Choosing : UserControl, ISwitchable
     {
-        public static ClassType classType;
+        public static ClassType ClassType;
+
         public Choosing()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         public void UtilizeState(object state)
@@ -21,21 +22,21 @@
             throw new NotImplementedException();
         }
 
-        private void hunterButton_Click(object sender, RoutedEventArgs e)
+        private void HunterButton_Click(object sender, RoutedEventArgs e)
         {
-            classType = ClassType.Hunter;
+            ClassType = ClassType.Hunter;
             Switcher.Switch(new Gameplay());
         }
 
-        private void mageButton_Click(object sender, RoutedEventArgs e)
+        private void MageButton_Click(object sender, RoutedEventArgs e)
         {
-            classType = ClassType.Mage;
+            ClassType = ClassType.Mage;
             Switcher.Switch(new Gameplay());
         }
 
-        private void warriorButton_Click(object sender, RoutedEventArgs e)
+        private void WarriorButton_Click(object sender, RoutedEventArgs e)
         {
-            classType = ClassType.Warrior;
+            ClassType = ClassType.Warrior;
             Switcher.Switch(new Gameplay());
         }
     }

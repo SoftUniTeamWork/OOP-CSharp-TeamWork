@@ -23,14 +23,14 @@
             <RowDefinition Height="35*"/>
             <RowDefinition Height="246*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="warriorButton" Margin="2,0,4,34" VerticalAlignment="Bottom" Height="270" FontSize="21.333" Click="warriorButton_Click" Grid.Column="1">
+        <Button x:Name="warriorButton" Margin="2,0,4,34" VerticalAlignment="Bottom" Height="270" FontSize="21.333" Click="WarriorButton_Click" Grid.Column="1">
             <Image Source="/Resources/Classes/Warrior.png" Stretch="Fill" Height="270" Width="206" RenderTransformOrigin="0,0">
             </Image>
         </Button>
-        <Button x:Name="mageButton" Margin="3,0,4,34" VerticalAlignment="Bottom" Height="270" FontSize="21.333" Click="mageButton_Click" Grid.Column="3">
+        <Button x:Name="mageButton" Margin="3,0,4,34" VerticalAlignment="Bottom" Height="270" FontSize="21.333" Click="MageButton_Click" Grid.Column="3">
             <Image Source="/Resources/Classes/Mage.png" Stretch="Fill" Height="270" Width="206" RenderTransformOrigin="0.479,0.507"/>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="0,0,0,34" VerticalAlignment="Bottom" Height="270" Width="206" Grid.Column="5" Click="hunterButton_Click">
+        <Button HorizontalAlignment="Left" Margin="0,0,0,34" VerticalAlignment="Bottom" Height="270" Width="206" Grid.Column="5" Click="HunterButton_Click">
             <Image Source="/Resources/Classes/Hunter.png" Height="270" Width="206" Stretch="Fill"/>
         </Button>
         <TextBlock Grid.Column="3" Margin="0,1,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Height="154" Text="&#x9;The arcane magic available to mages is both great and dangerous. Mages can wear only cloth armor, but arcane shields and enchantments give them additional protection. To keep enemies at bay, magi can summon bursts of fire to incinerate distant targets and cause entire areas to erupt, setting groups of foes ablaze."/>

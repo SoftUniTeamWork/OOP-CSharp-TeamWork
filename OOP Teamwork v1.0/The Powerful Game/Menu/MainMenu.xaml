@@ -26,7 +26,7 @@
                 Content="New Game"
                 Height="45"
                 FontSize="21.333"
-                Click="newGameButton_Click">
+                Click="NewGameButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="../Resources/FightField/button-normal.png"></ImageBrush>
             </Button.Background>
@@ -39,7 +39,7 @@
                 Width="219"
                 FontSize="21.333"
                 Content="Option"
-                Click="optionButton_Click">
+                Click="OptionButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="../Resources/FightField/button-normal.png"></ImageBrush>
             </Button.Background>
@@ -52,7 +52,7 @@
                 Width="219"
                 FontSize="21.333"
                 Content="Credits"
-                Click="creditsButton_Click">
+                Click="CreditsButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="../Resources/FightField/button-normal.png"></ImageBrush>
             </Button.Background>
@@ -65,7 +65,7 @@
                 Width="219" 
                 FontSize="21.333"
                 Content="Quit"
-                Click="quitButton_Click">
+                Click="QuitButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="../Resources/FightField/button-normal.png"></ImageBrush>
             </Button.Background>

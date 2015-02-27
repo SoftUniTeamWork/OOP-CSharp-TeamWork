@@ -2,20 +2,20 @@
 {
     using System;
     using System.Text;
-    using Contracts;
     using System.Windows.Controls;
+    using Contracts;
     using Validations;
 
     public abstract class Entity : IUpdatable, IRenderable
     {
+        public bool IsAlive = true;
+
         protected int damage;
+
         private string name;
         private AttributePair healthPoints;
         private int armorPoints;
-        private double attackSpeed;
         private Image image;
-
-        public bool isAlive = true;
 
         public Entity(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image image)
         {
@@ -30,7 +30,11 @@
 
         public virtual string Name
         {
-            get { return this.name; }
+            get
+            {
+                return this.name;
+            }
+
             set
             {
                 this.name = EntityValidator.NameValidating(value);
@@ -49,13 +53,18 @@
 
         public virtual int ArmorPoints
         {
-            get { return this.armorPoints; }
+            get
+            {
+                return this.armorPoints;
+            }
+
             set
             {
                 if (value < 0)
                 {
                     throw new ArgumentNullException("Armor cannot be negative number.");
                 }
+
                 this.armorPoints = value;
             }
         }
@@ -72,12 +81,14 @@
             {
                 return this.image;
             }
+
             set
             {
                 if (value == null)
                 {
                     throw new ArgumentNullException("Entity image cannot be empty.");
                 }
+
                 this.image = value;
             }
         }

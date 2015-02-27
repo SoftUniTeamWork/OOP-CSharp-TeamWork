@@ -11,20 +11,21 @@
         public Hunter(
             string name,
             double x,
-            double y, 
+            double y,
             AttributePair healthPoints,
-            int armorPoints, 
+            int armorPoints,
             int damage,
-            Image image, 
+            Image image,
             int strength,
             int inteligence,
-            int agility, 
-            AttributePair resourcePoints, 
+            int agility,
+            AttributePair resourcePoints,
             EntityResourceType resourceType)
             : base(name, x, y, healthPoints, armorPoints, damage, image, strength, inteligence, agility, resourcePoints, resourceType)
         {
             // Deals 80 damage to the enemy target.
             this.offensiveAbillity = new Abillity("Power Shot", 40, 55);
+
             // Grants the user's enemy 100% miss chance.
             this.defensiveAbillity = new Abillity("Avoidance", 60, 50);
         }
@@ -36,14 +37,16 @@
             {
                 return this.damage;
             }
+
             set
             {
                 this.damage = EntityValidator.DamageValidating(value + this.Agility);
             }
         }
-        private int RegenerationCounter { get; set; }
 
         public override bool DeffensiveBuff { get; set; }
+
+        private int RegenerationCounter { get; set; }
 
         public override string Attack(Enemy enemy)
         {
@@ -51,7 +54,7 @@
 
             int fightCase = fightSituation.Next(1, 101);
 
-            string combatLogResult = "";
+            string combatLogResult = string.Empty;
 
             // Passive - 10% more Critical Strike chance
             int normalAttackDamage = this.Damage;
@@ -99,7 +102,7 @@
 
         public override string CastOffensiveSpell(Enemy enemy)
         {
-            string combatLogResult = "";
+            string combatLogResult = string.Empty;
             if (this.ResourcePoints.CurrentValue >= this.offensiveAbillity.Cost)
             {
                 this.ResourcePoints = this.ResourcePoints.Decrease(this.offensiveAbillity.Cost);

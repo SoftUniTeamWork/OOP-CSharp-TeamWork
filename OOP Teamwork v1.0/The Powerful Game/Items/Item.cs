@@ -1,8 +1,8 @@
 ﻿namespace The_Powerful_Game.Items
 {
     using System.Text;
-    using Validations;
     using Enums;
+    using Validations;
 
     public abstract class Item
     {
@@ -16,12 +16,14 @@
             this.Type = type;
             this.Price = price;
         }
+
         public string Name
         {
             get
             {
                 return this.name;
             }
+
             set
             {
                 this.name = ItemValidator.ItemNameValidating(value);
@@ -36,6 +38,7 @@
             {
                 return this.price;
             }
+
             set
             {
                 this.price = ItemValidator.PriceValidating(value);

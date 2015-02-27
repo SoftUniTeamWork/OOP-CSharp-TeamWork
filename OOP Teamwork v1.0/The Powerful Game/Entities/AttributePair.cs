@@ -34,6 +34,7 @@
             {
                 this.currentValue = this.maximumValue;
             }
+
             return new AttributePair(this.currentValue, this.maximumValue);
         }
 
@@ -44,6 +45,7 @@
             {
                 this.currentValue = 0;
             }
+
             return new AttributePair(this.currentValue, this.maximumValue);
         }
 
@@ -54,6 +56,7 @@
             {
                 this.currentValue = this.maximumValue;
             }
+
             return new AttributePair(this.currentValue, this.maximumValue);
         }
 

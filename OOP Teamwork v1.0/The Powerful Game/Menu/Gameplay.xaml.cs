@@ -11,18 +11,7 @@
     /// </summary>
     public partial class Gameplay : UserControl, ISwitchable
     {
-        public Gameplay()
-        {
-            this.InitializeComponent();
-            this.DataContext = new Map(17, 25, numMap);
-            Control = this;
-            Root = GameplayLayoutRoot;
-            MainEngine = new Engine();
-
-            CompositionTarget.Rendering += Gameplay.MainEngine.Run;
-        }
-
-        public static int[][] numMap = new int[16][]
+        public static int[][] NumMap = new int[16][]
             {
                 new int[] { 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 1, 1 },
                 new int[] { 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 1, 1 },
@@ -47,6 +36,17 @@
         public static Engine MainEngine { get; private set; }
 
         public static UserControl Control { get; private set; }
+
+        public Gameplay()
+        {
+            this.InitializeComponent();
+            this.DataContext = new Map(17, 25, NumMap);
+            Control = this;
+            Root = this.GameplayLayoutRoot;
+            MainEngine = new Engine();
+
+            CompositionTarget.Rendering += Gameplay.MainEngine.Run;
+        }
 
         #region ISwitchable Members
         public void UtilizeState(object state)

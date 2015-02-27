@@ -25,6 +25,7 @@
         {
             // Deals 80 damage to the enemy
             this.offensiveAbillity = new Abillity("Frost Nova", 30, 70);
+
             // Absorbs 50 points of enemy damage using the players mana.
             this.defensiveAbillity = new Abillity("Mana Shield", 0, 50);
         }
@@ -36,6 +37,7 @@
             {
                 return this.damage;
             }
+
             set
             {
                 this.damage = EntityValidator.DamageValidating(value + this.Inteligence);
@@ -132,6 +134,7 @@
             {
                 MessageBox.Show(string.Format("Not enough {0} for {1}!", this.ResourceType.ToString(), this.defensiveAbillity.Name));
             }
+
             return combatLogResult;
         }
 

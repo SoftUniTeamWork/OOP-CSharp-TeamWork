@@ -2,11 +2,6 @@
 {
     public class Abillity
     {
-        private string name;
-        private int cost;
-        private int duration;
-        private int effectValue;
-
         public Abillity(string name, int cost, int effectValue)
         {
             this.Name = name;

@@ -1,7 +1,8 @@
 ﻿namespace The_Powerful_Game.Exceptions
 {
     using System;
-    class ItemTypeException : Exception
+
+    public class ItemTypeException : Exception
     {
         public ItemTypeException()
         {

@@ -1,10 +1,10 @@
 ﻿namespace The_Powerful_Game.Entities
 {
     using System;
-    using System.Windows.Controls;
     using System.Windows;
-    using Validations;
+    using System.Windows.Controls;
     using Enums;
+    using Validations;
 
     public class Warrior : Character
     {
@@ -25,6 +25,7 @@
         {
             // Doubles player damage for the next attack.
             this.offensiveAbillity = new Abillity("God Strength", 50, this.Damage);
+
             // Increases player's armour points by 50%.
             this.defensiveAbillity = new Abillity("Taunt", 40, this.ArmorPoints);
         }
@@ -36,6 +37,7 @@
             {
                 return this.damage;
             }
+
             set
             {
                 this.damage = EntityValidator.DamageValidating(value + this.Strength);

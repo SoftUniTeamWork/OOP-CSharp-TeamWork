@@ -2,7 +2,6 @@
 {
     public static class Constants
     {
-        public static readonly string GameName = "The Powerful Game";
         public const int MapWidth = 1000;
         public const int MapHeight = 680;
 
@@ -23,16 +22,9 @@
         public const int MageArmorPoints = 10;
         public const int MageDamagePoints = 25;
 
-        public static readonly string WarriorImage = @"pack://application:,,,/Resources/Classes/Warrior.png";
-        public static readonly string HunterImage = @"pack://application:,,,/Resources/Classes/Hunter.png";
-        public static readonly string MageImage = @"pack://application:,,,/Resources/Classes/Mage.png";
-
         public const int EnemyHealthPoints = 200;
         public const int EnemyArmorPoints = 15;
         public const int EnemyDamagePoints = 40;
-
-        public static readonly string EnemyImage = @"pack://application:,,,/Resources/3D-Orc.png";
-        public static readonly string MerchantImage = @"pack://application:,,,/Resources/merchant.png";
 
         public const int PlayerWidth = 40;
         public const int PlayerHeight = 40;
@@ -41,5 +33,14 @@
         public const int EnemyHeight = 40;
 
         public const int TileSize = 40;
+
+        public static readonly string GameName = "The Powerful Game";
+
+        public static readonly string EnemyImage = @"pack://application:,,,/Resources/3D-Orc.png";
+        public static readonly string MerchantImage = @"pack://application:,,,/Resources/merchant.png";
+
+        public static readonly string WarriorImage = @"pack://application:,,,/Resources/Classes/Warrior.png";
+        public static readonly string HunterImage = @"pack://application:,,,/Resources/Classes/Hunter.png";
+        public static readonly string MageImage = @"pack://application:,,,/Resources/Classes/Mage.png";
     }
 }

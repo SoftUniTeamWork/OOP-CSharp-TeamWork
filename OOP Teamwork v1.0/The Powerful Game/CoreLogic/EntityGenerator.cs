@@ -1,7 +1,7 @@
 ﻿namespace The_Powerful_Game.CoreLogic
 {
-    using System.Collections.Generic;
     using System;
+    using System.Collections.Generic;
     using System.Windows.Controls;
     using System.Windows.Media.Imaging;
     using Entities;
@@ -18,7 +18,7 @@
             AttributePair health;
             Image playerImage = null;
             Character player = null;
-            switch (Choosing.classType)
+            switch (Choosing.ClassType)
             {
                 case ClassType.Warrior:
                     health = new AttributePair(Constants.WarriorHealthPoints, Constants.WarriorHealthPoints);
@@ -72,8 +72,8 @@
                         new AttributePair(Constants.CharacterResourcePoints, Constants.CharacterResourcePoints),
                         EntityResourceType.Energy);
                     break;
-
             }
+
             Gameplay.Root.Children.Add(playerImage);
             return player;
         }

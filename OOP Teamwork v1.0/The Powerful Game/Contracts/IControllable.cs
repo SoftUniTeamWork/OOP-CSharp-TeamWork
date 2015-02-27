@@ -2,7 +2,7 @@
 {
     using Entities;
 
-    interface IControllable
+    public interface IControllable
     {
         void Move();
 

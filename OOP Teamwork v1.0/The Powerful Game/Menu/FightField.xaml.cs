@@ -1,15 +1,12 @@
-﻿using System;
-using System.Windows.Media.Imaging;
-
-namespace The_Powerful_Game.Menu
+﻿namespace The_Powerful_Game.Menu
 {
+    using System.Linq;
     using System.Windows;
     using System.Windows.Forms;
     using System.Windows.Media;
-    using System.Linq;
-    using The_Powerful_Game.Items;
     using The_Powerful_Game.CoreLogic;
     using The_Powerful_Game.Entities;
+    using The_Powerful_Game.Items;   
     using MessageBox = System.Windows.MessageBox;
     using UserControl = System.Windows.Controls.UserControl;
 
@@ -47,7 +44,7 @@ namespace The_Powerful_Game.Menu
         private void ButtonAttackOnClick(object sender, RoutedEventArgs e)
         {
             this.CombatLog.Text = this.Fight.PlayerTurn("Attack") + this.CombatLog.Text;
-            if (this.Enemy.isAlive)
+            if (this.Enemy.IsAlive)
             {
                 this.CombatLog.Text = this.Fight.EnemyTurn() + this.CombatLog.Text;
             }
@@ -56,7 +53,7 @@ namespace The_Powerful_Game.Menu
         private void ButtonOffensiveSpellOnClick(object sender, RoutedEventArgs e)
         {
             this.CombatLog.Text = this.Fight.PlayerTurn("Offensive Skill") + this.CombatLog.Text;
-            if (this.Fight.PlayerTookTurn && this.Enemy.isAlive)
+            if (this.Fight.PlayerTookTurn && this.Enemy.IsAlive)
             {
                 this.CombatLog.Text = this.Fight.EnemyTurn() + this.CombatLog.Text;
             }
@@ -97,6 +94,5 @@ namespace The_Powerful_Game.Menu
                 MessageBox.Show("No Resource Potions available.");
             }
         }
-
     }
 }
