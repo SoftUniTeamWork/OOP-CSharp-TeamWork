@@ -1,9 +1,8 @@
 ﻿namespace The_Powerful_Game.Items
 {
     using System.Text;
-    using The_Powerful_Game.Validations;
-    using The_Powerful_Game.Enums;
-    using The_Powerful_Game.Contracts;
+    using Validations;
+    using Enums;
 
     public abstract class Item
     {
@@ -19,16 +18,28 @@
         }
         public string Name
         {
-            get { return this.name; }
-            set { this.name = ItemValidator.ItemNameValidating(value); }
+            get
+            {
+                return this.name;
+            }
+            set
+            {
+                this.name = ItemValidator.ItemNameValidating(value);
+            }
         }
 
         public ItemType Type { get; set; }
 
         public int Price
         {
-            get { return this.price; }
-            set { this.price = ItemValidator.PriceValidating(value); }
+            get
+            {
+                return this.price;
+            }
+            set
+            {
+                this.price = ItemValidator.PriceValidating(value);
+            }
         }
 
         public abstract object Clone();

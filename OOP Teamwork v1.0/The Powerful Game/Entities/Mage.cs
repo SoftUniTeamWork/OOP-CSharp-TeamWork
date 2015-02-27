@@ -1,11 +1,10 @@
-﻿using The_Powerful_Game.Validations;
-
-namespace The_Powerful_Game.Entities
+﻿namespace The_Powerful_Game.Entities
 {
     using System;
     using System.Windows.Controls;
     using System.Windows.Forms;
-    using The_Powerful_Game.Entities.Chooses;
+    using Enums;
+    using Validations;
 
     public class Mage : Character
     {
@@ -22,8 +21,14 @@ namespace The_Powerful_Game.Entities
         // Increase damage for every inteligence point you have
         public override int Damage
         {
-            get { return this.damage; }
-            set { this.damage = EntityValidator.DamageValidating(value + this.Inteligence); }
+            get
+            {
+                return this.damage;
+            }
+            set
+            {
+                this.damage = EntityValidator.DamageValidating(value + this.Inteligence);
+            }
         }
 
         public override bool DeffensiveBuff { get; set; }

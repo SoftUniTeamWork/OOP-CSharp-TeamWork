@@ -1,10 +1,10 @@
 ﻿namespace The_Powerful_Game.CoreLogic
 {
     using System;
-    using The_Powerful_Game.Items;
+    using Items;
     using System.Windows.Media;
-    using The_Powerful_Game.Menu;
-    using The_Powerful_Game.Entities;
+    using Menu;
+    using Entities;
     using MessageBox = System.Windows.MessageBox;
 
     public class Fight
@@ -25,6 +25,7 @@
         public string EnemyTurn()
         {
             string combatLogResult = this.Enemy.Attack(this.Player);
+
             PlayerDeadCheck();
             FightOverCheck();
             return combatLogResult;
