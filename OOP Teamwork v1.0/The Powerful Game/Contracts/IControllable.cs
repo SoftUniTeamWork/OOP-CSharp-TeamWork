@@ -1,6 +1,6 @@
 ﻿namespace The_Powerful_Game.Contracts
 {
-    using The_Powerful_Game.Entities;
+    using Entities;
 
     interface IControllable
     {

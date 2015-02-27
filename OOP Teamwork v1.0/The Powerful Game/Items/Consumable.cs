@@ -1,7 +1,7 @@
 ﻿namespace The_Powerful_Game.Items
 {
-    using The_Powerful_Game.Contracts;
-    using The_Powerful_Game.Enums;
+    using Contracts;
+    using Enums;
 
     public abstract class Consumable : Item, IConsumable
     {

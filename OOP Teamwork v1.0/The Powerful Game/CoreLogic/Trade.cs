@@ -1,6 +1,6 @@
 ﻿namespace The_Powerful_Game.CoreLogic
 {
-    using The_Powerful_Game.Entities;
+    using Entities;
 
     public class Trade
     {

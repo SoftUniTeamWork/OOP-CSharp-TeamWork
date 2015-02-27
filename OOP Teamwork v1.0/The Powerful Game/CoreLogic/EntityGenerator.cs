@@ -5,11 +5,10 @@ namespace The_Powerful_Game.CoreLogic
     using System;
     using System.Windows.Controls;
     using System.Windows.Media.Imaging;
-    using The_Powerful_Game.Entities;
-    using The_Powerful_Game.Entities.Chooses;
-    using The_Powerful_Game.Enums;
-    using The_Powerful_Game.Items;
-    using The_Powerful_Game.Menu;
+    using Entities;
+    using Enums;
+    using Items;
+    using Menu;
 
     public static class EntityGenerator
     {
@@ -26,21 +25,24 @@ namespace The_Powerful_Game.CoreLogic
                     health = new AttributePair(Constants.WarriorHealthPoints, Constants.WarriorHealthPoints);
                     playerImage = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.WarriorImage);
                     player = new Warrior(playerName, 100, 100, health, Constants.WarriorArmorPoints,
-                        Constants.WarriorDamagePoints, playerImage, 2, 1, 1, new AttributePair(Constants.WarriorResourcePoints, Constants.CharacterResourcePoints),
+                        Constants.WarriorDamagePoints, playerImage, 2, 1, 1,
+                        new AttributePair(Constants.WarriorResourcePoints, Constants.CharacterResourcePoints),
                         EntityResourceType.Rage);
                     break;
                 case ClassType.Mage:
                     health = new AttributePair(Constants.MageHealthPoints, Constants.MageHealthPoints);
                     playerImage = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.MageImage);
                     player = new Mage(playerName, 100, 100, health, Constants.MageArmorPoints,
-                        Constants.MageDamagePoints, playerImage, 2, 1, 1, new AttributePair(Constants.CharacterResourcePoints, Constants.CharacterResourcePoints),
+                        Constants.MageDamagePoints, playerImage, 2, 1, 1, 
+                        new AttributePair(Constants.CharacterResourcePoints, Constants.CharacterResourcePoints),
                         EntityResourceType.Mana);
                     break;
                 case ClassType.Hunter:
                     health = new AttributePair(Constants.HunterHealthPoints, Constants.HunterHealthPoints);
                     playerImage = GenerateImage(playerName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.HunterImage);
                     player = new Hunter(playerName, 100, 100, health, Constants.HunterArmorPoints,
-                        Constants.HunterDamagePoints, playerImage, 2, 1, 1, new AttributePair(Constants.CharacterResourcePoints, Constants.CharacterResourcePoints),
+                        Constants.HunterDamagePoints, playerImage, 2, 1, 1, 
+                        new AttributePair(Constants.CharacterResourcePoints, Constants.CharacterResourcePoints),
                         EntityResourceType.Energy);
                     break;
 
@@ -65,14 +67,7 @@ namespace The_Powerful_Game.CoreLogic
             string enemyName = "Enemy";
             var img = GenerateImage(enemyName, Constants.PlayerWidth, Constants.PlayerHeight, Constants.EnemyImage);
             var health = new AttributePair(Constants.EnemyHealthPoints, Constants.EnemyHealthPoints);
-            var enemy = new Enemy(
-                enemyName,
-                x,
-                y,
-                health,
-                Constants.EnemyArmorPoints,
-                Constants.EnemyDamagePoints,
-                img);
+            var enemy = new Enemy(enemyName, x, y, health, Constants.EnemyArmorPoints, Constants.EnemyDamagePoints,img);
 
             Gameplay.Root.Children.Add(img);
             return enemy;
@@ -84,9 +79,10 @@ namespace The_Powerful_Game.CoreLogic
             List<Item> products = new List<Item>();
             AttributePair health = new AttributePair(Constants.WarriorHealthPoints, Constants.WarriorHealthPoints);
             Image merchantImage = GenerateImage(merchantName, Constants.EnemyWidth, Constants.EnemyHeight, Constants.WarriorImage);
-            Merchant merchant = new Merchant(merchantName, x, y, health, Constants.WarriorArmorPoints,
-                        Constants.WarriorDamagePoints, merchantImage, products);
+            Merchant merchant = new Merchant(merchantName, x, y, health,
+                Constants.WarriorArmorPoints, Constants.WarriorDamagePoints, merchantImage, products);
             Gameplay.Root.Children.Add(merchantImage);
+
             return merchant;
         }
     }

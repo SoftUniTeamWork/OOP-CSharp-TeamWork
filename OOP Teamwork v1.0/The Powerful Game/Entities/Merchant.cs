@@ -3,8 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.Windows.Controls;
-    using The_Powerful_Game.Contracts;
-    using The_Powerful_Game.Items;
+    using Contracts;
+    using Items;
 
     public class Merchant : Entity,IRenderable
     {

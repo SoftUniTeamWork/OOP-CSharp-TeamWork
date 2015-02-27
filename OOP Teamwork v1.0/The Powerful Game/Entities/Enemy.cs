@@ -1,12 +1,9 @@
-﻿using The_Powerful_Game.Contracts;
-
-namespace The_Powerful_Game.Entities
+﻿namespace The_Powerful_Game.Entities
 {
     using System;
     using System.Windows.Controls;
-    using System.Windows;
-    using System.Windows.Media;
-    using The_Powerful_Game.Menu;
+    using Menu;
+    using Contracts;
 
     public class Enemy : Entity,IUpdatable,IRenderable
     {

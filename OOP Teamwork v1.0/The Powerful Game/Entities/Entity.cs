@@ -4,7 +4,7 @@
     using System.Text;
     using Contracts;
     using System.Windows.Controls;
-    using The_Powerful_Game.Validations;
+    using Validations;
 
     public abstract class Entity : IUpdatable, IRenderable
     {

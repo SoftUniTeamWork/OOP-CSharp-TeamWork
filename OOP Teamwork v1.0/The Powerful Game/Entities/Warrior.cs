@@ -2,9 +2,9 @@
 {
     using System;
     using System.Windows.Controls;
-    using Chooses;
     using System.Windows;
-    using The_Powerful_Game.Validations;
+    using Validations;
+    using Enums;
 
     public class Warrior : Character
     {
@@ -21,8 +21,14 @@
         // Increase damage by every Strength point
         public override int Damage
         {
-            get { return this.damage; }
-            set { this.damage = EntityValidator.DamageValidating(value + this.Strength); }
+            get
+            {
+                return this.damage;
+            }
+            set
+            {
+                this.damage = EntityValidator.DamageValidating(value + this.Strength);
+            }
         }
 
         public override bool DeffensiveBuff { get; set; }

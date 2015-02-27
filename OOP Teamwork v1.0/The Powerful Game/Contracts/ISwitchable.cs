@@ -1,5 +1,4 @@
-﻿
-namespace The_Powerful_Game
+﻿namespace The_Powerful_Game
 {
     public interface ISwitchable
     {

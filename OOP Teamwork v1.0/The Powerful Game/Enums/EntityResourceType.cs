@@ -1,4 +1,4 @@
-﻿namespace The_Powerful_Game.Entities.Chooses
+﻿namespace The_Powerful_Game.Enums
 {
     public enum EntityResourceType
     {
