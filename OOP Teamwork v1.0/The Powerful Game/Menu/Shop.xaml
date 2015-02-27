@@ -44,5 +44,6 @@
                 </TextBox.Background>
             </TextBox>
         </Canvas>
+        <Button Height="25" HorizontalAlignment="Right" Margin="0,0,33,50" VerticalAlignment="Bottom" Width="100" Content="Exit" Click="ExitButton_Click"/>
     </Grid>
 </UserControl>

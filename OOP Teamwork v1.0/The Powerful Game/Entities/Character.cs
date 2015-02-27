@@ -165,6 +165,11 @@
             }
         }
 
+        public void Flee(Enemy enemy)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void EquipItem(Item item)
         {
             if (item != null)
@@ -236,7 +241,7 @@
                 + " Points are now " + this.ResourcePoints.CurrentValue + "\n";
         }
 
-        public void Flee(Enemy enemy)
+        public void Flee(Entity enemy)
         {
             this.X = enemy.X - 50;
         }

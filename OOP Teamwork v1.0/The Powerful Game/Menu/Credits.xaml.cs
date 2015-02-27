@@ -1,6 +1,7 @@
 ﻿namespace The_Powerful_Game.Menu
 {
     using System;
+    using System.Windows;
     using System.Windows.Controls;
 
     /// <summary>
@@ -24,5 +25,10 @@
             Switcher.Switch(new MainMenu());
         }
         #endregion
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new MainMenu());
+        }
     }
 }

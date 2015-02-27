@@ -8,7 +8,6 @@
 	d:DesignWidth="640" d:DesignHeight="480" Width="1000" Height="680">
 
     <Grid x:Name="LayoutRoot" Background="White">
-        <TextBlock Height="40" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="200" Text="Option" TextWrapping="Wrap" FontSize="21.333"/>
-        <Button Height="25" HorizontalAlignment="Right" Margin="0,0,20,20" VerticalAlignment="Bottom" Width="100" Content="&lt; Back" Click="Button_Click"/>
+        <Button Height="25" HorizontalAlignment="Right" Margin="0,0,33,50" VerticalAlignment="Bottom" Width="100" Content="&lt; Back" Click="Button_Click"/>
     </Grid>
 </UserControl>

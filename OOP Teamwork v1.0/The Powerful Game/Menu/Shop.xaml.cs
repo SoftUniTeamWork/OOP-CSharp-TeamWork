@@ -1,6 +1,8 @@
 ﻿namespace The_Powerful_Game.Menu
 {
+    using System.Windows;
     using System.Windows.Controls;
+    using System.Windows.Media;
     using The_Powerful_Game.CoreLogic;
     using The_Powerful_Game.Entities;
 
@@ -25,5 +27,12 @@
         public Merchant Merchant { get; private set; }
 
         public Trade Trade { get; private set; }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            CompositionTarget.Rendering += Gameplay.MainEngine.Run;
+            this.Player.Flee(this.Merchant);
+            Switcher.Switch(Gameplay.Control);
+        }
     }
 }
