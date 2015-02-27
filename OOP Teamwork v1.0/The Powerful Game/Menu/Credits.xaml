@@ -8,7 +8,47 @@
 	d:DesignWidth="640" d:DesignHeight="480" Width="1000" Height="680">
 
     <Grid x:Name="LayoutRoot" Background="White">
-        <TextBlock Height="40" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="200" Text="Load Game" TextWrapping="Wrap" FontSize="21.333"/>
-        <Button Height="25" HorizontalAlignment="Right" Margin="0,0,20,20" VerticalAlignment="Bottom" Width="100" Content="&lt; Back" Click="Button_Click"/>
+        <Grid x:Name="CreditsLayoutRoot" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="207*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="207*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="207*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="207*"/>
+                <ColumnDefinition Width="25*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="363*"/>
+                <RowDefinition Height="0*"/>
+                <RowDefinition Height="31*"/>
+                <RowDefinition Height="286*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="warriorButton" Margin="1.6,0,2,34.2" VerticalAlignment="Bottom" Height="270" FontSize="21.333" Grid.Column="1">
+                <Image Source="/Resources/Developers/RumenConkov.png" Stretch="Fill" Height="270" Width="206" RenderTransformOrigin="0,0">
+                </Image>
+            </Button>
+            <Button x:Name="mageButton" Margin="4.6,0,3,34.2" VerticalAlignment="Bottom" Height="270" FontSize="21.333" Grid.Column="3">
+                <Image Source="/Resources/Developers/StoyanStoyanov.png" Stretch="Fill" Height="270" Width="206" RenderTransformOrigin="0.479,0.507"/>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="5.6,0,0,34.2" VerticalAlignment="Bottom" Height="270" Width="206" Grid.Column="5">
+                <Image Source="/Resources/Developers/KirilAtanasov.png" Height="270" Width="206" Stretch="Fill"/>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="5.4,0,0,34.2" VerticalAlignment="Bottom" Height="270" Width="206" Grid.Column="7" >
+                <Image Source="/Resources/Developers/TodorAtanasov.png" Height="270" Width="206" Stretch="Fill"/>
+            </Button>
+            <TextBlock Grid.Column="3" Margin="1.6,0.6,1,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Height="154"><Run Text="&#x9;He worked on Entity classes and subclasses, created Map class, created w"/><Run Text="indows states and others"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="153" Width="213" Grid.Column="1" Margin="0.6,30.8,0,0" Grid.RowSpan="2"><Run Text="&#x9;Created game engine, "/><LineBreak/><Run Text="."/></TextBlock>
+            <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="6.6,30.8,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="156" Width="212" Text="&#x9;From an early age the call of the wild draws some adventurers from the comfort of their homes into the unforgiving primal world outside. Those who endure become hunters. Masters of their environment, they are able to slip like ghosts through the trees and lay traps in the paths of their enemies." Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Left" Margin="6.6,0.8,0,0" FontFamily="Comic Sans MS" FontSize="14" TextWrapping="Wrap" Text="&#x9;Stoyan Stoyanov" VerticalAlignment="Top" Width="212" Height="29" Grid.Row="2" Grid.ColumnSpan="2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0.6,2.8,0,0" FontFamily="Comic Sans MS" FontSize="14" TextWrapping="Wrap" Text="&#x9;Rumen Conkov" VerticalAlignment="Top" Height="29" Width="213" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="4.6,2.8,0,0" FontFamily="Comic Sans MS" FontSize="14" TextWrapping="Wrap" Text="&#x9;Kiril Atanasov" VerticalAlignment="Top" Height="29" Width="205" Grid.Row="2" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="7" HorizontalAlignment="Left" Margin="5.4,2.8,0,0" FontFamily="Comic Sans MS" FontSize="14" Grid.Row="2" TextWrapping="Wrap" Text="&#x9;Todor Atanasov" VerticalAlignment="Top" Height="35" Width="206" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="7" HorizontalAlignment="Left" Margin="0.4,30.8,0,0" Grid.Row="2" TextWrapping="Wrap" Text="&#x9;" VerticalAlignment="Top" Height="158" Width="216" Grid.RowSpan="2"/>
+
+
+        </Grid>
     </Grid>
 </UserControl>
