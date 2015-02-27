@@ -1,12 +1,8 @@
-﻿using System;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-
-namespace The_Powerful_Game.CoreLogic
+﻿namespace The_Powerful_Game.CoreLogic
 {
     public static class Constants
     {
-        public static readonly string GameName = "";   //TODO
+        public static readonly string GameName = "The Powerful Game";
         public const int MapWidth = 1000;
         public const int MapHeight = 680;
 
@@ -36,6 +32,7 @@ namespace The_Powerful_Game.CoreLogic
         public const int EnemyDamagePoints = 40;
 
         public static readonly string EnemyImage = @"pack://application:,,,/Resources/3D-Orc.png";
+        public static readonly string MerchantImage = @"pack://application:,,,/Resources/merchant.png";
 
         public const int PlayerWidth = 40;
         public const int PlayerHeight = 40;

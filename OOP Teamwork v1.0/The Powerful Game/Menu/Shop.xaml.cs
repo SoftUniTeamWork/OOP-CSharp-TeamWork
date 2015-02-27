@@ -21,6 +21,8 @@
             this.Merchant = merchant;
             this.Trade = new Trade(player, merchant);
 
+            this.DataContext = this;
+
             InitializeComponent();
         }
     }

@@ -1,6 +1,5 @@
 ﻿namespace The_Powerful_Game.Items
 {
-    using The_Powerful_Game.Contracts;
     using The_Powerful_Game.Enums;
 
     public class Weapon : GearItem

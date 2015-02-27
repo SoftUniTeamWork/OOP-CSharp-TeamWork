@@ -41,7 +41,7 @@
             Random posRandom = new Random();
 
             this.player = EntityGenerator.GeneratePlayer();
-            this.merchant = EntityGenerator.GenerateMerchant(150, 100);
+            this.merchant = EntityGenerator.GenerateMerchant(150, 450);
 
             while (this.EnemiesList.Count < NumberOfEnemies)
             {

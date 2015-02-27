@@ -1,25 +1,16 @@
-﻿
-
-namespace The_Powerful_Game.Entities
+﻿namespace The_Powerful_Game.Entities
 {
     public struct AttributePair
     {
-        //Fields
         private int currentValue;
         private int maximumValue;
 
-        //Constructors
-        /// <summary>
-        /// This constructor set attribute max value.
-        /// </summary>
-        /// <param name="maxValue">the max value</param>
         public AttributePair(int currentValue, int maxValue)
         {
             this.currentValue = currentValue;
             this.maximumValue = maxValue;
         }
 
-        //Properties
         public int CurrentValue
         {
             get
@@ -36,12 +27,7 @@ namespace The_Powerful_Game.Entities
             }
         }
 
-        //Methods
-        /// <summary>
-        /// This method increment heal value and checks value for overflow.
-        /// </summary>
-        /// <param name="value">add health</param>
-        public AttributePair Increase(int value)   // value is ushort type, so that negative values can't be passed
+        public AttributePair Increase(int value)
         {
             this.currentValue += value;
             if (this.currentValue > this.maximumValue)
@@ -51,10 +37,6 @@ namespace The_Powerful_Game.Entities
             return new AttributePair(this.currentValue, this.maximumValue);
         }
 
-        /// <summary>
-        /// This method takes damage. Checks if damage is zero.
-        /// </summary>
-        /// <param name="value">take damage</param>
         public AttributePair Decrease(int value)
         {
             this.currentValue -= value;
@@ -65,11 +47,7 @@ namespace The_Powerful_Game.Entities
             return new AttributePair(this.currentValue, this.maximumValue);
         }
 
-        /// <summary>
-        /// This method sets the current value.
-        /// </summary>
-        /// <param name="value">current value</param>
-        public AttributePair SetCurrent(int value)  // used to set the currentValue
+        public AttributePair SetCurrent(int value)
         {
             this.currentValue = value;
             if (this.currentValue > this.maximumValue)
@@ -79,11 +57,7 @@ namespace The_Powerful_Game.Entities
             return new AttributePair(this.currentValue, this.maximumValue);
         }
 
-        /// <summary>
-        /// This method sets the max value
-        /// </summary>
-        /// <param name="value">max value</param>
-        public void SetMaximum(int value) // used to set the maximumValue
+        public void SetMaximum(int value)
         {
             this.maximumValue = value;
             if (this.currentValue > this.maximumValue)

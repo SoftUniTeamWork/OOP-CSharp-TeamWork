@@ -1,9 +1,7 @@
-﻿using The_Powerful_Game.Contracts;
-using The_Powerful_Game.Entities;
-
-namespace The_Powerful_Game.Items
+﻿namespace The_Powerful_Game.Items
 {
     using The_Powerful_Game.Enums;
+    using The_Powerful_Game.Contracts;
 
     public abstract class GearItem : Item, IEquipable
     {

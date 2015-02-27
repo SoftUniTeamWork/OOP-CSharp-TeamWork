@@ -5,7 +5,7 @@
     using Menu;
     using Contracts;
 
-    public class Enemy : Entity,IUpdatable,IRenderable
+    public class Enemy : Entity
     {
         public Enemy(string name, double x, double y, AttributePair healthPoints, int armorPoints, int damage, Image img)
             : base(name, x, y, healthPoints, armorPoints, damage, img)
